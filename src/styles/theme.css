@@ -1,0 +1,44 @@
+/* Theme */
+
+:root {
+  --black: var(--gray-800);
+  --white: #fff;
+  --font-primary: "Inter", sans-serif;
+  --font-secondary: "Inter", sans-serif;
+  --font-mono: "Fira Code", monospace;
+  --color-primary: var(--indigo-500);
+  --color-primary-darker: var(--indigo-700);
+}
+
+body {
+  background-color: var(--white);
+  color: var(--black);
+  font-family: var(--font-primary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-secondary);
+  color: var(--black);
+}
+
+a {
+  color: var(--color-primary);
+}
+a:hover {
+  color: var(--color-primary-darker);
+}
+
+code,
+pre {
+  font-family: var(--font-mono), source-code-pro, Menlo, Monaco, Consolas,
+    "Courier New", monospace;
+}
+
+code {
+  color: var(--emerald-500);
+}
