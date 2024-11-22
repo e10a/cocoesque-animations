@@ -1,0 +1,40 @@
+/* Keyframes */
+
+@keyframes nav-desktop {
+  0% {
+    @apply -mt-[10%];
+    @apply opacity-0;
+    @apply bg-transparent;
+  }
+  98% {
+    @apply bg-transparent;
+  }
+  100% {
+    @apply mt-0;
+    @apply opacity-100;
+    @apply bg-white/80;
+  }
+}
+
+@keyframes nav-filter-invert {
+  0% {
+    filter: invert(0);
+  }
+  90% {
+    filter: invert(0.8);
+  }
+  100% {
+    filter: invert(1);
+  }
+}
+
+/* Helper Keyframes */
+
+@keyframes helper-border {
+  from {
+    border: 10px solid gray;
+  }
+  to {
+    border: 10px solid magenta;
+  }
+}

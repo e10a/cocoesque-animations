@@ -1,0 +1,6 @@
+/* Pages */
+@import "./styles/pages/home.css";
+
+/* Animations */
+@import "./styles/keyframes.css";
+@import "./styles/animations.css";
