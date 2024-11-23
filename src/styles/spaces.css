@@ -1,10 +1,7 @@
 /* Spaces */
 
 :root {
-  --space-px: 1px;
-  --space-0: 0;
-  --space-05: 2px;
-  --space-1: 4px;
+  --space: 4px;
   --space-2: 8px;
   --space-3: 12px;
   --space-4: 16px;
