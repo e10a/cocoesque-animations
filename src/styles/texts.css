@@ -1,0 +1,24 @@
+/* Texts */
+
+:root {
+  --text-xxs: 10px;
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+  --text-3xl: 30px;
+  --text-4xl: 36px;
+  --text-5xl: 48px;
+  --text-6xl: 64px;
+  --text-hairline: 100;
+  --text-thin: 200;
+  --text-light: 300;
+  --text-normal: 400;
+  --text-medium: 500;
+  --text-semibold: 600;
+  --text-bold: 700;
+  --text-extrabold: 800;
+  --text-black: 900;
+}

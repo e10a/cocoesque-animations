@@ -1,6 +1,54 @@
 import { FadeIn } from "@/animations/FadeIn";
 import { TypeEffect } from "@/animations/TypeEffect";
 import { WaveEffect } from "@/animations/WaveEffect";
+import { styled } from "@linaria/react";
+
+const Outer = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgba(var(--rgb-white));
+  text-align: center;
+`;
+const Header = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 80%;
+  margin: 0 auto;
+  gap: var(--space-4);
+  border: 1px solid yellow;
+  width: var(--screen-768);
+`;
+const Title = styled.h1`
+  font-size: var(--text-5xl);
+  margin: 0;
+`;
+const Subtitle = styled.h2`
+  font-size: var(--text-2xl);
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  opacity: 0.9;
+`;
+const Tagline = styled.p`
+  font-size: var(--text-2xl);
+  position: relative;
+`;
+const TaglineInvisible = styled.p`
+  visibility: hidden;
+  position: relative;
+  z-index: -1;
+`;
+const TaglineVisible = styled.p`
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+`;
 
 export const HomeHero = ({
   title,
@@ -42,20 +90,18 @@ export const HomeHero = ({
   };
   return (
     <>
-      <section id="hero-inner" className="relative flex flex-col">
+      <Outer id="hero-inner">
         <FadeIn>
-          <div className="flex flex-col items-center justify-center gap-4">
-            <h1 className="text-white">{title}</h1>
-            <p className="subtitle text-white uppercase font-extrabold tracking-widest opacity-90">
-              {subtitle}
-            </p>
-            <p className="text-white text-2xl w-full max-w-[560px] relative">
-              <span className="relative -z-1 invisible">{tagline}</span>
-              <span className="absolute z-1 top-0 left-0">
+          <Header>
+            <Title>{title}</Title>
+            <Subtitle>{subtitle}</Subtitle>
+            <Tagline>
+              <TaglineInvisible>{tagline}</TaglineInvisible>
+              <TaglineVisible>
                 <TypeEffect showCursor text={tagline} />
-              </span>
-            </p>
-          </div>
+              </TaglineVisible>
+            </Tagline>
+          </Header>
         </FadeIn>
         <div className="flex flex-wrap justify-center gap-2 768:gap-5">
           {Boolean(ctas.length) && (
@@ -73,7 +119,7 @@ export const HomeHero = ({
             </WaveEffect>
           )}
         </div>
-      </section>
+      </Outer>
     </>
   );
 };

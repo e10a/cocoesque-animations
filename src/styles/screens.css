@@ -1,0 +1,13 @@
+/* Screens */
+
+:root {
+  --screen-320: 320px; /* smallest device supported */
+  --screen-480: 480px; /* tablets and larger phones */
+  --screen-768: 768px; /* laptops and small screens */
+  --screen-960: 960px;
+  --screen-1024: 1024px; /* large screens and desktops */
+  --screen-1200: 1200px; /* tv and extra large screens */
+  --screen-1440: 1440px;
+  --screen-1920: 1920px;
+  --screen-2560: 2560px;
+}

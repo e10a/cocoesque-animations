@@ -1,30 +1,32 @@
 import { useEffect, useState } from "react";
 import { createClient } from "contentful";
-
-// import { HomeBelowTheFold } from "./home-page-below-the-fold";
+import { HomeBelowTheFold } from "@/components/page-sections/HomeBelowTheFold";
 import { HomeHero } from "@/components/page-sections/HomeHero";
 import { PageLayout } from "@/components/layouts/PageLayout";
 import { NavDesktop } from "@/components/navigation/NavDesktop";
 import { styled } from "@linaria/react";
 
 const AboveTheFold = styled.div`
-  min-height: 65vh;
-  max-height: 100vh;
-  padding: 8px 0 20px;
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  max-height: 100vh;
+  min-height: 65vh;
+  padding: var(--space-8) 0 var(--space-8);
+  width: 100%;
   background-image: linear-gradient(
     to right,
-    rgb(99, 102, 241),
-    rgb(168, 85, 247),
-    rgb(236, 72, 153)
+    rgb(var(--rgb-indigo-500)),
+    rgb(var(--rgb-purple-500)),
+    rgb(var(--rgb-pink-500))
   );
+
+  @media only screen and (width >= 768px) {
+    padding: var(--space-20) 0 var(--space-20);
+  }
 `;
 
-// background-color: rgba(var(--rgb-white), 0.5);
 const NavDesktopContainer = styled.div`
   position: fixed;
   top: 0;
@@ -33,7 +35,13 @@ const NavDesktopContainer = styled.div`
   z-index: 20;
 `;
 
-interface ContentfulHeroData {
+const ProjectMarker = styled.div`
+  position: absolute;
+  bottom: 0;
+  margin-bottom: calc(0px - var(--space-8));
+`;
+
+interface ContentfulData {
   sectionHero?: {
     fields: {
       ctas: any[];
@@ -42,7 +50,7 @@ interface ContentfulHeroData {
 }
 
 export const PageHome = () => {
-  const [data, setData] = useState<ContentfulHeroData>({});
+  const [data, setData] = useState<ContentfulData>({});
   const [isLoading, setIsLoading] = useState(true);
 
   const client = createClient({
@@ -58,7 +66,7 @@ export const PageHome = () => {
           include: 2,
           limit: 1,
         });
-        setData(response.items[0]?.fields as ContentfulHeroData);
+        setData(response.items[0]?.fields as ContentfulData);
         setIsLoading(false);
       } catch (error) {
         console.error("Error fetching data from Contentful:", error);
@@ -71,9 +79,7 @@ export const PageHome = () => {
   return (
     <>
       <PageLayout>
-        <div
-          id="page-home"
-        >
+        <div id="page-home">
           <AboveTheFold data-timeline="above_the_fold">
             <HomeHero
               title="Ellen Shimada"
@@ -81,18 +87,17 @@ export const PageHome = () => {
               tagline="My specialty is to design and build engaging, high-quality digital experiences"
               ctas={data.sectionHero?.fields?.ctas || []}
             />
+
             <NavDesktopContainer>
               <NavDesktop />
             </NavDesktopContainer>
-            <div id="projects" className="absolute bottom-0 -mb-8" />
+
+            <ProjectMarker id="projects" />
           </AboveTheFold>
 
           {!isLoading && (
-            <div
-              id="below-the-fold"
-              className="w-full text-center flex flex-col divide-y -mb-8 md:mb-0"
-            >
-              {/* <HomeBelowTheFold /> */}
+            <div id="below-the-fold">
+              <HomeBelowTheFold />
             </div>
           )}
         </div>

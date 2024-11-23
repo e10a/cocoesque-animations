@@ -27,9 +27,9 @@
 
 @keyframes helper_border {
   from {
-    border: 10px solid gray;
+    border: var(--space-2) solid gray;
   }
   to {
-    border: 10px solid magenta;
+    border: var(--space-2)  solid magenta;
   }
 }

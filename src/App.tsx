@@ -9,12 +9,12 @@ const HelperContainer = styled.div`
   bottom: 0;
   right: 0;
   text-align: right;
-  background-color: var(--rose-500);
   border-top-left-radius: 0.25rem;
-  border: 1px solid var(--zinc-200);
-  padding: 0.5rem;
-  font-size: 0.875rem;
+  font-size: var(--text-xxs);
   z-index: 1000;
+  backdrop-filter: blur(5px);
+  background-color: rgba(var(--rgb-gray-500), 0.8);
+  font-family: var(--font-mono);
 `;
 
 function App() {

@@ -1,11 +1,19 @@
 @import "./styles/colors.css";
 @import "./styles/gradients.css";
+@import "./styles/texts.css";
+@import "./styles/screens.css";
+@import "./styles/spaces.css";
+@import "./styles/borders.css";
+
+/* Base */
 @import "./styles/base.css";
+
+/* Theme */
 @import "./styles/theme.css";
-@import "./styles/navigation.css";
 
 /* Animations */
 @import "./styles/keyframes.css";
 @import "./styles/animations.css";
-@import "./styles/tools.css";
 
+/* Tools */
+@import "./styles/tools.css";
