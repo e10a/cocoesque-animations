@@ -39,11 +39,13 @@ export const HomeAbout = ({
         <p>{data.displaySubTitle}</p>
       </Header>
       <Content>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: marked.parse(data.displayDescription),
-          }}
-        ></div>
+        {data.displayDescription && (
+          <div
+            dangerouslySetInnerHTML={{
+              __html: marked.parse(data.displayDescription),
+            }}
+          ></div>
+        )}
       </Content>
     </>
   );

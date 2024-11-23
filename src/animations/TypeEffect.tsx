@@ -23,13 +23,15 @@ export const TypeEffect = ({
   const textRef = useRef(null);
 
   useEffect(() => {
-    gsap.to(cursorRef.current, {
-      opacity: 0,
-      ease: "power1.inOut",
-      repeat: -1,
-      yoyo: true,
-      duration: 0.5,
-    });
+    if (showCursor) {
+      gsap.to(cursorRef.current, {
+        opacity: 0,
+        ease: "power1.inOut",
+        repeat: -1,
+        yoyo: true,
+        duration: 0.5,
+      });
+    }
 
     const typeText = () => {
       let currentText = "";
