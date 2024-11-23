@@ -1,36 +1,31 @@
 /* Keyframes */
-
-@keyframes nav-desktop {
+@keyframes nav_desktop--bg {
   0% {
-    @apply -mt-[10%];
-    @apply opacity-0;
-    @apply bg-transparent;
+    background-color: rgba(var(--rgb-white), 0);
   }
   98% {
-    @apply bg-transparent;
+    background-color: rgba(var(--rgb-white), 0.3);
   }
   100% {
-    @apply mt-0;
-    @apply opacity-100;
-    @apply bg-white/80;
+    background-color: rgba(var(--rgb-white), 0.8);
   }
 }
 
-@keyframes nav-filter-invert {
+@keyframes nav-desktop__inner--filter {
   0% {
-    filter: invert(0);
+    filter: invert(1);
   }
-  90% {
+  80% {
     filter: invert(0.8);
   }
   100% {
-    filter: invert(1);
+    filter: invert(0);
   }
 }
 
 /* Helper Keyframes */
 
-@keyframes helper-border {
+@keyframes helper_border {
   from {
     border: 10px solid gray;
   }

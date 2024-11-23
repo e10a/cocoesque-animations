@@ -1,41 +1,22 @@
 /* Animations */
-
-.page-layout-home {
-  .page-layout__content {
-    @apply pt-0;
-  }
-  .nav-bar__container {
-    @apply hidden;
-  }
-  #above-the-fold {
-    view-timeline-name: --above_the_fold;
-  }
-  #nav-desktop {
-    animation-timeline: --above_the_fold;
-    animation-name: nav-desktop;
-    animation-range: cover 80% cover 100%;
-    animation-fill-mode: forwards;
-    animation-duration: 1ms; /* Firefox requires this to apply the animation */
-    @apply duration-300;
-    @apply ease-linear;
-    @apply fixed;
-    @apply flex;
-    @apply left-0;
-    @apply opacity-0;
-    @apply shadow-lg;
-    @apply top-0;
-    @apply transition-all;
-    @apply w-full;
-    @apply z-20;
-  }
-  #nav-desktop-inner {
-    animation-timeline: --above_the_fold;
-    animation-name: nav-filter-invert;
-    animation-range: cover 0% cover 98%;
-    animation-fill-mode: backwards;
-    animation-duration: 1ms; /* Firefox requires this to apply the animation */
-  }
-  .nav-bar__logo {
-    @apply h-[50px];
-  }
+[data-animate] {
+  animation-duration: 100ms;
 }
+[data-timeline="above_the_fold"] {
+  view-timeline-name: --above_the_fold;
+}
+[data-animate="nav_desktop"] {
+  animation-timeline: --above_the_fold;
+  animation-name: nav_desktop--bg;
+  animation-range: cover 80% cover 100%;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+[data-animate="nav-desktop__inner"] {
+  animation-timeline: --above_the_fold;
+  animation-name: nav-desktop__inner--filter;
+  animation-range: cover 80% cover 100%;
+  animation-fill-mode: backwards;
+  animation-timing-function: linear;
+}
+

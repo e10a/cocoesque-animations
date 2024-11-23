@@ -74,7 +74,7 @@ export const PageHome = () => {
         <div
           id="page-home"
         >
-          <AboveTheFold>
+          <AboveTheFold data-timeline="above_the_fold">
             <HomeHero
               title="Ellen Shimada"
               subtitle="Software Engineer • UI/UX Design Lead"

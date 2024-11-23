@@ -19,8 +19,8 @@ const Inner = styled.div`
 
 export const NavDesktop = () => {
   return (
-    <Outer id="nav-desktop">
-      <Inner id="nav-desktop__inner">
+    <Outer id="nav-desktop" data-animate="nav_desktop">
+      <Inner id="nav-desktop__inner" data-animate="nav-desktop__inner">
         <NavBarBrand />
         <NavBarTabs />
       </Inner>
