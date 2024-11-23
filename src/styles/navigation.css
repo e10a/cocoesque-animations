@@ -1,0 +1,36 @@
+#nav-desktop {
+  outline: 1px solid var(--indigo-500);
+  display: none;
+}
+#nav-mobile {
+  outline: 1px solid var(--yellow-500);
+  display: block;
+}
+.nav-bar__logo {
+  height: 50px;
+}
+.nav-bar__tabs {
+  display: flex;
+  gap: 16px;
+}
+#nav-desktop-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+}
+#nav-mobile-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+}
+@media only screen and (min-width: 1000px) {
+  #nav-desktop {
+    display: block;
+  }
+
+  #nav-mobile {
+    display: none;
+  }
+}

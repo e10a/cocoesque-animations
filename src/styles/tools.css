@@ -1,0 +1,3 @@
+[data-env="production"] {
+  display: none !important;
+}
