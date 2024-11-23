@@ -1,0 +1,40 @@
+/* Buttons */
+a,
+button,
+.button {
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+}
+a[disabled],
+button[disabled],
+.button[disabled] {
+  cursor: not-allowed;
+}
+.button {
+  align-items: center;
+  border-radius: var(--space);
+  border: 1px solid transparent;
+  color: rgb(var(--rgb-white));
+  display: inline-flex;
+  font-family: var(--font-primary);
+  font-weight: var(--text-semibold);
+  justify-content: center;
+  min-width: 40px;
+  padding: calc(var(--space-3)) var(--space-3);
+  text-align: center;
+  transform: scale(1);
+}
+.button:hover:not(:disabled) {
+  transform: scale(1.1);
+}
+.button-transparent-white {
+  background-color: rgba(var(--rgb-white), 0.15);
+  border-color: rgba(var(--rgb-white), 0);
+  backdrop-filter: blur(10px);
+  border-width: calc(var(--space) / 2);
+}
+.button-transparent-white:hover {
+  background-color: rgba(var(--rgb-white), 0);
+  border-color: rgba(var(--rgb-white), 0.9);
+}

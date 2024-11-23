@@ -4,6 +4,7 @@
 @import "./styles/screens.css";
 @import "./styles/spaces.css";
 @import "./styles/borders.css";
+@import "./styles/buttons.css";
 
 /* Base */
 @import "./styles/base.css";

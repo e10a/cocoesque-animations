@@ -1,7 +1,9 @@
 /* Base */
 * {
   box-sizing: border-box;
-  transition: all 0.3s ease-in-out;
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 html {
@@ -128,11 +130,20 @@ img {
 
 code,
 pre {
-  font-family: source-code-pro, Menlo, Monaco, Consolas,
-    "Courier New", monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
   width: 100%;
 }
-
+a,
+button {
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+}
+a[disabled],
+button[disabled] {
+  cursor: not-allowed;
+}
 #root {
   height: 100%;
   width: 100%;
@@ -142,4 +153,15 @@ pre {
   .mobile-scroll-lock {
     overflow: hidden;
   }
+}
+
+:root {
+  --tw-scale-x: 0;
+  --tw-scale-y: 0;
+  --tw-border-opacity: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
 }
