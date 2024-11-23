@@ -15,12 +15,7 @@ const AboveTheFold = styled.div`
   min-height: 65vh;
   padding: var(--space-8) 0 var(--space-8);
   width: 100%;
-  background-image: linear-gradient(
-    to right,
-    rgb(var(--rgb-indigo-500)),
-    rgb(var(--rgb-purple-500)),
-    rgb(var(--rgb-pink-500))
-  );
+  background-image: linear-gradient(var(--gradient-rb), var(--gradient-indigo-pink));
 
   @media only screen and (width >= 768px) {
     padding: var(--space-20) 0 var(--space-20);

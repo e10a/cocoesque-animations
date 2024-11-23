@@ -1,5 +1,13 @@
 /* Gradients */
 
-/*
-
-*/
+:root {
+  --gradient-x: to right;
+  --gradient-y: to bottom;
+  --gradient-rb: to right bottom;
+  --gradient-lb: to left bottom;
+  --gradient-rt: to right top;
+  --gradient-lt: to left top;
+  --gradient-indigo-pink: rgb(var(--rgb-indigo-500)), rgb(var(--rgb-purple-500)),
+    rgb(var(--rgb-pink-500));
+  --gradient-indigo-teal: rgb(var(--rgb-indigo-500)), rgb(var(--rgb-teal-500));
+}
