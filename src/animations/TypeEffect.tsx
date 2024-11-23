@@ -1,7 +1,23 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
+import { styled } from "@linaria/react";
 
-export const TypeEffect = ({ showCursor = false, text }: { showCursor?: boolean; text: string }) => {
+const Cursor = styled.span`
+  display: inline-block;
+  width: 3px;
+  height: 16px;
+  background-color: rgb(var(--rgb-white));
+  margin-left: 3px;
+  vertical-align: middle;
+`;
+
+export const TypeEffect = ({
+  showCursor = false,
+  text,
+}: {
+  showCursor?: boolean;
+  text: string;
+}) => {
   const [textToType, setTextToType] = useState("");
   const cursorRef = useRef(null);
   const textRef = useRef(null);
@@ -45,7 +61,7 @@ export const TypeEffect = ({ showCursor = false, text }: { showCursor?: boolean;
   return (
     <span ref={textRef}>
       {textToType}
-      {showCursor && <span ref={cursorRef} className="cursor"></span>}
+      {showCursor && <Cursor ref={cursorRef}></Cursor>}
     </span>
   );
 };

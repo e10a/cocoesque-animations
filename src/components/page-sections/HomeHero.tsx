@@ -17,26 +17,36 @@ const Header = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 80%;
+  max-width: 90vw;
   margin: 0 auto;
   gap: var(--space-4);
-  border: 1px solid yellow;
   width: var(--screen-768);
 `;
 const Title = styled.h1`
-  font-size: var(--text-5xl);
+  font-size: var(--text-4xl);
+  font-weight: var(--text-bold);
   margin: 0;
+  @media only screen and (width >=768px) {
+    font-size: var(--text-5xl);
+  }
 `;
 const Subtitle = styled.h2`
-  font-size: var(--text-2xl);
+  font-size: var(--text-sm);
   text-transform: uppercase;
-  font-weight: 900;
-  letter-spacing: 0.05em;
+  font-weight: var(--text-extrabold);
+  letter-spacing: calc(var(--space) / 2);
   opacity: 0.9;
+  margin: 0;
+  @media only screen and (width >=768px) {
+    font-size: var(--text-lg);
+  }
 `;
 const Tagline = styled.p`
-  font-size: var(--text-2xl);
+  font-size: var(--text-base);
   position: relative;
+  @media only screen and (width >=768px) {
+    font-size: var(--text-2xl);
+  }
 `;
 const TaglineInvisible = styled.p`
   visibility: hidden;
@@ -49,7 +59,26 @@ const TaglineVisible = styled.p`
   top: 0;
   left: 0;
 `;
-
+const CtaWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+  @media only screen and (width >=768px) {
+    gap: var(--space-5);
+  }
+`;
+const Cta = styled.a`
+  transition-duration: 0.5s;
+  &:hover {
+    transform: scale(1.1);
+  }
+  @media only screen and (width >=768px) {
+    font-size: var(--text-2xl);
+    padding: var(--space-4) var(--space-5);
+  }
+`;
+// className="button button-transparent-white 768:button-2xl"
 export const HomeHero = ({
   title,
   subtitle,
@@ -98,27 +127,27 @@ export const HomeHero = ({
             <Tagline>
               <TaglineInvisible>{tagline}</TaglineInvisible>
               <TaglineVisible>
-                <TypeEffect showCursor text={tagline} />
+                <TypeEffect text={tagline} />
               </TaglineVisible>
             </Tagline>
           </Header>
         </FadeIn>
-        <div className="flex flex-wrap justify-center gap-2 768:gap-5">
+        <CtaWrapper>
           {Boolean(ctas.length) && (
             <WaveEffect delay={0.4}>
               {ctas.map((cta) => (
-                <a
+                <Cta
+                  className="button button-transparent-white"
                   key={cta.sys.id}
-                  className="button button-transparent-white 768:button-2xl"
                   href={cta.fields.url}
                   onClick={(event) => handleClick(cta, event)}
                 >
                   {cta.fields.text}
-                </a>
+                </Cta>
               ))}
             </WaveEffect>
           )}
-        </div>
+        </CtaWrapper>
       </Outer>
     </>
   );
