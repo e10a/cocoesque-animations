@@ -26,7 +26,6 @@ const AboveTheFold = styled.div`
     padding: var(--space-20) 0 var(--space-20);
   }
 `;
-
 const NavDesktopContainer = styled.div`
   position: fixed;
   top: 0;
@@ -34,7 +33,6 @@ const NavDesktopContainer = styled.div`
   width: 100%;
   z-index: 20;
 `;
-
 const ProjectMarker = styled.div`
   position: absolute;
   bottom: 0;

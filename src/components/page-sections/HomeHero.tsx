@@ -23,12 +23,8 @@ const Header = styled.div`
   width: var(--screen-768);
 `;
 const Title = styled.h1`
-  font-size: var(--text-4xl);
   font-weight: var(--text-bold);
   margin: 0;
-  @media only screen and (width >=768px) {
-    font-size: var(--text-5xl);
-  }
 `;
 const Subtitle = styled.h2`
   font-size: var(--text-sm);
@@ -41,8 +37,7 @@ const Subtitle = styled.h2`
     font-size: var(--text-lg);
   }
 `;
-const Tagline = styled.p`
-  font-size: var(--text-base);
+const Tagline = styled.div`
   position: relative;
   @media only screen and (width >=768px) {
     font-size: var(--text-2xl);

@@ -1,9 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
-import { HomeProjectsActive } from "./home-projects-active";
-import { HomeProjectsComingSoon } from "./HomeProjectsComingSoon";
+import { HomeProjectsActive } from "@/components/page-sections/HomeProjectsActive";
+import { HomeProjectsComingSoon } from "@/components/page-sections/HomeProjectsComingSoon";
 
-export const HomeProjects = ({ projects = [] }) => {
+interface Project {
+  fields: {
+    comingSoon: boolean;
+  };
+}
+
+export const HomeProjects = ({ projects = [] }: { projects: Project[] }) => {
   const activeProjects = projects.filter(
     (project) => !project.fields.comingSoon
   );
