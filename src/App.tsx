@@ -3,6 +3,8 @@ import { TimelineTracker } from "@/components/tools/TimelineTracker";
 import { PageHome } from "@/pages/PageHome";
 import { styled } from "@linaria/react";
 import { Analytics } from "@vercel/analytics/react";
+import { Provider as ResponsiveProvider } from "@/context/ResponsiveContext";
+import Responsive from "@/components/tools/Responsive";
 
 const HelperContainer = styled.div`
   position: fixed;
@@ -20,12 +22,15 @@ const HelperContainer = styled.div`
 function App() {
   return (
     <>
-      <Routes>
-        <Route path="/" element={<PageHome />} />
-      </Routes>
-      <HelperContainer data-env={import.meta.env.VITE_APP_VERCEL_ENV}>
-        <TimelineTracker />
-      </HelperContainer>
+      <ResponsiveProvider>
+        <Routes>
+          <Route path="/" element={<PageHome />} />
+        </Routes>
+        <HelperContainer data-env={import.meta.env.VITE_APP_VERCEL_ENV}>
+          <Responsive />
+          <TimelineTracker />
+        </HelperContainer>
+      </ResponsiveProvider>
       <Analytics />
     </>
   );
