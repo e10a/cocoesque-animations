@@ -5,8 +5,8 @@
   --font-primary: "Inter", sans-serif;
   --font-secondary: "Inter", sans-serif;
   --rgb-black: var(--rgb-gray-800);
-  --rgb-color-primary-darker: var(--indigo-700);
-  --rgb-color-primary: var(--indigo-500);
+  --rgb-color-primary-darker: var(--rgb-indigo-700);
+  --rgb-color-primary: var(--rgb-indigo-500);
 }
 
 body {
@@ -23,8 +23,46 @@ h5,
 h6 {
   font-family: var(--font-secondary);
   color: var(--black);
+  font-weight: var(--text-bold);
 }
-
+h1 {
+  font-size: var(--text-3xl);
+}
+h2 {
+  font-size: var(--text-2xl);
+}
+h3 {
+  font-size: var(--text-xl);
+}
+h4 {
+  font-size: var(--text-lg);
+}
+h5 {
+  font-size: var(--text-base);
+}
+h6 {
+  font-size: var(--text-base);
+}
+@media only screen and (width >=768px) {
+  h1 {
+    font-size: var(--text-5xl);
+  }
+  h2 {
+    font-size: var(--text-4xl);
+  }
+  h3 {
+    font-size: var(--text-2xl);
+  }
+  h4 {
+    font-size: var(--text-xl);
+  }
+  h5 {
+    font-size: var(--text-lg);
+  }
+  h6 {
+    font-size: var(--text-base);
+  }
+}
 a {
   color: rgb(var(--rgb-color-primary));
 }

@@ -35,22 +35,8 @@ h4,
 h5,
 h6 {
   font-family: var(--font-secondary);
-  font-weight: 600;
-  color: rgba(0, 0, 0, 0.86);
-}
-
-h1,
-h2,
-h3 {
-  margin-top: 3.2rem;
-  margin-bottom: 1.6rem;
-}
-
-h4,
-h5,
-h6 {
-  margin-top: 1.6rem;
-  margin-bottom: 1.6rem;
+  font-weight: var(--text-bold);
+  margin: var(--space-8) 0 var(--space-2);
 }
 
 h1 {
@@ -78,9 +64,8 @@ h6 {
 }
 
 p {
-  margin: 0 0 var(--space-4);
+  margin: var(--space-4) 0;
 }
-
 strong {
   font-weight: 500;
 }
