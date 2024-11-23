@@ -73,7 +73,6 @@ export const HomeHero = ({
             </WaveEffect>
           )}
         </div>
-        <div id="projects" className="absolute bottom-0 -mb-8" />
       </section>
     </>
   );

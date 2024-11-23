@@ -21,9 +21,9 @@ export const TimelineTracker = () => {
   }, []);
 
   return (
-    <div className="flex flex-col gap-1 text-center font-mono uppercase trackiing-wider">
-      <div className="leading-0">TIMELINE</div>
-      <div className="leading-0">{`${scrollPercentage}%`}</div>
+    <div>
+      <div>TIMELINE</div>
+      <div>{`${scrollPercentage}%`}</div>
     </div>
   );
 };

@@ -1,18 +1,17 @@
 /* Theme */
 
 :root {
-  --black: var(--gray-800);
-  --white: #fff;
+  --font-mono: "Fira Code", monospace;
   --font-primary: "Inter", sans-serif;
   --font-secondary: "Inter", sans-serif;
-  --font-mono: "Fira Code", monospace;
-  --color-primary: var(--indigo-500);
-  --color-primary-darker: var(--indigo-700);
+  --rgb-black: var(--rgb-gray-800);
+  --rgb-color-primary-darker: var(--indigo-700);
+  --rgb-color-primary: var(--indigo-500);
 }
 
 body {
-  background-color: var(--white);
-  color: var(--black);
+  background-color: rgba(var(--rgb-white));
+  color: rgba(var(--rgb-black));
   font-family: var(--font-primary);
 }
 
@@ -27,10 +26,10 @@ h6 {
 }
 
 a {
-  color: var(--color-primary);
+  color: rgb(var(--rgb-color-primary));
 }
 a:hover {
-  color: var(--color-primary-darker);
+  color: rgb(var(--rgb-color-primary-darker));
 }
 
 code,
@@ -40,5 +39,5 @@ pre {
 }
 
 code {
-  color: var(--emerald-500);
+  color: rgb(var(--rgb-emerald-500));
 }
