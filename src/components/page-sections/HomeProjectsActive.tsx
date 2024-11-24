@@ -2,7 +2,20 @@ import { useEffect, useState } from "react";
 import { Project } from "@/components/Project";
 import { Carousel } from "@/components/Carousel";
 
-export const HomeProjectsActive = ({ projects = [] }) => {
+interface Project {
+  sys: {
+    id: string;
+  };
+  fields: Record<string, unknown>;
+}
+
+interface HomeProjectsActiveProps {
+  projects: Project[];
+}
+
+export const HomeProjectsActive = ({ projects }: HomeProjectsActiveProps) => {
+  if (!projects) return;
+
   const [hideControls, setHideControls] = useState(false);
   useEffect(() => {
     const handleResize = () => {

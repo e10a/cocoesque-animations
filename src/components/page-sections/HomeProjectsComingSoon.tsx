@@ -1,7 +1,18 @@
 import { Project } from "@/components/Project";
 import { Carousel } from "@/components/Carousel";
 
-export const HomeProjectsComingSoon = ({ projects = [] }) => {
+interface Project {
+  sys: {
+    id: string;
+  };
+  fields: Record<string, unknown>;
+}
+
+interface HomeProjectsActiveProps {
+  projects: Project[];
+}
+
+export const HomeProjectsComingSoon = ({ projects }: HomeProjectsActiveProps) => {
   return (
     <Carousel
       infinite={false}

@@ -1,20 +1,20 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-
 import { HomeProjectsActive } from "@/components/page-sections/HomeProjectsActive";
 import { HomeProjectsComingSoon } from "@/components/page-sections/HomeProjectsComingSoon";
 
 interface Project {
-  fields: {
-    comingSoon: boolean;
+  sys: {
+    id: string;
   };
+  fields: Record<string, unknown>;
 }
 
-export const HomeProjects = ({ projects = [] }: { projects: Project[] }) => {
-  const activeProjects = projects.filter(
+export const HomeProjects = (projects: Project[] = []) => {
+  if (!projects) return;
+
+  const activeProjects: Project[] = projects.filter(
     (project) => !project.fields.comingSoon
   );
-
-  const comingSoonProjects = projects.filter(
+  const comingSoonProjects: Project[] = projects.filter(
     (project) => project.fields.comingSoon
   );
 
