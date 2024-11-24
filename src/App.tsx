@@ -11,7 +11,7 @@ function App() {
         <Routes>
           <Route path="/" element={<PageHome />} />
         </Routes>
-        <DevTools />
+        {import.meta.env.VITE_APP_VERCEL_ENV !== "production" && <DevTools />}
       </ResponsiveProvider>
       <Analytics />
     </>

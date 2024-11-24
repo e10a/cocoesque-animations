@@ -28,7 +28,7 @@ const Inner = styled.div`
 
 export default function DevTools() {
   return (
-    <Outer data-env={import.meta.env.VITE_APP_VERCEL_ENV}>
+    <Outer>
       <Inner>
         <TimelineTracker />
         <Responsive />
