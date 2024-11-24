@@ -19,4 +19,7 @@
 @import "./styles/animations/home-skills.css";
 
 /* DevTools */
-@import "./styles/dev-tools.css"
+@import "./styles/dev-tools.css";
+
+/* Helpers */
+@import "./styles/outlines.css";

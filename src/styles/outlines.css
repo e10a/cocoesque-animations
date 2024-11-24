@@ -1,0 +1,11 @@
+/* Outlines */
+:root {
+  --outline-timeline: 4px dashed magenta;
+  --outline-animate: 4px dashed lime;
+}
+.outline-magenta {
+  outline: 4px dashed magenta;
+}
+.outline-lime {
+  outline: 4px dashed lime;
+}

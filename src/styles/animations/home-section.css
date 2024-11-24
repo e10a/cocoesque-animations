@@ -1,5 +1,5 @@
 [data-animate="home_section_contents"] {
-  outline: 4px dashed lime;
+  outline: var(--outline-animate);
 }
 
 [data-animate="home_section_contents"] {
