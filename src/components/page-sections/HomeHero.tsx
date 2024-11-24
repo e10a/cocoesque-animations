@@ -31,7 +31,7 @@ const Subtitle = styled.h2`
   font-size: var(--text-sm);
   text-transform: uppercase;
   font-weight: var(--text-extrabold);
-  letter-spacing: --space-half;
+  letter-spacing: var(--space-half);
   opacity: 0.9;
   margin: 0;
   @media only screen and (width >=768px) {
