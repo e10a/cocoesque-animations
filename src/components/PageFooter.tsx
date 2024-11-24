@@ -70,7 +70,7 @@ export const PageFooter = () => {
           </div>
           <div className="md:text-right">
             <p>
-              Cocoesque{" • "}Co-creating with compassion - Copyright © 2024
+            {import.meta.env.VITE_APP_NAME}{" • "}{import.meta.env.VITE_APP_DESCRIPTION} - Copyright © {new Date().getUTCFullYear()}
             </p>
           </div>
         </div>
