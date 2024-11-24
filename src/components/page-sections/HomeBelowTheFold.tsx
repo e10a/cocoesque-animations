@@ -63,12 +63,12 @@ export const HomeBelowTheFold = () => {
   });
   const [isLoading, setIsLoading] = useState(true);
 
-  const client = createClient({
-    space: import.meta.env.VITE_APP_CONTENTFUL_SPACE_ID || "",
-    accessToken: import.meta.env.VITE_APP_CONTENTFUL_ACCESS_TOKEN || "",
-  });
-
   useEffect(() => {
+    const client = createClient({
+      space: import.meta.env.VITE_APP_CONTENTFUL_SPACE_ID || "",
+      accessToken: import.meta.env.VITE_APP_CONTENTFUL_ACCESS_TOKEN || "",
+    });
+
     const fetchData = async () => {
       try {
         const response = await client.getEntries({
@@ -94,7 +94,7 @@ export const HomeBelowTheFold = () => {
     };
 
     fetchData();
-  }, []);
+  }, [setData, setIsLoading]);
 
   useEffect(() => {
     const hash = window.location.hash;
