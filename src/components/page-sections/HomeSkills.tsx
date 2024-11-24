@@ -11,6 +11,8 @@ const Content = styled.div`
   box-shadow: inset 0 0 0 1px rgba(var(--rgb-white), 0.2);
   color: rgb(var(--rgb-white));
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: var(--space-4);
   height: 400px;
   margin-top: var(--space-10);
@@ -25,6 +27,7 @@ const Skills = styled.div`
   flex: 1 1 0%;
   gap: var(--space-3);
   justify-content: center;
+  max-width: var(--space-40);
 `;
 
 export const HomeSkills = ({ skills }: SkillsType) => {

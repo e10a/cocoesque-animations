@@ -11,7 +11,6 @@ const Outer = styled.div`
   gap: var(--space);
   padding: var(--space-4);
   width: 100%;
-  max-width: var(--space-36);
 `;
 const Inner = styled.div`
   align-items: center;
