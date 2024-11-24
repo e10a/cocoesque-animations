@@ -49,7 +49,6 @@ const PageLoaderContainer = styled.div`
   margin-bottom: var(--space-32);
 `;
 
-
 export const HomeBelowTheFold = () => {
   const [data, setData] = useState<ContentfulData>({
     projects: [],
@@ -124,7 +123,7 @@ export const HomeBelowTheFold = () => {
         ))}
       {!isLoading && (
         <>
-          <ProjectsSection>
+          <ProjectsSection style={{ display: "none" }}>
             <HomeProjects
               projects={
                 projects.filter((project: Project) => !project.fields.hide) ||
@@ -133,15 +132,26 @@ export const HomeBelowTheFold = () => {
             />
           </ProjectsSection>
 
+          <div style={{ height: "50vh" }} />
+
           <SkillsSection>
-            <HomeSkills
-              skills={
-                skills.filter(
-                  (skill: Skill) =>
-                    skill.fields.category[0] === "Tools & Technologies"
-                ) ?? []
-              }
-            />
+            <section>
+              <header style={{ marginBottom: "var(--space-10)" }}>
+                <h2>Skills</h2>
+                <p>What&apos;s in my tool belt</p>
+              </header>
+
+              <div data-animate="home_section_contents">
+                <HomeSkills
+                  skills={
+                    skills.filter(
+                      (skill: Skill) =>
+                        skill.fields.category[0] === "Tools & Technologies"
+                    ) ?? []
+                  }
+                />
+              </div>
+            </section>
           </SkillsSection>
 
           <AboutSection>

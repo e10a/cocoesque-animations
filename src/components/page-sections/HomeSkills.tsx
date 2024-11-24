@@ -8,16 +8,14 @@ const Content = styled.div`
     var(--gradient-br),
     var(--gradient-indigo-teal)
   );
-  box-shadow: inset 0 0 0 1px rgba(var(--rgb-white), 0.2);
   color: rgb(var(--rgb-white));
   display: flex;
   align-items: center;
   justify-content: center;
   gap: var(--space-4);
-  height: 400px;
-  margin-top: var(--space-10);
   overflow: hidden;
-  padding: var(--space-8) 0;
+  position: relative;
+  max-height: 400px;
 `;
 const Skills = styled.div`
   align-items: center;
@@ -28,6 +26,23 @@ const Skills = styled.div`
   gap: var(--space-3);
   justify-content: center;
   max-width: var(--space-40);
+  min-width: var(--space-32);
+`;
+const ShadowTop = styled.div`
+  box-shadow: rgba(var(--rgb-black), 0.8) 0 0 var(--space-2) var(--space);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+`;
+const ShadowBottom = styled.div`
+  box-shadow: rgba(var(--rgb-black), 0.15) 0 0 var(--space-2) var(--space);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
 `;
 
 export const HomeSkills = ({ skills }: SkillsType) => {
@@ -76,31 +91,28 @@ export const HomeSkills = ({ skills }: SkillsType) => {
   };
 
   return (
-    <section>
-      <header>
-        <h2>Skills</h2>
-        <p>What&apos;s in my tool belt</p>
-      </header>
-      <Content
-        data-cols={numberOfCols}
-        data-items={itemsPerCol}
-        ref={containerRef}
-      >
-        {skills &&
-          Array(numberOfCols)
-            .fill(undefined)
-            .map((_, i) => (
-              <Skills
-                key={`column-${i + 1}`}
-                className={`column-${i + 1}`}
-                style={{
-                  transform: `translateY(${((i % 2) as 0 | 1) ? 0 : 5}%)`,
-                }}
-              >
-                {renderColumn(i)}
-              </Skills>
-            ))}
-      </Content>
-    </section>
+    <Content
+      data-animate="skills_container"
+      data-cols={numberOfCols}
+      data-items={itemsPerCol}
+      ref={containerRef}
+    >
+      <ShadowTop />
+      {skills &&
+        Array(numberOfCols)
+          .fill(undefined)
+          .map((_, i) => (
+            <Skills
+              key={`column-${i + 1}`}
+              className={`column-${i + 1}`}
+              style={{
+                transform: `translateY(${((i % 2) as 0 | 1) ? 0 : 5}%)`,
+              }}
+            >
+              {renderColumn(i)}
+            </Skills>
+          ))}
+      <ShadowBottom />
+    </Content>
   );
 };
