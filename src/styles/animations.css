@@ -1,22 +1,14 @@
-/* Animations */
+/* Animation Defaults */
 [data-animate] {
-  animation-duration: 100ms;
-}
-[data-timeline="above_the_fold"] {
-  view-timeline-name: --above_the_fold;
-}
-[data-animate="nav_desktop"] {
-  animation-timeline: --above_the_fold;
-  animation-name: nav_desktop--bg;
-  animation-range: cover 80% cover 100%;
-  animation-fill-mode: forwards;
-  animation-timing-function: linear;
-}
-[data-animate="nav-desktop__inner"] {
-  animation-timeline: --above_the_fold;
-  animation-name: nav-desktop__inner--filter;
-  animation-range: cover 80% cover 100%;
-  animation-fill-mode: backwards;
-  animation-timing-function: linear;
+  animation-duration: 100ms; /* Default duration necessary for Firefox */
 }
 
+/* Helper Keyframes */
+@keyframes helper_border {
+  from {
+    border: var(--space-2) solid gray;
+  }
+  to {
+    border: var(--space-2) solid magenta;
+  }
+}

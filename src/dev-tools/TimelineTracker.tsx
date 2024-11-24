@@ -21,9 +21,11 @@ export const TimelineTracker = () => {
   }, []);
 
   return (
-    <div>
-      <div>TIMELINE</div>
-      <div>{`${scrollPercentage}%`}</div>
+    <div className="dev-tools-section">
+      <div className="dev-tools-item">
+        scrollTimeline
+        <div className="dev-tools-key">{`${scrollPercentage}%`}</div>
+      </div>
     </div>
   );
 };

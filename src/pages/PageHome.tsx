@@ -3,7 +3,7 @@ import { createClient } from "contentful";
 import { HomeBelowTheFold } from "@/components/page-sections/HomeBelowTheFold";
 import { HomeHero } from "@/components/page-sections/HomeHero";
 import { PageLayout } from "@/components/layouts/PageLayout";
-import { NavDesktop } from "@/components/navigation/NavDesktop";
+import { Nav } from "@/components/navigation/Nav";
 import { styled } from "@linaria/react";
 
 const AboveTheFold = styled.div`
@@ -15,13 +15,16 @@ const AboveTheFold = styled.div`
   min-height: 65vh;
   padding: var(--space-8) 0 var(--space-8);
   width: 100%;
-  background-image: linear-gradient(var(--gradient-rb), var(--gradient-indigo-pink));
+  background-image: linear-gradient(
+    var(--gradient-rb),
+    var(--gradient-indigo-pink)
+  );
 
   @media only screen and (width >= 768px) {
     padding: var(--space-20) 0 var(--space-20);
   }
 `;
-const NavDesktopContainer = styled.div`
+const NavContainer = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -81,9 +84,9 @@ export const PageHome = () => {
               ctas={data.sectionHero?.fields?.ctas || []}
             />
 
-            <NavDesktopContainer>
-              <NavDesktop />
-            </NavDesktopContainer>
+            <NavContainer>
+              <Nav />
+            </NavContainer>
 
             <ProjectMarker id="projects" />
           </AboveTheFold>

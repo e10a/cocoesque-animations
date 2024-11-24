@@ -13,8 +13,10 @@
 @import "./styles/theme.css";
 
 /* Animations */
-@import "./styles/keyframes.css";
 @import "./styles/animations.css";
+@import "./styles/animations/nav.css";
+@import "./styles/animations/home-section.css";
+@import "./styles/animations/home-skills.css";
 
-/* Tools */
-@import "./styles/tools.css";
+/* DevTools */
+@import "./styles/dev-tools.css"

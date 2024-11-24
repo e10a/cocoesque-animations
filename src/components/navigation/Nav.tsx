@@ -5,7 +5,6 @@ import { styled } from "@linaria/react";
 const Outer = styled.nav`
   box-shadow: 0 0 var(--space-2) rgba(var(--rgb-gray-950), 0.1);
   backdrop-filter: blur(5px);
-  display: none;
   .nav-bar__logo {
     height: 50px;
   }
@@ -13,11 +12,7 @@ const Outer = styled.nav`
     display: flex;
     gap: var(--space-4);
   }
-  @media only screen and (width >=768px) {
-    display: block;
-  }
 `;
-
 const Inner = styled.div`
   display: flex;
   justify-content: space-between;
@@ -28,10 +23,10 @@ const Inner = styled.div`
   }
 `;
 
-export const NavDesktop = () => {
+export const Nav = () => {
   return (
-    <Outer id="nav-desktop" data-animate="nav_desktop">
-      <Inner id="nav-desktop__inner" data-animate="nav-desktop__inner">
+    <Outer id="nav" data-animate="nav">
+      <Inner id="nav__inner" data-animate="nav__inner">
         <NavBarBrand />
         <NavBarTabs />
       </Inner>

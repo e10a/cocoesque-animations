@@ -1,0 +1,24 @@
+[data-animate="home_section_contents"] {
+  animation-timeline: scroll();
+  animation-name: home_section_contents;
+  animation-fill-mode: backwards;
+  animation-timing-function: linear;
+}
+
+@keyframes home_section_contents {
+  0% {
+    opacity: 0.3;
+  }
+  25% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
