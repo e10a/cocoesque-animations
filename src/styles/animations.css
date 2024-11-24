@@ -2,13 +2,3 @@
 [data-animate] {
   animation-duration: 100ms; /* Default duration necessary for Firefox */
 }
-
-/* Helper Keyframes */
-@keyframes helper_border {
-  from {
-    border: var(--space-2) solid gray;
-  }
-  to {
-    border: var(--space-2) solid magenta;
-  }
-}
