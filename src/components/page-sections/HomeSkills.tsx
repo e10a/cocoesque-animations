@@ -66,18 +66,10 @@ export const HomeSkills = ({ skills }: SkillsType) => {
   const renderColumn = (index: number) => {
     const itemStartPosition = index * itemsPerCol;
     const itemEndPosition = itemStartPosition + itemsPerCol;
-    const keyValue = (index % 2) as 0 | 1;
 
-    return (
-      <Skills
-        className={`column-${index}`}
-        style={{ transform: `translateY(${keyValue ? 0 : 5}%)` }}
-      >
-        {skills.slice(itemStartPosition, itemEndPosition).map((skill) => (
-          <Skill key={skill.sys.id} {...skill} />
-        ))}
-      </Skills>
-    );
+    return skills
+      .slice(itemStartPosition, itemEndPosition)
+      .map((skill) => <Skill key={skill.sys.id} {...skill} />);
   };
 
   return (
@@ -94,7 +86,17 @@ export const HomeSkills = ({ skills }: SkillsType) => {
         {skills &&
           Array(numberOfCols)
             .fill(undefined)
-            .map((_, i) => renderColumn(i))}
+            .map((_, i) => (
+              <Skills
+                key={`column-${i + 1}`}
+                className={`column-${i + 1}`}
+                style={{
+                  transform: `translateY(${((i % 2) as 0 | 1) ? 0 : 5}%)`,
+                }}
+              >
+                {renderColumn(i)}
+              </Skills>
+            ))}
       </Content>
     </section>
   );

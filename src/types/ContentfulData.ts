@@ -36,7 +36,6 @@ export interface Skill {
   sys: {
     id: string;
   };
-  key: string;
 }
 
 export interface Skills {
