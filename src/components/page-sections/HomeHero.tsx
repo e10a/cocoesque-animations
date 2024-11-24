@@ -11,6 +11,7 @@ const Outer = styled.div`
   justify-content: center;
   color: rgba(var(--rgb-white));
   text-align: center;
+  gap: var(--space-3);
 `;
 const Header = styled.div`
   display: flex;
@@ -19,7 +20,7 @@ const Header = styled.div`
   justify-content: center;
   max-width: 90vw;
   margin: 0 auto;
-  gap: var(--space-4);
+  gap: var(--space-2);
   width: var(--screen-768);
 `;
 const Title = styled.h1`
@@ -73,7 +74,7 @@ const Cta = styled.a`
     padding: var(--space-4) var(--space-5);
   }
 `;
-// className="button button-transparent-white 768:button-2xl"
+
 export const HomeHero = ({
   title,
   subtitle,

@@ -1,10 +1,9 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { createClient } from "contentful";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { HomeProjects } from "@/components/page-sections/HomeProjects";
-import { HomeSkills } from "@/components/page-sections/HomeSkills";
 import { HomeAbout } from "@/components/page-sections/HomeAbout";
+import { HomeSkills } from "@/components/page-sections/HomeSkills";
 import { PageLoader } from "@/components/PageLoader";
 import { styled } from "@linaria/react";
 import { About, ContentfulData, Project, Skill } from "@/types/ContentfulData";
