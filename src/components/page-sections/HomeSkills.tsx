@@ -70,12 +70,11 @@ export const HomeSkills = ({ skills }: SkillsType) => {
 
     return (
       <Skills
-        key={`column-${index}`}
         className={`column-${index}`}
         style={{ transform: `translateY(${keyValue ? 0 : 5}%)` }}
       >
         {skills.slice(itemStartPosition, itemEndPosition).map((skill) => (
-          <Skill {...skill} />
+          <Skill key={skill.sys.id} {...skill} />
         ))}
       </Skills>
     );
