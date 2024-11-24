@@ -24,9 +24,9 @@ const Content = styled.div`
 `;
 
 export const HomeAbout = ({
-  data,
+  about,
 }: {
-  data: {
+  about: {
     displayTitle: string;
     displaySubTitle: string;
     displayDescription: string;
@@ -35,14 +35,14 @@ export const HomeAbout = ({
   return (
     <>
       <Header>
-        <Title>{data.displayTitle}</Title>
-        <p>{data.displaySubTitle}</p>
+        <Title>{about.displayTitle}</Title>
+        <p>{about.displaySubTitle}</p>
       </Header>
       <Content>
-        {data.displayDescription && (
+        {about.displayDescription && (
           <div
             dangerouslySetInnerHTML={{
-              __html: marked.parse(data.displayDescription),
+              __html: marked.parse(about.displayDescription),
             }}
           ></div>
         )}
