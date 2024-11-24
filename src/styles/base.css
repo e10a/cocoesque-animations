@@ -39,6 +39,15 @@ h6 {
   margin: var(--space-8) 0 var(--space-2);
 }
 
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+  margin-top: 0;
+}
+
 h1 {
   font-size: var(--text-5xl);
 }
