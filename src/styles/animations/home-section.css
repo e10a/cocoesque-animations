@@ -1,8 +1,4 @@
 [data-animate="home_section_contents"] {
-  outline: var(--outline-animate);
-}
-
-[data-animate="home_section_contents"] {
   animation-timeline: scroll();
   animation-name: home_section_contents;
   animation-timing-function: linear;
