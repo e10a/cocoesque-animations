@@ -7,6 +7,7 @@ import { HomeSkills } from "@/components/page-sections/HomeSkills";
 import { HomeAbout } from "@/components/page-sections/HomeAbout";
 import { PageLoader } from "@/components/PageLoader";
 import { styled } from "@linaria/react";
+import { About, ContentfulData, Project, Skill } from "@/types/ContentfulData";
 
 const Outer = styled.div`
   text-align: center;
@@ -49,26 +50,19 @@ const PageLoaderContainer = styled.div`
   margin-bottom: var(--space-32);
 `;
 
-interface Project {
-  fields: {
-    hide: boolean;
-    comingSoon: boolean;
-    // Add other project fields here if needed
-  };
-}
-
-interface ContentfulData {
-  projects?: Array<Project>;
-  skills?: Array<{ fields: { category: string[] } }>;
-  about?: Array<{ fields: {
-    displayTitle: string;
-    displaySubTitle: string;
-    displayDescription: string;
-  } }>;
-}
 
 export const HomeBelowTheFold = () => {
-  const [data, setData] = useState<ContentfulData>({});
+  const [data, setData] = useState<ContentfulData>({
+    projects: [],
+    skills: [],
+    about: {
+      fields: {
+        displayTitle: "",
+        displaySubTitle: "",
+        displayDescription: "",
+      },
+    },
+  });
   const [isLoading, setIsLoading] = useState(true);
 
   const client = createClient({
@@ -85,8 +79,15 @@ export const HomeBelowTheFold = () => {
           limit: 1,
         });
 
-        if (response.items[0]) {
-          setData(response.items[0].fields as ContentfulData);
+        const fields = response?.items[0]?.fields;
+
+        if (fields) {
+          const typedData: ContentfulData = {
+            projects: (fields?.projects || []) as unknown as Project[],
+            skills: (fields?.skills || []) as unknown as Skill[],
+            about: fields?.about as unknown as About,
+          };
+          setData(typedData);
         }
         setIsLoading(false);
       } catch (error) {
@@ -112,7 +113,7 @@ export const HomeBelowTheFold = () => {
     }
   }, [data]);
 
-  const { skills, projects, about } = data;
+  const { about, projects, skills } = data;
 
   return (
     <Outer>
@@ -127,7 +128,8 @@ export const HomeBelowTheFold = () => {
           <ProjectsSection>
             <HomeProjects
               projects={
-                projects?.filter((project) => !project.fields.hide) || []
+                projects.filter((project: Project) => !project.fields.hide) ||
+                []
               }
             />
           </ProjectsSection>
@@ -135,15 +137,16 @@ export const HomeBelowTheFold = () => {
           <SkillsSection>
             <HomeSkills
               skills={
-                skills?.filter(
-                  (skill) => skill.fields.category[0] === "Tools & Technologies"
+                skills.filter(
+                  (skill: Skill) =>
+                    skill.fields.category[0] === "Tools & Technologies"
                 ) ?? []
               }
             />
           </SkillsSection>
 
           <AboutSection>
-            {about?.[0]?.fields && <HomeAbout about={about[0].fields} />}
+            {about && <HomeAbout about={about.fields} />}
           </AboutSection>
 
           <BorderDivider />

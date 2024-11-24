@@ -1,4 +1,5 @@
 import { styled } from "@linaria/react";
+import { Skill as SkillType } from "@/types/ContentfulData";
 
 const Outer = styled.div`
   backdrop-filter: blur(5px);
@@ -10,6 +11,7 @@ const Outer = styled.div`
   gap: var(--space);
   padding: var(--space-4);
   width: 100%;
+  max-width: var(--space-36);
 `;
 const Inner = styled.div`
   align-items: center;
@@ -26,27 +28,14 @@ const Name = styled.div`
   line-height: 1.25;
 `;
 
-interface SkillProps {
-  skill: {
-    image?: {
-      fields?: {
-        file?: {
-          url?: string;
-        };
-      };
-    };
-    longName?: string;
-  };
-}
-
-export const Skill = ({ skill }: SkillProps) => {
+export const Skill = ({fields} : SkillType) => {
   return (
     <Outer>
       <Inner>
-        {skill?.image && (
-          <Image src={skill?.image?.fields?.file?.url} alt={skill?.longName} />
+        {fields.image && (
+          <Image src={fields.image?.fields?.file?.url} alt={fields.longName} />
         )}
-        <Name>{skill.longName}</Name>
+        <Name>{fields.longName}</Name>
       </Inner>
     </Outer>
   );

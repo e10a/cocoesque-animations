@@ -1,10 +1,6 @@
-interface Skill {
-  id: string | number;
-  title: string;
-  skills: string;
-}
+import { ExperienceSkill } from "@/types/ContentfulData";
 
-export const SkillsExperience = ({ skills }: { skills: Skill[] }) => {
+export const SkillsExperience = ({ skills }: { skills: ExperienceSkill[] }) => {
   return (
     <>
       {skills.map((skill) => (

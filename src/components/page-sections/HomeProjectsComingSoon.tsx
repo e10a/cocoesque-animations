@@ -1,18 +1,8 @@
 import { Project } from "@/components/Project";
 import { Carousel } from "@/components/Carousel";
+import { Projects } from "@/types/ContentfulData";
 
-interface Project {
-  sys: {
-    id: string;
-  };
-  fields: Record<string, unknown>;
-}
-
-interface HomeProjectsActiveProps {
-  projects: Project[];
-}
-
-export const HomeProjectsComingSoon = ({ projects }: HomeProjectsActiveProps) => {
+export const HomeProjectsComingSoon = ({ projects }: Projects) => {
   return (
     <Carousel
       infinite={false}

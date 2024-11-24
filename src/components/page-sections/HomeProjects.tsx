@@ -1,15 +1,9 @@
 import { HomeProjectsActive } from "@/components/page-sections/HomeProjectsActive";
 import { HomeProjectsComingSoon } from "@/components/page-sections/HomeProjectsComingSoon";
+import { Project, Projects } from "@/types/ContentfulData";
 
-interface Project {
-  sys: {
-    id: string;
-  };
-  fields: Record<string, unknown>;
-}
-
-export const HomeProjects = (projects: Project[] = []) => {
-  if (!projects) return;
+export const HomeProjects = ({ projects }: Projects) => {
+  if (!projects) return null;
 
   const activeProjects: Project[] = projects.filter(
     (project) => !project.fields.comingSoon

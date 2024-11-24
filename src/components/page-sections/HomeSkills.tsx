@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Skill } from "@/components/Skill";
 import { styled } from "@linaria/react";
+import { Skills as SkillsType } from "@/types/ContentfulData";
 
 const Content = styled.div`
   background-image: linear-gradient(
@@ -26,7 +27,7 @@ const Skills = styled.div`
   justify-content: center;
 `;
 
-export const HomeSkills = ({ skills }: { skills: any[] }) => {
+export const HomeSkills = ({ skills }: SkillsType) => {
   const containerRef = useRef(null);
   const gridConfig = {
     320: { numberOfCols: 3, numberOfRows: 2 },
@@ -74,10 +75,7 @@ export const HomeSkills = ({ skills }: { skills: any[] }) => {
         style={{ transform: `translateY(${keyValue ? 0 : 5}%)` }}
       >
         {skills.slice(itemStartPosition, itemEndPosition).map((skill) => (
-          <Skill key={skill.sys.id} skill={skill.fields} />
-        ))}
-        {skills.slice(itemStartPosition, itemEndPosition).map((skill) => (
-          <Skill key={skill.sys.id} skill={skill.fields} />
+          <Skill {...skill} />
         ))}
       </Skills>
     );

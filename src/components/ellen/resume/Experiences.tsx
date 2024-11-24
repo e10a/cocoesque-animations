@@ -1,12 +1,4 @@
-interface Experience {
-  id: string | number;
-  title: string;
-  is_remote?: boolean;
-  years: string;
-  company: string;
-  location: string;
-  items: string[];
-}
+import { Experience } from "@/types/ContentfulData";
 
 export const Experiences = ({ experiences }: { experiences: Experience[] }) => {
   return (
