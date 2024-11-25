@@ -1,9 +1,11 @@
 [data-animate="home_section_contents"] {
-  animation-timeline: scroll();
+  view-timeline-name: --home_section_contents;
+  animation-timeline: view();
+  /*  */
   animation-name: home_section_contents;
-  animation-timing-function: linear;
-  animation-range: contain 20% 40%;
-  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+  animation-range: cover -5% 100%;
+  animation-fill-mode: forwards;
 }
 
 @keyframes home_section_contents {
@@ -17,6 +19,6 @@
     opacity: 0.5;
   }
   100% {
-    opacity: 0.3;
+    opacity: 0;
   }
 }
