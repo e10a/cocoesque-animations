@@ -156,7 +156,7 @@ export const HomeBelowTheFold = () => {
           </SkillsSection>
 
           <GetInTouchSection data-location-marker-parent>
-            <LocationMarker id="contact" style={{ marginTop: "calc(0px - var(--space-8))"}} />
+            <LocationMarker id="contact" style={{ marginTop: "calc(0px - var(--space-8))", top: 0 }} />
 
             <header style={{ marginBottom: "var(--space-10)" }}>
               <h2>Get in Touch</h2>

@@ -84,7 +84,7 @@ export const PageHome = () => {
               <Nav />
             </NavContainer>
 
-            <LocationMarker id="projects" style={{ marginBottom: "calc(0px - var(--space-8))"}} />
+            <LocationMarker id="projects" style={{ marginBottom: "calc(0px - var(--space-8))", bottom: 0 }} />
           </AboveTheFold>
 
           {!isLoading &&

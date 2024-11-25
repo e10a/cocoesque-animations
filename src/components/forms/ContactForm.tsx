@@ -1,5 +1,41 @@
 import { useState } from "react";
 import { createClient } from "contentful-management";
+import { styled } from "@linaria/react";
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  width: 100%;
+  max-width: var(--space-128);
+  margin: 0 auto;
+`;
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  position: relative;
+  z-index: 1;
+`;
+const FormInner = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: var(--space-80);
+  margin: 0 auto;
+  gap: var(--space-2);
+`;
+const FieldLabelSrOnly = styled.label`
+  clip: rect(0, 0, 0, 0);
+  border-width: 0;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+`;
 
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -85,74 +121,69 @@ export const ContactForm = () => {
   };
 
   return (
-    <div className="relative">
+    <Container>
       {!submitted && (
-        <form onSubmit={handleSubmit} className="relative z-1">
-          <div className="flex flex-col gap-4">
-            <div className="flex flex-col gap-2">
-              <div className="form-control -mb-2">
-                <label className="sr-only">Message:</label>
-                <textarea
-                  placeholder="Type your message here..."
-                  className="form-control-field form-control-textarea"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  required
-                ></textarea>
-              </div>
-              <div className="form-control">
-                <label className="sr-only">Name:</label>
-                <input
-                  className="form-control-field"
-                  placeholder="Your name"
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  required
-                />
-              </div>
-              <div className="form-control">
-                <label className="sr-only">Email:</label>
-                <input
-                  className="form-control-field"
-                  placeholder="Email address"
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  required
-                />
-              </div>
+        <Form onSubmit={handleSubmit}>
+          <FormInner>
+            <div>
+              <FieldLabelSrOnly>Message:</FieldLabelSrOnly>
+              <textarea
+                placeholder="Type your message here..."
+                name="message"
+                value={formData.message}
+                onChange={handleInputChange}
+                required
+                style={{ minHeight: "var(--space-48)" }}
+              ></textarea>
             </div>
-            <div className="flex flex-col items-center gap-2">
-              <button
-                disabled={isSubmitting}
-                type="submit"
-                className={`button button-transparent-white button-xl ${
-                  isSubmitting ? "cursor-not-allowed" : "cursor-pointer"
-                }`}
-              >
-                {isSubmitting && "Submitting..."}
-                {!isSubmitting && "Submit"}
-              </button>
+            <div>
+              <FieldLabelSrOnly>Name:</FieldLabelSrOnly>
+              <input
+                className="form-control-field"
+                placeholder="Your name"
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
+                required
+              />
             </div>
-          </div>
-        </form>
+            <div>
+              <FieldLabelSrOnly>Email:</FieldLabelSrOnly>
+              <input
+                className="form-control-field"
+                placeholder="Email address"
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+          </FormInner>
+
+          <button
+            disabled={isSubmitting}
+            type="submit"
+            className="button button-transparent-white button-xl"
+          >
+            {isSubmitting && "Submitting..."}
+            {!isSubmitting && "Submit"}
+          </button>
+        </Form>
       )}
 
       <div
-        className={`bg-white/90 backdrop-blur-lg transition-opacity isolate duration-500 rounded-lg shadow-md ${
-          submitted ? "h-full opacity-100" : "h-0 opacity-0"
-        }`}
+        className={`bg-white/90 backdrop-blur-lg transition-opacity isolate duration-500 rounded-lg shadow-md ${submitted ? "h-full opacity-100" : "h-0 opacity-0"
+          }`}
       >
         {submitted && (
           <div className="flex flex-col items-center justify-center p-8 gap-4 h-full">
-            <div className="flex flex-col items-center">
+            <header className="flex flex-col items-center">
               <h3>{submissionStatusTitle}</h3>
               <p>{submissionStatus}</p>
-            </div>
+            </header>
+
             <button
               onClick={handleResetForm}
               className="button button--primary"
@@ -162,6 +193,6 @@ export const ContactForm = () => {
           </div>
         )}
       </div>
-    </div>
+    </Container>
   );
 };
