@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import Project from "@/components/Project";
 import Carousel from "@/components/Carousel";
-import { Projects } from "@/types/ContentfulData";
+import { Project as ProjectType, Projects } from "@/types/ContentfulData";
 
 export default function HomeProjectsActive({ projects }: Projects) {
   if (!projects) return;
 
   const [hideControls, setHideControls] = useState(false);
+
   useEffect(() => {
     const handleResize = () => {
       setHideControls(window.innerWidth >= 1200);
@@ -18,6 +19,7 @@ export default function HomeProjectsActive({ projects }: Projects) {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
   return (
     <Carousel
       infinite={false}
@@ -28,12 +30,13 @@ export default function HomeProjectsActive({ projects }: Projects) {
       hideControls={hideControls}
     >
       {projects.map(
-        (project: { sys: { id: string }; fields: Record<string, unknown> }) => (
+        (project: ProjectType) => (
           <div key={project.sys.id} className="my-8 mx-2">
-            <Project project={project.fields} />
+            <Project project={project} />
           </div>
         )
       )}
+
       <div className="my-8 mx-2">
         <div className="project-card bg-gradient-to-br from-indigo-600/90 to-teal-600/40 text-white">
           <div className="flex-1 flex flex-col gap-4 p-4 justify-center">

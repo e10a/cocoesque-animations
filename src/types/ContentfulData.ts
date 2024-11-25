@@ -1,5 +1,32 @@
 export interface Project {
-  fields: Record<string, unknown>;
+  fields: {
+    accentColor: string;
+    comingSoon: boolean;
+    company: {
+      fields?: {
+        logo?: {
+          fields?: {
+            file?: {
+              url?: string;
+            };
+            title?: string;
+          };
+        }
+        name?: string;
+      };
+    };
+    coverImage: {
+      fields?: {
+        file?: {
+          url?: string;
+        };
+        title?: string;
+      };
+    };
+    displayTitle: string;
+    externalLink: string;
+    slug?: string;
+  };
   sys: {
     id: string;
   };
@@ -16,7 +43,6 @@ export interface ExperienceSkill {
   title: string;
   skills: string;
 }
-
 export interface Skill {
   fields: {
     category: string[];

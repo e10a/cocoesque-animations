@@ -1,35 +1,44 @@
-interface Project {
-  slug?: string;
-  displayTitle?: string;
-  comingSoon?: boolean;
-  coverImage?: string;
-  externalLink?: string;
-  accentColor?: string;
-  company?: {
-    logo: {
-      fields: {
-        file: {
-          url: string;
-        };
-        title: string;
-      };
-    };
-    name: string;
-  };
-};
+import { Project as ProjectType } from "@/types/ContentfulData";
+import { styled } from "@linaria/react";
 
-export default function Project({ project }: { project: Project } ) {
+const Content = styled.div`
+  padding: var(--space-4);
+  min-height: var(--space-24);
+  backdrop-blur: blur(12px);
+  background-image: linear-gradient(to right bottom, rgba(79, 70, 229, 0.9), rgba(13, 148, 136, 0.4));
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  color: rgb(var(--rgb-white));
+  text-align: left;
+`;
+const CompanyName = styled.p`
+  font-size: var(--text-sm);
+  font-weight: var(--text-thin);
+  letter-spacing: 0.6px;
+  line-height: 100%;
+  text-transform: uppercase;
+  margin: 0;
+`;
+const Title = styled.h3`
+  font-size: var(--text-base);
+  font-weight: var(--text-bold);
+  letter-spacing: 0.8px;
+  line-height: var(--space-4);
+  text-transform: uppercase;
+  margin: 0;
+`;
+
+export default function Project({ project }: { project: ProjectType }) {
   const {
-    slug,
-    displayTitle,
-    comingSoon,
-    coverImage,
-    externalLink,
     accentColor,
+    comingSoon,
     company,
-  } = project;
-
-  const showCompanyBanner = false;
+    coverImage,
+    displayTitle,
+    externalLink,
+    slug,
+  } = project.fields;
 
   const getProjectUrl = () => {
     const slugs = [slug];
@@ -45,9 +54,8 @@ export default function Project({ project }: { project: Project } ) {
   return (
     <a
       role="button"
-      className={`project-card group ${
-        comingSoon ? "cursor-default" : "cursor-pointer"
-      }`}
+      className={`project-card group ${comingSoon ? "cursor-default" : "cursor-pointer"
+        }`}
       href={externalLink || getProjectUrl()}
       target={externalLink ? "_blank" : ""}
       title={displayTitle}
@@ -55,38 +63,27 @@ export default function Project({ project }: { project: Project } ) {
       rel="noreferrer"
     >
       <div
-        className={`h-full w-full relative bg-gradient-to-br ${
-          accentColor || "from-orange-500"
-        } to-pink-500`}
+        className={`h-full w-full relative bg-gradient-to-br ${accentColor || "from-orange-500"
+          } to-pink-500`}
       >
-        <div
-          className="absolute inset-0 z-0 bg-cover"
-          style={{
-            backgroundImage: `url(${
-              coverImage ||
-              "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg"
-            }) `,
-          }}
-        ></div>
+        {
+          coverImage && <div
+            className="absolute inset-0 z-0 bg-cover"
+            style={{
+              backgroundImage: `url(${coverImage.fields?.file?.url}) ||
+                "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg"
+              ) `,
+            }}
+          />
+        }
+
         <div className="relative z-1 flex flex-col h-full">
           <div className="relative flex-1">
             {comingSoon && (
               <div className="absolute inset-0 bg-gradient-to-br from-black/90 to-black/30 backdrop-blur-sm group-hover:opacity-0 transition-opacity duration-300 ease-linear" />
             )}
           </div>
-          {!comingSoon && showCompanyBanner && company?.logo?.fields?.file?.url && (
-            <div className="z-1 absolute top-0 left-0 mt-4 flex gap-2 bg-white py-2 px-2 items-center rounded-r-md">
-              <div className="size-4 -mt-px flex items-center justify-center">
-                <img
-                  src={company.logo.fields.file.url}
-                    alt={company.logo.fields.title}
-                  />
-                </div>
-                <div className="uppercase tracking-wider text-xs font-bold leading-tight text-slate-600">
-                  {company.name}
-                </div>
-              </div>
-            )}
+
           {comingSoon && (
             <div className="shadow-md bg-gradient-to-r from-purple-500 to-pink-500 z-1 absolute top-0 left-0 mt-4 flex gap-2 py-2 px-2 items-center rounded-r-md">
               <div className="text-xs text-white font-bold uppercase tracking-wider leading-tight">
@@ -94,16 +91,17 @@ export default function Project({ project }: { project: Project } ) {
               </div>
             </div>
           )}
-          <div className="min-h-24 bg-gradient-to-br from-indigo-600/90 to-teal-600/40 text-white backdrop-blur-md text-left p-4 gap-2 flex flex-col">
-            <div className="font-bold leading-tight uppercase tracking-wider">
+
+          <Content>
+            <Title>
               {displayTitle}
-            </div>
-            <div className="font-thin leading-tight uppercase tracking-wider text-xs">
-              {company?.name}
-            </div>
-          </div>
+            </Title>
+            <CompanyName>
+              {company.fields?.name}
+            </CompanyName>
+          </Content>
         </div>
       </div>
-    </a>
+    </a >
   );
 };

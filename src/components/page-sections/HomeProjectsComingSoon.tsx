@@ -1,6 +1,6 @@
 import Project from "@/components/Project";
 import Carousel from "@/components/Carousel";
-import { Projects } from "@/types/ContentfulData";
+import { Project as ProjectType, Projects } from "@/types/ContentfulData";
 
 export default function HomeProjectsComingSoon({ projects }: Projects) {
   return (
@@ -12,9 +12,9 @@ export default function HomeProjectsComingSoon({ projects }: Projects) {
       totalSlides={projects.length}
     >
       {projects.map(
-        (project: { sys: { id: string }; fields: Record<string, unknown> }) => (
+        (project: ProjectType) => (
           <div key={project.sys.id} className="mx-2 mb-8">
-            <Project project={project.fields} />
+            <Project project={project} />
           </div>
         )
       )}

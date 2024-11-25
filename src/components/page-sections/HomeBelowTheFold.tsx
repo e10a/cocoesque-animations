@@ -10,7 +10,6 @@ import LocationMarker from "@/components/LocationMarker";
 import PageLoader from "@/components/PageLoader";
 import { About, ContentfulData, Project, Skill } from "@/types/ContentfulData";
 
-
 const Outer = styled.div`
   text-align: center;
 `;
