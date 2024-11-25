@@ -16,7 +16,7 @@ const ProjectsSection = styled.section`
   padding: var(--space-10) 0;
 `;
 const SkillsSection = styled.section`
-  padding: var(--space-10) 0;
+  padding: var(--space-10) 0 0;
   background-image: linear-gradient(
     var(--gradient-x),
     var(--gradient-indigo-teal)

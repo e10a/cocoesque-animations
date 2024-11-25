@@ -48,3 +48,6 @@ Provided by [flackr](https://github.com/flackr/scroll-timeline)
 
 ## What's in the backlog
 - ...
+
+## Extras
+- scroll to top if logo is clicked on homepage
