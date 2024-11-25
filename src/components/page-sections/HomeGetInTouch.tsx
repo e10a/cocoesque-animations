@@ -1,43 +1,64 @@
 import { ContactForm } from "@/components/forms/ContactForm";
-import LocationMarker from "@/components/LocationMarker";
 import { styled } from "@linaria/react";
 
-const GetInTouchSection = styled.section`
-  padding: var(--space-10) 0;
-  background-image: linear-gradient(
-    var(--gradient-rb),
-    var(--gradient-indigo-pink)
-  );
+const CtaContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: var(--space-8);
+`;
+const CtaLink = styled.a`
   color: rgb(var(--rgb-white));
+  display: inline-flex;
+  text-decoration: none;
+  font-size: var(--text-sm);
+  position: relative;
+  margin: 0 var(--space-4);
+
+  &:before {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: transparent;
+    margin-top: 1px;
+  }
+
+  &:hover {
+    color: rgb(var(--rgb-white));
+
+    &:before {
+      background-color: rgb(var(--rgb-white));
+    }
+  }
+
+  &+a:after {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 1px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-left: 1px solid rgba(var(--rgb-white), 0.3);
+    margin-left: calc(0px - var(--space-4));
+  }
 `;
 
 export default function HomeGetInTouch() {
   return (
-
-    <GetInTouchSection data-location-marker-parent>
-      <LocationMarker id="contact" style={{ marginTop: "calc(0px - var(--space-8))", top: 0 }} />
-
-      <header style={{ marginBottom: "var(--space-10)" }}>
-        <h2>Get in Touch</h2>
-        <p>Let&apos;s build something beautiful!</p>
-      </header>
-
+    <>
       <ContactForm />
 
-      <div className="flex flex-wrap justify-center items-center text-white divide-x divide-white/50">
-        <a className="group px-2 text-white hover:text-white leading-none" href="/resume">
-          <span className="text-sm border-b border-transparent group-hover:border-white inline-flex leading-none transition-all duration-300">Resume</span>
-        </a>
-        <a className="group px-2 text-white hover:text-white leading-none" href="#projects">
-          <span className="text-sm border-b border-transparent group-hover:border-white inline-flex leading-none transition-all duration-300">Projects</span>
-        </a>
-        <a className="group px-2 text-white hover:text-white leading-none" href="https://www.linkedin.com/in/ellen-s" target="_blank" rel="noreferrer">
-          <span className="text-sm border-b border-transparent group-hover:border-white inline-flex leading-none transition-all duration-300">LinkedIn</span>
-        </a>
-        <a className="group px-2 text-white hover:text-white leading-none" href="https://github.com/e10a" target="_blank" rel="noreferrer">
-          <span className="text-sm border-b border-transparent group-hover:border-white inline-flex leading-none transition-all duration-300">GitHub</span>
-        </a>
-      </div>
-    </GetInTouchSection>
+      <CtaContainer>
+        <CtaLink href="/resume">Resume</CtaLink>
+        <CtaLink href="/#projects">Projects</CtaLink>
+        <CtaLink href="https://www.linkedin.com/in/ellen-s">LinkedIn</CtaLink>
+        <CtaLink href="https://github.com/e10a">GitHub</CtaLink>
+      </CtaContainer>
+    </>
   );
 };
