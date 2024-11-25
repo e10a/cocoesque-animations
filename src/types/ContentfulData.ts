@@ -25,6 +25,7 @@ export interface Project {
     };
     displayTitle: string;
     externalLink: string;
+    hide: boolean;
     slug?: string;
   };
   sys: {

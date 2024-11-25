@@ -31,13 +31,13 @@ export default function HomeProjectsActive({ projects }: Projects) {
     >
       {projects.map(
         (project: ProjectType) => (
-          <div key={project.sys.id} className="my-8 mx-2">
+          <div key={project.sys.id} style={{ margin: "var(--space-8) var(--space-2)" }}>
             <Project project={project} />
           </div>
         )
       )}
 
-      <div className="my-8 mx-2">
+      <div style={{ margin: "var(--space-8) var(--space-2)" }}>
         <div className="project-card bg-gradient-to-br from-indigo-600/90 to-teal-600/40 text-white">
           <div className="flex-1 flex flex-col gap-4 p-4 justify-center">
             <div className="flex flex-col gap-2">

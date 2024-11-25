@@ -112,6 +112,8 @@ export const HomeBelowTheFold = () => {
 
   const { about, projects, skills } = data;
 
+  const visibleProjects = projects.filter(project => !project.fields.hide );
+
   return (
     <Outer>
       <div style={{ height: "50vh", outline: "1px solid rgb(var(--rgb-gray-100))" }} />
@@ -132,7 +134,7 @@ export const HomeBelowTheFold = () => {
                 <p>What&apos;s been keeping me busy</p>
               </header>
 
-              <HomeProjectsActive projects={projects.filter(
+              <HomeProjectsActive projects={visibleProjects.filter(
                 (project) => !project.fields.comingSoon
               )} />
             </section>
@@ -145,7 +147,7 @@ export const HomeBelowTheFold = () => {
                 <p>Presentation for these projects are in the works. Stay tuned!</p>
               </header>
 
-              <HomeProjectsComingSoon projects={projects.filter(
+              <HomeProjectsComingSoon projects={visibleProjects.filter(
                 (project) => project.fields.comingSoon
               )} />
             </section>
