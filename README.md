@@ -42,6 +42,9 @@ Provided by [flackr](https://github.com/flackr/scroll-timeline)
 - Style Contact Form
 - Style footer
 - Add resume page
+- Performance optimizations
+- Tests
+- Refactor components w/ export default function
 
 ## What's in the backlog
 - ...
