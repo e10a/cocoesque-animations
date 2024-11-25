@@ -11,7 +11,7 @@
   font-weight: var(--text-semibold);
   justify-content: center;
   min-width: 40px;
-  padding: calc(var(--space-3)) var(--space-3);
+  padding: calc(var(--space-3)) var(--space-6);
   text-align: center;
 }
 .button:hover {
