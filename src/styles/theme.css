@@ -63,6 +63,11 @@ h6 {
     font-size: var(--text-base);
   }
 }
+
+p {
+  line-height: 200%;
+}
+
 a {
   color: rgb(var(--rgb-color-primary));
 }

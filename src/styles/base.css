@@ -74,6 +74,7 @@ h6 {
 
 p {
   margin: var(--space-4) 0;
+  line-height: normal;
 }
 
 strong {
