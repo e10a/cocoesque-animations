@@ -5,8 +5,9 @@ import { HomeHero } from "@/components/page-sections/HomeHero";
 import { PageLayout } from "@/components/layouts/PageLayout";
 import { Nav } from "@/components/navigation/Nav";
 import { styled } from "@linaria/react";
+import LocationMarker from "@/components/LocationMarker";
 
-const AboveTheFold = styled.div`
+const AboveTheFold = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,11 +31,6 @@ const NavContainer = styled.div`
   left: 0;
   width: 100%;
   z-index: 20;
-`;
-const ProjectMarker = styled.div`
-  position: absolute;
-  bottom: 0;
-  margin-bottom: calc(0px - var(--space-8));
 `;
 
 interface ContentfulData {
@@ -76,7 +72,7 @@ export const PageHome = () => {
     <>
       <PageLayout>
         <div id="page-home">
-          <AboveTheFold data-timeline="above_the_fold">
+          <AboveTheFold data-timeline="above_the_fold" data-location-marker-parent>
             <HomeHero
               title="Ellen Shimada"
               subtitle="Software Engineer • UI/UX Design Lead"
@@ -88,14 +84,14 @@ export const PageHome = () => {
               <Nav />
             </NavContainer>
 
-            <ProjectMarker id="projects" />
+            <LocationMarker id="projects" style={{ marginBottom: "calc(0px - var(--space-8))"}} />
           </AboveTheFold>
 
-          {!isLoading && (
+          {!isLoading &&
             <div id="below-the-fold">
               <HomeBelowTheFold />
             </div>
-          )}
+          }
         </div>
       </PageLayout>
     </>

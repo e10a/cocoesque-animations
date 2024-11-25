@@ -7,6 +7,7 @@ import { HomeSkills } from "@/components/page-sections/HomeSkills";
 import { PageLoader } from "@/components/PageLoader";
 import { styled } from "@linaria/react";
 import { About, ContentfulData, Project, Skill } from "@/types/ContentfulData";
+import LocationMarker from "@/components/LocationMarker";
 
 const Outer = styled.div`
   text-align: center;
@@ -30,7 +31,7 @@ const AboutSection = styled.section`
   );
   color: rgb(var(--rgb-white));
 `;
-const ThanksSection = styled.section`
+const GetInTouchSection = styled.section`
   padding: var(--space-10) 0;
   background-image: linear-gradient(
     var(--gradient-rb),
@@ -154,19 +155,22 @@ export const HomeBelowTheFold = () => {
             </section>
           </SkillsSection>
 
+          <GetInTouchSection data-location-marker-parent>
+            <LocationMarker id="contact" style={{ marginTop: "calc(0px - var(--space-8))"}} />
+
+            <header style={{ marginBottom: "var(--space-10)" }}>
+              <h2>Get in Touch</h2>
+              <p>Let&apos;s build something beautiful!</p>
+            </header>
+
+            <ContactForm />
+          </GetInTouchSection>
+
           <AboutSection>
             {about && <HomeAbout about={about.fields} />}
           </AboutSection>
 
           <BorderDivider />
-
-          <ThanksSection id="contact">
-            <div>
-              <h2>Thanks for stopping by!</h2>
-              <p>Send me a message, I&apos;d love to hear from you :)</p>
-            </div>
-            <ContactForm />
-          </ThanksSection>
         </>
       )}
     </Outer>
