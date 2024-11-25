@@ -1,5 +1,5 @@
-import { HomeProjectsActive } from "@/components/page-sections/HomeProjectsActive";
-import { HomeProjectsComingSoon } from "@/components/page-sections/HomeProjectsComingSoon";
+import HomeProjectsActive from "@/components/page-sections/HomeProjectsActive";
+import HomeProjectsComingSoon from "@/components/page-sections/HomeProjectsComingSoon";
 import { Project, Projects } from "@/types/ContentfulData";
 
 export default function HomeProjects({ projects }: Projects) {

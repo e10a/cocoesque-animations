@@ -117,6 +117,8 @@ export const HomeBelowTheFold = () => {
 
   return (
     <Outer>
+      <div style={{ height: "50vh", outline: "1px solid rgb(var(--rgb-gray-100))" }} />
+
       {isLoading ||
         (!data && (
           <PageLoaderContainer>
@@ -126,7 +128,21 @@ export const HomeBelowTheFold = () => {
 
       {!isLoading && (
         <>
-          <ProjectsSection style={{ display: "none" }}>
+          <ProjectsSection>
+            <section>
+              <header>
+                <h2>Projects</h2>
+                <p>What&apos;s been keeping me busy</p>
+              </header>
+            </section>
+
+            <section>
+              <header>
+                <h2>Coming Soon</h2>
+                <p>Presentation for these projects are in the works. Stay tuned!</p>
+              </header>
+            </section>
+
             <HomeProjects
               projects={
                 projects.filter((project: Project) => !project.fields.hide) ||
@@ -134,8 +150,6 @@ export const HomeBelowTheFold = () => {
               }
             />
           </ProjectsSection>
-
-          <div style={{ height: "50vh" }} />
 
           <SkillsSection>
             <section>

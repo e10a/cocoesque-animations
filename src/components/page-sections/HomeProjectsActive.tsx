@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { Project } from "@/components/Project";
-import { Carousel } from "@/components/Carousel";
+import Project from "@/components/Project";
+import Carousel from "@/components/Carousel";
 import { Projects } from "@/types/ContentfulData";
 
-export const HomeProjectsActive = ({ projects }: Projects) => {
+export default function HomeProjectsActive({ projects }: Projects) {
   if (!projects) return;
 
   const [hideControls, setHideControls] = useState(false);

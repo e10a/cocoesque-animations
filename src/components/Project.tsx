@@ -1,4 +1,24 @@
-export const Project = ({ project = {} }) => {
+interface Project {
+  slug?: string;
+  displayTitle?: string;
+  comingSoon?: boolean;
+  coverImage?: string;
+  externalLink?: string;
+  accentColor?: string;
+  company?: {
+    logo: {
+      fields: {
+        file: {
+          url: string;
+        };
+        title: string;
+      };
+    };
+    name: string;
+  };
+};
+
+export default function Project({ project }: { project: Project } ) {
   const {
     slug,
     displayTitle,
@@ -7,25 +27,8 @@ export const Project = ({ project = {} }) => {
     externalLink,
     accentColor,
     company,
-  }: {
-    slug?: string;
-    displayTitle?: string;
-    comingSoon?: boolean;
-    coverImage?: string;
-    externalLink?: string;
-    accentColor?: string;
-    company?: {
-      logo: {
-        fields: {
-          file: {
-            url: string;
-          };
-          title: string;
-        };
-      };
-      name: string;
-    };
   } = project;
+
   const showCompanyBanner = false;
 
   const getProjectUrl = () => {

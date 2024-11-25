@@ -3,17 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-export const Carousel = ({
-  centerMode = false,
-  children,
-  infinite = true,
-  initialSlide = 0,
-  rows = 1,
-  slidesToShow = 3,
-  responsive = [],
-  totalSlides = null,
-  hideControls = false,
-}: {
+interface Props {
   centerMode?: boolean;
   children: React.ReactNode;
   infinite?: boolean;
@@ -31,7 +21,19 @@ export const Carousel = ({
   }>;
   totalSlides?: number | null;
   hideControls?: boolean;
-}): JSX.Element => {
+};
+
+export default function Carousel({
+  centerMode = false,
+  children,
+  infinite = true,
+  initialSlide = 0,
+  rows = 1,
+  slidesToShow = 3,
+  responsive = [],
+  totalSlides = null,
+  hideControls = false,
+}: Props) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const sliderRef = useRef<Slider>(null);
 

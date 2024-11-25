@@ -1,8 +1,8 @@
-import { Project } from "@/components/Project";
-import { Carousel } from "@/components/Carousel";
+import Project from "@/components/Project";
+import Carousel from "@/components/Carousel";
 import { Projects } from "@/types/ContentfulData";
 
-export const HomeProjectsComingSoon = ({ projects }: Projects) => {
+export default function HomeProjectsComingSoon({ projects }: Projects) {
   return (
     <Carousel
       infinite={false}
