@@ -134,6 +134,7 @@ textarea {
   padding: var(--space-2);
   border-radius: var(--border-radius-default);
   width: 100%;
+  min-height: var(--space-10);
 }
 
 a {
