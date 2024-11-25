@@ -1,4 +1,5 @@
-/* Animation Defaults */
-[data-animate] {
-  animation-duration: 100ms; /* Default duration necessary for Firefox */
-}
+@import "./animations/_index.css";
+@import "./animations/nav.css";
+@import "./animations/home-section.css";
+@import "./animations/home-skills.css";
+@import "./animations/_helpers.css";

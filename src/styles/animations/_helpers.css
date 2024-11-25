@@ -1,0 +1,23 @@
+/* Animation Helper Styles */
+:root {
+  --outline-animate-green: 4px dashed green;
+  --outline-animate-red: 4px dashed red;
+  --outline-animate-magenta: 4px dashed magenta;
+  --outline-animate-lime: 4px dashed lime;
+
+  --outline-animate-timeline: var(--outline-animate-magenta);
+  --outline-animate-element: var(--outline-animate-lime);
+  --outline-animate-starting: var(--outline-animate-green);
+  --outline-animate-ending: var(--outline-animate-red);
+}
+
+/* Animation Helper Keyframes */
+@keyframes helper {
+  from {
+    outline: var(--outline-animate-starting);
+  }
+
+  to {
+    outline: var(--outline-animate-ending);
+  }
+}

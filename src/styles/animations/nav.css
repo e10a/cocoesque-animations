@@ -4,6 +4,7 @@
 }
 [data-animate="nav"] {
   animation-timeline: --above_the_fold;
+  /*  */
   animation-name: nav--bg;
   animation-range: cover 80% cover 100%;
   animation-fill-mode: forwards;
@@ -11,6 +12,7 @@
 }
 [data-animate="nav__inner"] {
   animation-timeline: --above_the_fold;
+  /*  */
   animation-name: nav__inner--filter;
   animation-range: cover 80% cover 100%;
   animation-fill-mode: backwards;

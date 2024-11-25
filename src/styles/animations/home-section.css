@@ -2,7 +2,7 @@
   animation-timeline: scroll();
   animation-name: home_section_contents;
   animation-timing-function: linear;
-  animation-range: contain 20% 55%;
+  animation-range: contain 20% 40%;
   animation-fill-mode: both;
 }
 

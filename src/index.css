@@ -14,11 +14,6 @@
 
 /* Animations */
 @import "./styles/animations.css";
-@import "./styles/animations/nav.css";
-@import "./styles/animations/home-section.css";
 
 /* DevTools */
 @import "./styles/dev-tools.css";
-
-/* Helpers */
-@import "./styles/outlines.css";
