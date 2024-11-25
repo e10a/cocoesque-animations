@@ -111,7 +111,7 @@ export const HomeSkills = ({ skills }: SkillsType) => {
                 key={`column-${columnNumber}`}
                 data-col={`${columnNumber} of ${numberOfColumns}`}
               >
-                <ColumnInner data-animate="column_inner" data-nth={nthValue}>
+                <ColumnInner data-animate={`column_inner_${nthValue}`}>
                   {
                     iterations.map((iteration: number) =>
                       slicedSkills

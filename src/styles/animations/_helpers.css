@@ -1,14 +1,17 @@
 /* Animation Helper Styles */
 :root {
   --outline-animate-green: 4px dashed green;
-  --outline-animate-red: 4px dashed red;
-  --outline-animate-magenta: 4px dashed magenta;
   --outline-animate-lime: 4px dashed lime;
+  --outline-animate-magenta: 4px dashed magenta;
+  --outline-animate-red: 4px dashed red;
 
-  --outline-animate-timeline: var(--outline-animate-magenta);
+  /* Semantic */
   --outline-animate-element: var(--outline-animate-lime);
-  --outline-animate-starting: var(--outline-animate-green);
+  --outline-animate-timeline: var(--outline-animate-magenta);
+
+  /* Position */
   --outline-animate-ending: var(--outline-animate-red);
+  --outline-animate-starting: var(--outline-animate-green);
 }
 
 /* Animation Helper Keyframes */

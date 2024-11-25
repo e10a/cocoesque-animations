@@ -1,11 +1,12 @@
+/* view-timeline-name: --home_section_contents; */
 [data-animate="home_section_contents"] {
-  view-timeline-name: --home_section_contents;
   animation-timeline: view();
   /*  */
   animation-name: home_section_contents;
-  animation-timing-function: ease-in-out;
-  animation-range: cover -5% 100%;
+  /*  */
   animation-fill-mode: forwards;
+  animation-range: cover -5% 100%;
+  animation-timing-function: ease-in-out;
 }
 
 @keyframes home_section_contents {

@@ -1,38 +1,33 @@
-[data-timeline="skills_container"] {
-  view-timeline-name: --skills_container;
-  animation-timeline: view();
-}
-[data-animate="column_inner"] {
-  animation-timeline: --skills_container;
+[data-animate="column_inner_odd"] {
+  animation-timeline: scroll();
   /*  */
-  animation-range: normal;
+  animation-name: column_inner_odd;
+  /*  */
   animation-fill-mode: forwards;
   animation-timing-function: ease-out;
+}
+[data-animate="column_inner_even"] {
+  animation-timeline: scroll();
   /*  */
-  --y-distance: 200px;
-  --y-distance-pos: var(--y-distance);
-  --y-distance-neg: calc(0px - var(--y-distance));
-}
-[data-animate="column_inner"][data-nth="odd"] {
-  animation-name: column_inner_odd;
-}
-[data-animate="column_inner"][data-nth="even"] {
   animation-name: column_inner_even;
+  /*  */
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
 }
 
 @keyframes column_inner_odd {
   from {
-    transform: translateY(var(--y-distance-pos));
+    transform: translateY(200px);
   }
   to {
-    transform: translateY(var(--y-distance-neg));
+    transform: translateY(-200px);
   }
 }
 @keyframes column_inner_even {
   from {
-    transform: translateY(var(--y-distance-neg));
+    transform: translateY(-200px);
   }
   to {
-    transform: translateY(var(--y-distance-pos));
+    transform: translateY(200px);
   }
 }
