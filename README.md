@@ -37,7 +37,11 @@ Provided by [flackr](https://github.com/flackr/scroll-timeline)
 
 ## What's next
 
-- Animate skill columns
+- Add section Projects: active and coming soon
+- Add section Get in Touch
+- Style Contact Form
+- Style footer
+- Add resume page
 
 ## What's in the backlog
 - ...
