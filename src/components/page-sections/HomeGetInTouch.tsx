@@ -56,8 +56,8 @@ export default function HomeGetInTouch() {
       <CtaContainer>
         <CtaLink href="/resume">Resume</CtaLink>
         <CtaLink href="/#projects">Projects</CtaLink>
-        <CtaLink href="https://www.linkedin.com/in/ellen-s">LinkedIn</CtaLink>
-        <CtaLink href="https://github.com/e10a">GitHub</CtaLink>
+        <CtaLink href="https://www.linkedin.com/in/ellen-s" target="_blank" rel="noopener noreferrer">LinkedIn</CtaLink>
+        <CtaLink href="https://github.com/e10a" target="_blank" rel="noopener noreferrer">GitHub</CtaLink>
       </CtaContainer>
     </>
   );
