@@ -6,7 +6,7 @@
   animation-timeline: --above_the_fold;
   /*  */
   animation-fill-mode: forwards;
-  animation-name: helper, nav--bg;
+  animation-name: nav--bg;
   animation-range: cover 80% cover 100%;
   animation-timing-function: linear;
 }
