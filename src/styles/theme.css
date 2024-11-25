@@ -67,6 +67,9 @@ h6 {
 p {
   line-height: 200%;
 }
+header > p {
+  line-height: 160%;
+}
 
 a {
   color: rgb(var(--rgb-color-primary));
