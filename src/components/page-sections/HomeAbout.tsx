@@ -10,9 +10,9 @@ const Content = styled.div`
   gap: var(--space-2);
   margin: var(--space-10) auto 0;
   max-width: var(--screen-960);
-  padding: var(--space-8) var(--space-8) var(--space-4) ;
+  padding: var(--space-6) var(--space-6) var(--space) ;
   text-align: left;
-  width: 80%;
+  max-width: var(--space-768px);
 `;
 
 export const HomeAbout = ({

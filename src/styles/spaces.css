@@ -20,4 +20,13 @@
   --space-56: 224px;
   --space-64: 256px;
   --space-128: 512px;
+
+  /* Pixel Based */
+  --space-320px: 320px;
+  --space-480px: 480px;
+  --space-768px: 768px;
+  --space-960px: 960px;
+  --space-1024px: 1024px;
+  --space-1200px: 1200px;
+  --space-1440px: 1440px;
 }

@@ -24,7 +24,7 @@ const SkillsSection = styled.section`
   color: rgb(var(--rgb-white));
 `;
 const AboutSection = styled.section`
-  padding: var(--space-10) 0;
+  padding: var(--space-10) var(--space-4);
   background-image: linear-gradient(
     var(--gradient-x),
     var(--gradient-indigo-teal)

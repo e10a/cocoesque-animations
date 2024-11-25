@@ -9,6 +9,7 @@ const Container = styled.div`
   width: 100%;
   max-width: var(--space-128);
   margin: 0 auto;
+  padding: 0 var(--space-4);
 `;
 const Form = styled.form`
   display: flex;
