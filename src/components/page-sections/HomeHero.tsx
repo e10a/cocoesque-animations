@@ -45,11 +45,13 @@ const Tagline = styled.div`
   }
 `;
 const TaglineInvisible = styled.p`
+  line-height: 160%;
   visibility: hidden;
   position: relative;
   z-index: -1;
 `;
 const TaglineVisible = styled.p`
+  line-height: 160%;
   position: absolute;
   z-index: 1;
   top: 0;
