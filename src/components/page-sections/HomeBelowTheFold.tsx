@@ -3,7 +3,8 @@ import { createClient } from "contentful";
 import { styled } from "@linaria/react";
 import HomeAbout from "@/components/page-sections/HomeAbout";
 import HomeGetInTouch from "@/components/page-sections/HomeGetInTouch";
-import HomeProjects from "@/components/page-sections/HomeProjects";
+import HomeProjectsActive from "@/components/page-sections/HomeProjectsActive";
+import HomeProjectsComingSoon from "@/components/page-sections/HomeProjectsComingSoon";
 import HomeSkills from "@/components/page-sections/HomeSkills";
 import LocationMarker from "@/components/LocationMarker";
 import PageLoader from "@/components/PageLoader";
@@ -39,9 +40,6 @@ const AboutSection = styled.section`
     var(--gradient-indigo-teal)
   );
   color: rgb(var(--rgb-white));
-`;
-const BorderDivider = styled.div`
-  border-top: var(--space) solid rgb(var(--rgb-white));
 `;
 const PageLoaderContainer = styled.div`
   padding: var(--space-8) 0;
@@ -134,21 +132,24 @@ export const HomeBelowTheFold = () => {
                 <h2>Projects</h2>
                 <p>What&apos;s been keeping me busy</p>
               </header>
-            </section>
 
+              <HomeProjectsActive projects={projects.filter(
+                (project) => !project.fields.comingSoon
+              )} />
+            </section>
+          </ProjectsSection>
+
+          <ProjectsSection>
             <section>
               <header>
                 <h2>Coming Soon</h2>
                 <p>Presentation for these projects are in the works. Stay tuned!</p>
               </header>
-            </section>
 
-            <HomeProjects
-              projects={
-                projects.filter((project: Project) => !project.fields.hide) ||
-                []
-              }
-            />
+              <HomeProjectsComingSoon projects={projects.filter(
+                (project) => project.fields.comingSoon
+              )} />
+            </section>
           </ProjectsSection>
 
           <SkillsSection>
@@ -184,8 +185,6 @@ export const HomeBelowTheFold = () => {
           <AboutSection>
             {about && <HomeAbout about={about.fields} />}
           </AboutSection>
-
-          <BorderDivider />
         </>
       )}
     </Outer>
