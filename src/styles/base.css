@@ -1,5 +1,7 @@
 /* Base */
-* {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
   transition-property: all;
   transition-duration: 0.3s;
@@ -114,14 +116,12 @@ input,
 optgroup,
 select,
 textarea {
-  color: inherit;
   font-family: inherit;
   font-feature-settings: inherit;
   font-size: 100%;
   font-variation-settings: inherit;
   font-weight: inherit;
   letter-spacing: inherit;
-  line-height: inherit;
   line-height: inherit;
   margin: 0;
   padding: 0;
