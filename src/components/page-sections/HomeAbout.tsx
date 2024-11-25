@@ -15,21 +15,20 @@ const Content = styled.div`
   max-width: var(--space-768px);
 `;
 
-export const HomeAbout = ({
-  about,
-}: {
-  about: {
-    displayTitle: string;
-    displaySubTitle: string;
-    displayDescription: string;
-  };
-}) => {
+interface About {
+  displayTitle: string;
+  displaySubTitle: string;
+  displayDescription: string;
+}
+
+export default function HomeAbout({ about }: { about: About }) {
   return (
     <section>
       <header>
         <h2>{about.displayTitle}</h2>
         <p>{about.displaySubTitle}</p>
       </header>
+
       <Content>
         {about.displayDescription && (
           <div

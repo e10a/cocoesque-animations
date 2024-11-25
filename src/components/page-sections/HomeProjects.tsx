@@ -2,7 +2,7 @@ import { HomeProjectsActive } from "@/components/page-sections/HomeProjectsActiv
 import { HomeProjectsComingSoon } from "@/components/page-sections/HomeProjectsComingSoon";
 import { Project, Projects } from "@/types/ContentfulData";
 
-export const HomeProjects = ({ projects }: Projects) => {
+export default function HomeProjects({ projects }: Projects) {
   if (!projects) return null;
 
   const activeProjects: Project[] = projects.filter(

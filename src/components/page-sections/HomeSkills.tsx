@@ -47,7 +47,7 @@ const ShadowBottom = styled.div`
   z-index: 1;
 `;
 
-export const HomeSkills = ({ skills }: SkillsType) => {
+export default function HomeSkills({ skills }: SkillsType) {
   const containerRef = useRef(null);
 
   const gridConfig = {

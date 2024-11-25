@@ -1,16 +1,25 @@
 import { useEffect, useState } from "react";
 import { createClient } from "contentful";
-import { ContactForm } from "@/components/forms/ContactForm";
-import { HomeProjects } from "@/components/page-sections/HomeProjects";
-import { HomeAbout } from "@/components/page-sections/HomeAbout";
-import { HomeSkills } from "@/components/page-sections/HomeSkills";
-import { PageLoader } from "@/components/PageLoader";
 import { styled } from "@linaria/react";
-import { About, ContentfulData, Project, Skill } from "@/types/ContentfulData";
+import HomeAbout from "@/components/page-sections/HomeAbout";
+import HomeGetInTouch from "@/components/page-sections/HomeGetInTouch";
+import HomeProjects from "@/components/page-sections/HomeProjects";
+import HomeSkills from "@/components/page-sections/HomeSkills";
 import LocationMarker from "@/components/LocationMarker";
+import PageLoader from "@/components/PageLoader";
+import { About, ContentfulData, Project, Skill } from "@/types/ContentfulData";
+
 
 const Outer = styled.div`
   text-align: center;
+`;
+const GetInTouchSection = styled.section`
+  padding: var(--space-10) 0;
+  background-image: linear-gradient(
+    var(--gradient-rb),
+    var(--gradient-indigo-pink)
+  );
+  color: rgb(var(--rgb-white));
 `;
 const ProjectsSection = styled.section`
   padding: var(--space-10) 0;
@@ -28,14 +37,6 @@ const AboutSection = styled.section`
   background-image: linear-gradient(
     var(--gradient-x),
     var(--gradient-indigo-teal)
-  );
-  color: rgb(var(--rgb-white));
-`;
-const GetInTouchSection = styled.section`
-  padding: var(--space-10) 0;
-  background-image: linear-gradient(
-    var(--gradient-rb),
-    var(--gradient-indigo-pink)
   );
   color: rgb(var(--rgb-white));
 `;
@@ -122,6 +123,7 @@ export const HomeBelowTheFold = () => {
             <PageLoader />
           </PageLoaderContainer>
         ))}
+
       {!isLoading && (
         <>
           <ProjectsSection style={{ display: "none" }}>
@@ -162,8 +164,7 @@ export const HomeBelowTheFold = () => {
               <h2>Get in Touch</h2>
               <p>Let&apos;s build something beautiful!</p>
             </header>
-
-            <ContactForm />
+            <HomeGetInTouch />
           </GetInTouchSection>
 
           <AboutSection>

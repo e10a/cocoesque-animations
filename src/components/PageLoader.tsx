@@ -1,4 +1,4 @@
-export const PageLoader = () => {
+export default function PageLoader() {
   const loadingImg = "https://cdn.auth0.com/blog/hello-auth0/loader.svg";
 
   return (
