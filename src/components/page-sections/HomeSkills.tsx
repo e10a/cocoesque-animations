@@ -3,7 +3,7 @@ import { Skill } from "@/components/Skill";
 import { styled } from "@linaria/react";
 import { Skills as SkillsType } from "@/types/ContentfulData";
 
-const Content = styled.div`
+const SkillsContainer = styled.div`
   background-image: linear-gradient(
     var(--gradient-br),
     var(--gradient-indigo-teal)
@@ -13,20 +13,22 @@ const Content = styled.div`
   align-items: center;
   justify-content: center;
   gap: var(--space-4);
-  overflow: hidden;
+  overflow: clip;
   position: relative;
   max-height: 400px;
 `;
-const Skills = styled.div`
+const ColumnOuter = styled.div`
+  position: relative;
+  flex: 1 1 0%;
+  max-width: var(--space-40);
+  min-width: var(--space-32);
+`;
+const ColumnInner = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
-  flex: 1 1 0%;
   gap: var(--space-3);
   justify-content: center;
-  max-width: var(--space-40);
-  min-width: var(--space-32);
 `;
 const ShadowTop = styled.div`
   box-shadow: rgba(var(--rgb-black), 0.8) 0 0 var(--space-2) var(--space);
@@ -47,15 +49,17 @@ const ShadowBottom = styled.div`
 
 export const HomeSkills = ({ skills }: SkillsType) => {
   const containerRef = useRef(null);
+
   const gridConfig = {
-    320: { numberOfCols: 3, numberOfRows: 2 },
-    480: { numberOfCols: 3, numberOfRows: 2 },
-    768: { numberOfCols: 4, numberOfRows: 1 },
-    1024: { numberOfCols: 5, numberOfRows: 1 },
-    1280: { numberOfCols: 6, numberOfRows: 1 },
-    1440: { numberOfCols: 7, numberOfRows: 1 },
-    1536: { numberOfCols: 8, numberOfRows: 1 },
+    320: { columns: 3 },
+    480: { columns: 3 },
+    768: { columns: 4 },
+    1024: { columns: 5 },
+    1280: { columns: 6 },
+    1440: { columns: 7 },
+    1536: { columns: 8 },
   };
+
   const getGridConfig = () => {
     const key = Object.keys(gridConfig).find(
       (key) => window.innerWidth < Number(key)
@@ -63,15 +67,15 @@ export const HomeSkills = ({ skills }: SkillsType) => {
     return gridConfig[(key ? Number(key) : 1536) as keyof typeof gridConfig];
   };
 
-  const [numberOfCols, setNumberOfCols] = useState(
-    getGridConfig().numberOfCols
+  const [numberOfColumns, setNumberOfColumns] = useState(
+    getGridConfig().columns
   );
 
-  const itemsPerCol = Math.floor(skills?.length / numberOfCols);
+  const itemsPerCol = Math.floor(skills?.length / numberOfColumns);
 
   useEffect(() => {
     const handleResize = () => {
-      setNumberOfCols(getGridConfig().numberOfCols);
+      setNumberOfColumns(getGridConfig().columns);
     };
 
     window.addEventListener("resize", handleResize);
@@ -81,38 +85,45 @@ export const HomeSkills = ({ skills }: SkillsType) => {
     };
   }, []);
 
-  const renderColumn = (index: number) => {
-    const itemStartPosition = index * itemsPerCol;
-    const itemEndPosition = itemStartPosition + itemsPerCol;
-
-    return skills
-      .slice(itemStartPosition, itemEndPosition)
-      .map((skill) => <Skill key={skill.sys.id} {...skill} />);
-  };
-
   return (
-    <Content
+    <SkillsContainer
       data-animate="skills_container"
-      data-cols={numberOfCols}
+      data-timeline="skills_container"
+      data-cols={numberOfColumns}
       data-items={itemsPerCol}
       ref={containerRef}
     >
       <ShadowTop />
+
       {skills &&
-        Array(numberOfCols)
-          .fill(undefined)
-          .map((_, i) => (
-            <Skills
-              key={`column-${i + 1}`}
-              className={`column-${i + 1}`}
-              style={{
-                transform: `translateY(${((i % 2) as 0 | 1) ? 0 : 5}%)`,
-              }}
-            >
-              {renderColumn(i)}
-            </Skills>
-          ))}
+        Array(numberOfColumns)
+          .fill([])
+          .map((_, index) => {
+            const columnNumber = index + 1;
+            const startPosition = index * itemsPerCol;
+            const endPosition = startPosition + itemsPerCol;
+            const nthValue = index % 2 as 0 ? "even" : "odd";
+            const iterations = [1, 2];
+            const slicedSkills = skills.slice(startPosition, endPosition);
+
+            return (
+              <ColumnOuter
+                key={`column-${columnNumber}`}
+                data-col={`${columnNumber} of ${numberOfColumns}`}
+              >
+                <ColumnInner data-animate="column_inner" data-nth={nthValue}>
+                  {
+                    iterations.map((iteration: number) =>
+                      slicedSkills
+                        .map((skill) => <Skill key={`${iteration}-${skill.sys.id}`} {...skill} />)
+                    )
+                  }
+                </ColumnInner>
+              </ColumnOuter>
+            )
+          })}
+
       <ShadowBottom />
-    </Content>
+    </SkillsContainer>
   );
 };
