@@ -1,3 +1,4 @@
+import ProjectBanner from "./ProjectBanner";
 import { Project as ProjectType } from "@/types/ContentfulData";
 import { styled } from "@linaria/react";
 
@@ -84,13 +85,7 @@ export default function Project({ project }: { project: ProjectType }) {
             )}
           </div>
 
-          {comingSoon && (
-            <div className="shadow-md bg-gradient-to-r from-purple-500 to-pink-500 z-1 absolute top-0 left-0 mt-4 flex gap-2 py-2 px-2 items-center rounded-r-md">
-              <div className="text-xs text-white font-bold uppercase tracking-wider leading-tight">
-                Coming Soon!
-              </div>
-            </div>
-          )}
+          {comingSoon && <ProjectBanner/>}
 
           <Content>
             <Title>
