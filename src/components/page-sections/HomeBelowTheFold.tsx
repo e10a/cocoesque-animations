@@ -1,10 +1,9 @@
 import HomeAbout from "@/components/page-sections/HomeAbout";
 import HomeGetInTouch from "@/components/page-sections/HomeGetInTouch";
-import HomeProjectsActive from "@/components/page-sections/HomeProjectsActive";
-import HomeProjectsComingSoon from "@/components/page-sections/HomeProjectsComingSoon";
 import HomeSkills from "@/components/page-sections/HomeSkills";
 import LocationMarker from "@/components/LocationMarker";
 import PageLoader from "@/components/PageLoader";
+import ProjectCarousel from "@/components/project/ProjectCarousel";
 import { useEffect, useState } from "react";
 import { createClient } from "contentful";
 import { styled } from "@linaria/react";
@@ -132,7 +131,7 @@ export default function HomeBelowTheFold() {
                 <p>What&apos;s been keeping me busy</p>
               </header>
 
-              <HomeProjectsActive projects={visibleProjects.filter(
+              <ProjectCarousel projects={visibleProjects.filter(
                 (project) => !project.fields.comingSoon
               )} />
             </section>
@@ -145,7 +144,7 @@ export default function HomeBelowTheFold() {
                 <p>Presentation for these projects are in the works. Stay tuned!</p>
               </header>
 
-              <HomeProjectsComingSoon projects={visibleProjects.filter(
+              <ProjectCarousel projects={visibleProjects.filter(
                 (project) => project.fields.comingSoon
               )} />
             </section>

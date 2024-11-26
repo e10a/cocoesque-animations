@@ -1,5 +1,5 @@
-import ProjectCard from "@/components/project/ProjectCard";
 import Carousel from "@/components/Carousel";
+import ProjectCard from "@/components/project/ProjectCard";
 import { Project as ProjectType, Projects } from "@/types/ContentfulData";
 import { useEffect, useState } from "react";
 import {styled} from  "@linaria/react";
@@ -8,7 +8,7 @@ const CarouselItem = styled.div`
   margin:var(--space-8) var(--space-2);
 `;
 
-export default function HomeProjectsActive({ projects }: Projects) {
+export default function ProjectCarousel({ projects }: Projects) {
   if (!projects) return;
 
   const [hideControls, setHideControls] = useState(false);
