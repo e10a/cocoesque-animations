@@ -17,11 +17,11 @@ const ProjectContainer = styled.div`
   }
 
   &:has(a) {
-    border: 2px solid rgba(var(--rgb-fuchsia-500), 0);
+    box-shadow: 0 0 3px rgba(var(--rgb-black), 0.2);
 
     &:hover {
-      box-shadow: 0 0 20px 5px rgba(var(--rgb-violet-500), 1);
-      border: 2px solid rgba(var(--rgb-fuchsia-500), 1);
+      box-shadow: 0 0 20px 10px rgba(var(--rgb-violet-500), 1);
+      outline: 2px solid rgba(var(--rgb-fuchsia-500), 1);
     }
   }
 `;

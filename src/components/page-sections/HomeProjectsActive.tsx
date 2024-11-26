@@ -7,18 +7,6 @@ import {styled} from  "@linaria/react";
 const CarouselItem = styled.div`
   margin:var(--space-8) var(--space-2);
 `;
-// const ProjectCard = styled.div`
-//   text-align: center;
-//   border: 1px solid #e5e7eb;
-//   border-radius: .5rem;
-//   display: inline-flex;
-//   height: 300px;
-//   min-width: 15rem;
-//   position: relative;
-//   width: 15rem;
-//   background-image: linear-gradient(to right bottom, rgba(79, 70, 229, 0.9), rgba(13, 148, 136, 0.4));
-//   color: rgb(255 255 255);
-// `;
 
 export default function HomeProjectsActive({ projects }: Projects) {
   if (!projects) return;

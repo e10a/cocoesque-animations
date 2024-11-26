@@ -53,3 +53,4 @@ Provided by [flackr](https://github.com/flackr/scroll-timeline)
 
 - dynamic/animated back to top button
 - scroll to top if logo is clicked on homepage
+- update rgba to rgb using slash for opacity
