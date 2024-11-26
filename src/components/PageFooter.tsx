@@ -1,4 +1,4 @@
-export const PageFooter = () => {
+export default function PageFooter() {
   const resourceList = [
     {
       path: "/resume",

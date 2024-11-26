@@ -27,7 +27,7 @@ const Name = styled.div`
   line-height: 1.25;
 `;
 
-export const Skill = ({fields} : SkillType) => {
+export default function Skill({ fields }: SkillType) {
   return (
     <Outer>
       <Inner>

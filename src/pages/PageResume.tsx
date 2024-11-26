@@ -69,7 +69,6 @@ const Page = styled.section`
     }
   }
 
-
   h4 {
     color: rgb(var(--rgb-black));
     font-size: var(--text-base);
@@ -233,4 +232,4 @@ export default function PageResume() {
       </PageLayout >
     </>
   );
-}; 3
+}; 

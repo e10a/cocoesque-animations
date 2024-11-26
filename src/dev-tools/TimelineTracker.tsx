@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const TimelineTracker = () => {
+export default function TimelineTracker() {
   const [scrollPercentage, setScrollPercentage] = useState(0);
 
   useEffect(() => {

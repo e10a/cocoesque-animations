@@ -1,4 +1,4 @@
-import { TimelineTracker } from "@/dev-tools/TimelineTracker";
+import TimelineTracker from "@/dev-tools/TimelineTracker";
 import Responsive from "@/dev-tools/Responsive";
 import { styled } from "@linaria/react";
 

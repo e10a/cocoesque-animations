@@ -27,7 +27,7 @@ const FormInner = styled.div`
   gap: var(--space-2);
 `;
 
-export const ContactForm = () => {
+export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",

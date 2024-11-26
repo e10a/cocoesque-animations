@@ -8,12 +8,13 @@
 
 Data attributes to specify timeline and animated elements to keep animation separate from styling.
 
-```
+```css
 data-timeline="parent_element"
 data-animate="child_element"
 ```
 
 #### Polyfill
+
 Provided by [flackr](https://github.com/flackr/scroll-timeline)
 
 - Navigation bar
@@ -37,17 +38,17 @@ Provided by [flackr](https://github.com/flackr/scroll-timeline)
 
 ## What's next
 
-- Add section Projects: active and coming soon
-- Add section Get in Touch
-- Style Contact Form
+- Finish styling Projects
 - Style footer
-- Add resume page
+- Redo hero button animations
+- Add more scroll driven css animations
 - Performance optimizations
 - Tests
-- Refactor components w/ export default function
 
 ## What's in the backlog
+
 - ...
 
 ## Extras
+
 - scroll to top if logo is clicked on homepage

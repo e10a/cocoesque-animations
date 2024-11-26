@@ -1,4 +1,4 @@
-import { PageFooter } from "@/components/PageFooter";
+import PageFooter from "@/components/PageFooter";
 
 export default function PageLayout({ children }: { children: React.ReactNode })  {
   return (

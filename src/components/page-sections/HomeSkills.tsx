@@ -1,5 +1,5 @@
+import Skill from "@/components/Skill";
 import { useEffect, useRef, useState } from "react";
-import { Skill } from "@/components/Skill";
 import { styled } from "@linaria/react";
 import { Skills as SkillsType } from "@/types/ContentfulData";
 
