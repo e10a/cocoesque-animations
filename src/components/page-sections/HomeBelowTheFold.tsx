@@ -1,6 +1,3 @@
-import { useEffect, useState } from "react";
-import { createClient } from "contentful";
-import { styled } from "@linaria/react";
 import HomeAbout from "@/components/page-sections/HomeAbout";
 import HomeGetInTouch from "@/components/page-sections/HomeGetInTouch";
 import HomeProjectsActive from "@/components/page-sections/HomeProjectsActive";
@@ -8,6 +5,9 @@ import HomeProjectsComingSoon from "@/components/page-sections/HomeProjectsComin
 import HomeSkills from "@/components/page-sections/HomeSkills";
 import LocationMarker from "@/components/LocationMarker";
 import PageLoader from "@/components/PageLoader";
+import { useEffect, useState } from "react";
+import { createClient } from "contentful";
+import { styled } from "@linaria/react";
 import { About, ContentfulData, Project, Skill } from "@/types/ContentfulData";
 
 const Outer = styled.div`
@@ -48,7 +48,8 @@ const PageLoaderContainer = styled.div`
   margin-bottom: var(--space-32);
 `;
 
-export const HomeBelowTheFold = () => {
+export default function HomeBelowTheFold() {
+  const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState<ContentfulData>({
     projects: [],
     skills: [],
@@ -60,7 +61,6 @@ export const HomeBelowTheFold = () => {
       },
     },
   });
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const client = createClient({
@@ -112,12 +112,10 @@ export const HomeBelowTheFold = () => {
 
   const { about, projects, skills } = data;
 
-  const visibleProjects = projects.filter(project => !project.fields.hide );
+  const visibleProjects = projects.filter(project => !project.fields.hide);
 
   return (
     <Outer>
-      <div style={{ height: "50vh", outline: "1px solid rgb(var(--rgb-gray-100))" }} />
-
       {isLoading ||
         (!data && (
           <PageLoaderContainer>

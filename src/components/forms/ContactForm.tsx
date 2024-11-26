@@ -26,17 +26,6 @@ const FormInner = styled.div`
   margin: 0 auto;
   gap: var(--space-2);
 `;
-const FieldLabelSrOnly = styled.label`
-  clip: rect(0, 0, 0, 0);
-  border-width: 0;
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-`;
 
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -127,7 +116,7 @@ export const ContactForm = () => {
         <Form onSubmit={handleSubmit}>
           <FormInner>
             <div>
-              <FieldLabelSrOnly>Message:</FieldLabelSrOnly>
+              <label className="sr-only">Message</label>
               <textarea
                 placeholder="Type your message here..."
                 name="message"
@@ -138,7 +127,7 @@ export const ContactForm = () => {
               ></textarea>
             </div>
             <div>
-              <FieldLabelSrOnly>Name:</FieldLabelSrOnly>
+              <label className="sr-only">Name</label>
               <input
                 className="form-control-field"
                 placeholder="Your name"
@@ -150,7 +139,7 @@ export const ContactForm = () => {
               />
             </div>
             <div>
-              <FieldLabelSrOnly>Email:</FieldLabelSrOnly>
+              <label className="sr-only">Email</label>
               <input
                 className="form-control-field"
                 placeholder="Email address"

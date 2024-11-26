@@ -1,6 +1,6 @@
-import { NavBarTab } from "./NavBarTab";
+import NavBarTab from "./NavBarTab";
 
-export const NavBarTabs = () => {
+export default function NavBarTabs() {
   return (
     <div className="nav-bar__tabs">
       <a className="nav-bar__tab" href="/#projects">

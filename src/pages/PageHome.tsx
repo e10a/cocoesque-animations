@@ -1,19 +1,19 @@
+import HomeBelowTheFold from "@/components/page-sections/HomeBelowTheFold";
+import HomeHero from "@/components/page-sections/HomeHero";
+import LocationMarker from "@/components/LocationMarker";
+import Nav from "@/components/navigation/Nav";
+import PageLayout from "@/components/layouts/PageLayout";
 import { useEffect, useState } from "react";
 import { createClient } from "contentful";
-import { HomeBelowTheFold } from "@/components/page-sections/HomeBelowTheFold";
-import { HomeHero } from "@/components/page-sections/HomeHero";
-import { PageLayout } from "@/components/layouts/PageLayout";
-import { Nav } from "@/components/navigation/Nav";
 import { styled } from "@linaria/react";
-import LocationMarker from "@/components/LocationMarker";
 
 const AboveTheFold = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-height: 100vh;
-  min-height: 65vh;
+  max-height: 90vh;
+  min-height: 90vh;
   padding: var(--space-8) 0 var(--space-8);
   width: 100%;
   background-image: linear-gradient(
@@ -41,7 +41,7 @@ interface ContentfulData {
   };
 }
 
-export const PageHome = () => {
+export default function PageHome() {
   const [data, setData] = useState<ContentfulData>({});
   const [isLoading, setIsLoading] = useState(true);
 

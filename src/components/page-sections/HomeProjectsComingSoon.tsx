@@ -1,4 +1,4 @@
-import Project from "@/components/Project";
+import Project from "@/components/project/Project";
 import Carousel from "@/components/Carousel";
 import { Project as ProjectType, Projects } from "@/types/ContentfulData";
 

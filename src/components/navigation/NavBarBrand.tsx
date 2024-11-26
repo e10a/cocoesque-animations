@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-export const NavBarBrand = () => {
+export default function NavBarBrand() {
   return (
     <div className="nav-bar__brand">
       <NavLink to="/">

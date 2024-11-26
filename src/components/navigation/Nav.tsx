@@ -1,5 +1,5 @@
-import { NavBarBrand } from "./NavBarBrand";
-import { NavBarTabs } from "./NavBarTabs";
+import NavBarBrand from "./NavBarBrand";
+import NavBarTabs from "./NavBarTabs";
 import { styled } from "@linaria/react";
 
 const Outer = styled.nav`
@@ -23,7 +23,7 @@ const Inner = styled.div`
   }
 `;
 
-export const Nav = () => {
+export default function Nav() {
   return (
     <Outer id="nav" data-animate="nav">
       <Inner id="nav__inner" data-animate="nav__inner">

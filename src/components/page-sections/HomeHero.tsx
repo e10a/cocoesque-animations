@@ -77,7 +77,7 @@ const Cta = styled.a`
   }
 `;
 
-export const HomeHero = ({
+export default function HomeHero({
   title,
   subtitle,
   tagline,
@@ -95,7 +95,7 @@ export const HomeHero = ({
       text: string;
     };
   }[];
-}) => {
+}) {
   const handleClick = (
     cta: { fields: { url: string } },
     event: React.MouseEvent

@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-export const NavBarTab = ({ path, label }: { path: string; label: string }) => {
+export default function NavBarTab({ path, label }: { path: string; label: string }) {
   return (
     <NavLink
       to={path}
