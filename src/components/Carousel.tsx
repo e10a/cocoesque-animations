@@ -2,6 +2,14 @@ import { useRef, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { styled } from "@linaria/react";
+
+const ButtonContainer = styled.div`
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+  justify-content: center;
+`;
 
 interface Props {
   centerMode?: boolean;
@@ -43,12 +51,11 @@ export default function Carousel({
     return (
       <button
         disabled={currentSlide === totalSlides}
-        className={`carousel-nav-button mr-8 right-0 opacity-0 group-hover:opacity-100 ${className} ${
-          hideControls ? "invisible" : ""
-        }`}
+        className={`button-round ${className} ${hideControls ? "invisible" : ""
+          }`}
         onClick={onClick}
       >
-        <span className="material-symbols-rounded relative -mr-px">
+        <span className="material-symbols-rounded">
           chevron_right
         </span>
       </button>
@@ -61,12 +68,11 @@ export default function Carousel({
     return (
       <button
         disabled={currentSlide === 0}
-        className={`carousel-nav-button ml-8 left-0 opacity-0 group-hover:opacity-100 ${className} ${
-          hideControls ? "invisible" : ""
-        }`}
+        className={`carousel-nav-button ml-8 left-0 opacity-0 group-hover:opacity-100 ${className} ${hideControls ? "invisible" : ""
+          }`}
         onClick={onClick}
       >
-        <span className="material-symbols-rounded relative -ml-px">
+        <span className="material-symbols-rounded">
           chevron_left
         </span>
       </button>
@@ -116,26 +122,27 @@ export default function Carousel({
       </div>
       <div className={`carousel-controls ${hideControls ? "hidden" : ""}`}>
         <div className="flex gap-8 justify-center">
-          <div className="flex-1 flex gap-2 justify-center max-w-[1440px] m-auto px-4 sm:px-6 md:px-8">
+          <ButtonContainer>
             <button
               disabled={currentSlide === 0}
-              className="carousel-control-button"
+              className="button-round"
               onClick={goBack}
             >
-              <span className="material-symbols-rounded relative -ml-px">
+              <span className="material-symbols-rounded">
                 chevron_left
               </span>
             </button>
+
             <button
               disabled={currentSlide === totalSlides}
-              className="carousel-control-button"
+              className="button-round"
               onClick={goNext}
             >
-              <span className="material-symbols-rounded relative -mr-px">
+              <span className="material-symbols-rounded">
                 chevron_right
               </span>
             </button>
-          </div>
+          </ButtonContainer>
         </div>
       </div>
     </div>

@@ -33,6 +33,26 @@
   box-shadow: 0 0 0 1px rgba(var(--rgb-black), 0.3);
 }
 
+.button-round {
+  box-sizing: border-box;
+  cursor: pointer;
+  align-items: center;
+  background-color: rgb(var(--rgb-gray-200));
+  border: 1px solid rgb(var(--rgb-gray-300));
+  border-radius: 9999px;
+  display: flex;
+  color: rgb(var(--rgb-gray-500));
+  height: 2.75rem;
+  justify-content: center;
+  width: 2.75rem;
+
+  &:hover {
+    background-color: rgb(var(--rgb-gray-300));
+    border: 1px solid rgb(var(--rgb-gray-400));
+    color: rgb(var(--rgb-gray-600));
+  }
+}
+
 /* Button Sizes */
 
 .button-sm {
