@@ -57,7 +57,7 @@
 
 .button-sm {
   font-size: var(--text-sm);
-  padding: var(--space-2) var(--space-0);
+  padding: var(--space-2) var(--space-3);
 }
 .button-xl {
   font-size: var(--text-xl);
