@@ -7,7 +7,7 @@
   /*  */
   animation-fill-mode: forwards;
   animation-name: nav--bg;
-  animation-range: cover 80% cover 100%;
+  animation-range: cover 90% cover 95%;
   animation-timing-function: linear;
 }
 [data-animate="nav__inner"] {
@@ -15,7 +15,7 @@
   /*  */
   animation-fill-mode: backwards;
   animation-name: nav__inner--filter;
-  animation-range: cover 80% cover 100%;
+  animation-range: cover 90% cover 95%;
   animation-timing-function: linear;
 }
 
