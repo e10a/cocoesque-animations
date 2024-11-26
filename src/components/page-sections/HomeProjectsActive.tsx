@@ -1,7 +1,24 @@
-import { useEffect, useState } from "react";
-import Project from "@/components/project/Project";
+import ProjectCard from "@/components/project/ProjectCard";
 import Carousel from "@/components/Carousel";
 import { Project as ProjectType, Projects } from "@/types/ContentfulData";
+import { useEffect, useState } from "react";
+import {styled} from  "@linaria/react";
+
+const CarouselItem = styled.div`
+  margin:var(--space-8) var(--space-2);
+`;
+// const ProjectCard = styled.div`
+//   text-align: center;
+//   border: 1px solid #e5e7eb;
+//   border-radius: .5rem;
+//   display: inline-flex;
+//   height: 300px;
+//   min-width: 15rem;
+//   position: relative;
+//   width: 15rem;
+//   background-image: linear-gradient(to right bottom, rgba(79, 70, 229, 0.9), rgba(13, 148, 136, 0.4));
+//   color: rgb(255 255 255);
+// `;
 
 export default function HomeProjectsActive({ projects }: Projects) {
   if (!projects) return;
@@ -31,38 +48,15 @@ export default function HomeProjectsActive({ projects }: Projects) {
     >
       {projects.map(
         (project: ProjectType) => (
-          <div key={project.sys.id} style={{ margin: "var(--space-8) var(--space-2)" }}>
-            <Project project={project} />
-          </div>
+          <CarouselItem key={project.sys.id}>
+            <ProjectCard project={project} />
+          </CarouselItem>
         )
       )}
 
-      <div style={{ margin: "var(--space-8) var(--space-2)" }}>
-        <div className="project-card bg-gradient-to-br from-indigo-600/90 to-teal-600/40 text-white">
-          <div className="flex-1 flex flex-col gap-4 p-4 justify-center">
-            <div className="flex flex-col gap-2">
-              <div className="font-bold leading-tight">What&apos;s Next?</div>
-              <a
-                className="button button-transparent-white button-sm"
-                href="#projects-coming-soon"
-              >
-                View Upcoming Projects
-              </a>
-            </div>
-            <div className="flex flex-col gap-2">
-              <div className="leading-tight">
-                Let&apos;s build something together!
-              </div>
-              <a
-                className="button button-transparent-white button-sm"
-                href="#contact"
-              >
-                Get in Touch
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <CarouselItem>
+        <ProjectCard />
+      </CarouselItem>
     </Carousel>
   );
 };
