@@ -84,7 +84,7 @@ export default function PageHome() {
               <Nav />
             </NavContainer>
 
-            <LocationMarker id="projects" style={{ marginBottom: "calc(0px - var(--space-8))", bottom: 0 }} />
+            <LocationMarker id="projects" style={{ marginBottom: "var(--space-12)", bottom: 0 }} />
           </AboveTheFold>
 
           {!isLoading &&
