@@ -25,7 +25,7 @@ const NavContainerInset = styled.div`
     var(--gradient-indigo-pink)
   );
 `;
-const Page = styled.div`
+const Page = styled.section`
   background-color: rgb(var(--rgb-white));
   border-radius: var(--space);
   border: 1px solid rgb(var(--rgb-gray-300));
@@ -174,70 +174,63 @@ export default function PageResume() {
           {isLoading && <PageLoader />}
 
           {!isLoading &&
-            <section>
+            <>
               <header>
                 <h1 className="sr-only">Resume</h1>
               </header>
 
-              <div>
-                <Page>
-                  <header className="flex flex-col gap-1">
-                    <h2>{full_name}</h2>
-                    <p className="tagline">{tag_line}</p>
-                  </header>
-                  <section id="summary">
-                    <h3>Summary</h3>
-                    <p>{about}</p>
-                  </section>
-                  <section id="experience">
-                    <h3>Experience</h3>
-                    <ResumeExperiences experiences={experiences}/>
-                  </section>
-                  <section id="education">
-                    <h3>Education</h3>
-                    <div className="self-stretch flex-col justify-start items-start flex">
-                      <h4 className="w-full flex">{education.college}</h4>
-                      <p>{education.degree}</p>
-                    </div>
-                  </section>
-                  <section id="skills">
-                    <h3>Skills</h3>
-                    <div className="self-stretch flex-col justify-start items-start flex gap-2">
-                      {skills.technical_skills.map((skill: TechnicalSkill) => (
-                        <div key={skill.id}>
-                          <h4 className="w-full flex">{skill.title}:</h4>
-                          <p>{skill.description}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </section>
-                  <section id="achievements">
-                    <h3>Key Achievements</h3>
-                    <div className="self-stretch flex-col justify-start items-start flex gap-2">
-                      {achievements.map((achievement: Achievement) => (
-                        <div key={achievement.id}>
-                          <h4 className="w-full flex">{achievement.title}:</h4>
-                          <p>{achievement.description}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </section>
-                  <section id="resume">
-                    <a
-                      className="button button--primary button--compact text-white flex justify-center"
-                      href="https://jrynlppcbsquzh8t.public.blob.vercel-storage.com/resume-qSy38nTK7Byo0y1piEQ7DBGpnKjWws.pdf"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      View Full Resume
-                    </a>
-                  </section>
-                </Page>
-              </div>
-            </section>
+              <Page>
+                <header className="flex flex-col gap-1">
+                  <h2>{full_name}</h2>
+                  <p className="tagline">{tag_line}</p>
+                </header>
+
+                <section id="summary">
+                  <h3>Summary</h3>
+                  <p>{about}</p>
+                </section>
+
+                <section id="experience">
+                  <h3>Experience</h3>
+                  <ResumeExperiences experiences={experiences} />
+                </section>
+
+                <section id="education">
+                  <h3>Education</h3>
+                  <div className="self-stretch flex-col justify-start items-start flex">
+                    <h4 className="w-full flex">{education.college}</h4>
+                    <p>{education.degree}</p>
+                  </div>
+                </section>
+
+                <section id="skills">
+                  <h3>Skills</h3>
+                  <div className="self-stretch flex-col justify-start items-start flex gap-2">
+                    {skills.technical_skills.map((skill: TechnicalSkill) => (
+                      <div key={skill.id}>
+                        <h4 className="w-full flex">{skill.title}:</h4>
+                        <p>{skill.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+
+                <section id="achievements">
+                  <h3>Key Achievements</h3>
+                  <div className="self-stretch flex-col justify-start items-start flex gap-2">
+                    {achievements.map((achievement: Achievement) => (
+                      <div key={achievement.id}>
+                        <h4 className="w-full flex">{achievement.title}:</h4>
+                        <p>{achievement.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              </Page>
+            </>
           }
         </PageLayoutInner>
       </PageLayout >
     </>
   );
-};3
+}; 3
