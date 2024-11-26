@@ -10,7 +10,7 @@
 }
 
 body {
-  background-color: rgba(var(--rgb-indigo-500));
+  background-color: rgb(var(--rgb-indigo-500));
   color: rgba(var(--rgb-black));
   font-family: var(--font-primary);
 }
