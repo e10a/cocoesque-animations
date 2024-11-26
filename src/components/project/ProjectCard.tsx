@@ -16,7 +16,11 @@ const ProjectContainer = styled.div`
     height: 300px;
   }
 
-  &:has(a) {
+  &:has( > div:first-child) {
+    border: 4px solid rgba(var(--rgb-fuchsia-500), 0.8);
+  }
+
+  &:has( > a:first-child) {
     box-shadow: 0 0 3px rgba(var(--rgb-black), 0.2);
 
     &:hover {
