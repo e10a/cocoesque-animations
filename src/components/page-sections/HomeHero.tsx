@@ -34,6 +34,7 @@ const Subtitle = styled.h2`
   letter-spacing: var(--space-half);
   opacity: 0.9;
   margin: 0;
+
   @media only screen and (width >=768px) {
     font-size: var(--text-lg);
   }
