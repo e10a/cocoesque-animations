@@ -6,7 +6,7 @@
 }
 .dev-tools-section-header {
   text-transform: uppercase;
-  font-size: 8px;
+  font-size: var(--text-tiniest);
   letter-spacing: var(--space-half);
   background-color: rgb(var(--rgb-gray-500));
   margin: calc(0px - var(--space-half)) calc(0px - var(--space)) 0;

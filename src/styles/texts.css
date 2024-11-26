@@ -1,6 +1,7 @@
 /* Texts */
 
 :root {
+  --text-tiniest: 8px;
   --text-xxs: 12px;
   --text-xs: 12px;
   --text-sm: 14px;

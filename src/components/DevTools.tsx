@@ -19,7 +19,7 @@ const Inner = styled.div`
   background-color: rgba(var(--rgb-gray-500), 0.8);
 
   font-family: var(--font-mono);
-  font-size: 8px;
+  font-size: var(--text-tiniest);
   color: rgb(var(--rgb-white));
 
   display: flex;
