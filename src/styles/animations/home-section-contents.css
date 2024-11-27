@@ -1,6 +1,10 @@
+[data-view-timeline="home_section_contents"] {
+  view-timeline-name: --home_section_contents;
+}
 [data-view-animate="home_section_contents"] {
+  animation-timeline: --home_section_contents;
   animation-name: home_section_contents;
-  animation-fill-mode: forwards;
+  animation-fill-mode: backwards;
   animation-range: cover -5% 100%;
   animation-timing-function: ease-in-out;
 }

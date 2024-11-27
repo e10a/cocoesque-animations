@@ -1,6 +1,5 @@
 [data-view-timeline="above_the_fold"] {
   view-timeline-name: --above_the_fold;
-  animation-timeline: view();
 }
 [data-view-animate="nav"] {
   animation-timeline: --above_the_fold;
