@@ -1,10 +1,7 @@
 [data-view-animate="home_section_contents"] {
-  animation-timeline: view();
-  /*  */
   animation-name: home_section_contents;
-  /*  */
   animation-fill-mode: forwards;
-  animation-range: cover -5% 100%;
+  animation-range: cover 20% cover 200%;
   animation-timing-function: ease-in-out;
 }
 
@@ -12,13 +9,13 @@
   0% {
     opacity: 0.3;
   }
-  30% {
+  10% {
     opacity: 1;
   }
-  95% {
-    opacity: 0.5;
+  55% {
+    opacity: 0.1;
   }
   100% {
-    opacity: 0;
+    filter: blur(3px);
   }
 }
