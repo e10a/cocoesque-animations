@@ -1,0 +1,16 @@
+[data-group-child="coming_soon_projects"] {
+  inset: 0;
+  position: absolute;
+  z-index: 1;
+  background-color: rgba(var(--color-black) / 0.65);
+  backdrop-filter: blur(2.5px);
+  border: 4px solid rgb(var(--color-fuchsia-500) / 0.8);
+  border-radius: var(--space-2);
+  overflow: clip;
+}
+[data-group-parent="coming_soon_projects"]:hover {
+  [data-group-child="coming_soon_projects"] {
+    background-color: transparent;
+    backdrop-filter: blur(0);
+  }
+}

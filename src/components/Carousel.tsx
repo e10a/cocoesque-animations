@@ -32,7 +32,8 @@ const Outer = styled.div`
   justify-content: center;
 
   .slick-slider {
-    max-width: 100vw;
+    max-width: var(--space-1440px);
+    width: 100vw;
   }
 `;
 
@@ -78,7 +79,7 @@ export default function Carousel({
         className={`button-round ${arrowButton}`}
         disabled={currentSlide === totalSlides}
         onClick={onClick}
-        style={{ display: hideControls ? "none" : "flex", right: 0 }}
+        style={{ right: 0 }}
       >
         <span className="material-symbols-rounded">chevron_right</span>
       </button>
@@ -93,7 +94,7 @@ export default function Carousel({
         className={`button-round ${arrowButton}`}
         disabled={currentSlide === 0}
         onClick={onClick}
-        style={{ display: hideControls ? "none" : "flex", left: 0 }}
+        style={{ left: 0 }}
       >
         <span className="material-symbols-rounded">chevron_left</span>
       </button>

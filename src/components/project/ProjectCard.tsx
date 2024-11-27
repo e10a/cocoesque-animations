@@ -16,10 +16,6 @@ const ProjectContainer = styled.div`
     height: 300px;
   }
 
-  &:has(> div:first-child) {
-    border: 4px solid rgb(var(--color-fuchsia-500) / 0.8);
-  }
-
   &:has(> a:first-child) {
     box-shadow: 0 0 3px rgb(var(--color-black) / 0.2);
 
@@ -40,7 +36,7 @@ export default function ProjectCard({ project }: { project?: ProjectType }) {
       )}
 
       {project?.fields && project?.fields.comingSoon && (
-        <ProjectContainer data-view-timeline="coming_soon_projects">
+        <ProjectContainer>
           <div title={project?.fields.displayTitle}>
             <ProjectCardInner project={project} />
           </div>

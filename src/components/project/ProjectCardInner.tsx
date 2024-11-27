@@ -1,14 +1,25 @@
 import ProjectBanner from "./ProjectBanner";
 import { Project } from "@/types/ContentfulData";
 import { styled } from "@linaria/react";
+import { css } from "@linaria/core";
 
-const ProjectOuter = styled.div`
+const projectStyles = css`
   display: flex;
   flex-direction: column;
   height: 100%;
   justify-content: end;
   position: relative;
   width: 100%;
+`;
+
+const PlaceholderOuter = styled.div`
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(79 70 229 / 0.9),
+    rgba(13 148 136 / 0.4)
+  );
+`;
+const ProjectOuter = styled.div`
   background-image: linear-gradient(
     to right bottom,
     rgb(6 182 212),
@@ -57,8 +68,35 @@ const ProjectContent = styled.div`
   }
 `;
 
+const Placeholder = () => {
+  return (
+    <PlaceholderOuter className={projectStyles}>
+      <div className="flex flex-col gap-2">
+        <div className="font-bold leading-tight">What&apos;s Next?</div>
+        <a
+          className="button button-transparent-white button-sm"
+          href="#projects-coming-soon"
+        >
+          View Upcoming Projects
+        </a>
+      </div>
+      <div className="flex flex-col gap-2">
+        <div className="leading-tight">
+          Let&apos;s build something together!
+        </div>
+        <a
+          className="button button-transparent-white button-sm"
+          href="#contact"
+        >
+          Get in Touch
+        </a>
+      </div>
+    </PlaceholderOuter>
+  );
+}
+
 export default function ProjectCardInner({ project }: { project?: Project }) {
-  if (!project?.fields) return;
+  if (!project?.fields) return (<Placeholder />);
 
   const { comingSoon, company, coverImage, displayTitle } = project.fields;
 
@@ -66,14 +104,14 @@ export default function ProjectCardInner({ project }: { project?: Project }) {
   const companyName = company.fields?.name;
 
   return (
-    <ProjectOuter>
+    <ProjectOuter className={projectStyles}>
       {coverImageUrl && (
         <ProjectImage style={{ backgroundImage: `url(${coverImageUrl})` }} />
       )}
 
       {comingSoon && (
         <>
-          <div data-view-animate="coming_soon_projects" />
+          <div data-group-child="coming_soon_projects" />
           <ProjectBanner />
         </>
       )}

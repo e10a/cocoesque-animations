@@ -124,7 +124,9 @@ export default function HomeBelowTheFold() {
 
       {!isLoading && (
         <>
-          <ProjectsSection>
+          <ProjectsSection data-location-marker-parent="">
+            <LocationMarker id="projects" style={{ marginTop: "calc(0px - var(--space-10))", top: 0 }} />
+
             <section>
               <header>
                 <h2>Projects</h2>
@@ -138,17 +140,22 @@ export default function HomeBelowTheFold() {
           </ProjectsSection>
 
           <ProjectsSection
+            data-location-marker-parent=""
             style={{ backgroundColor: "rgb(var(--color-slate-50))" }}
           >
+            <LocationMarker id="projects-coming-soon" style={{ marginTop: "calc(0px - var(--space-8))", top: 0 }} />
+
             <section>
               <header>
                 <h2>Coming Soon</h2>
                 <p>Presentation for these projects are in the works. Stay tuned!</p>
               </header>
 
-              <ProjectCarousel
-                projects={visibleProjects.filter(project => project.fields.comingSoon)}
-              />
+              <div data-group-parent="coming_soon_projects">
+                <ProjectCarousel
+                  projects={visibleProjects.filter(project => project.fields.comingSoon)}
+                />
+              </div>
             </section>
           </ProjectsSection>
 
