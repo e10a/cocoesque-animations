@@ -1,13 +1,23 @@
-/* Animation Defaults */
-[data-scroll-animate],
-[data-view-animate] {
-  animation-range: normal;
-  animation-duration: 100ms;
-  /* Default duration necessary for Firefox */
+/* Default Timeline */
+[data-scroll-timeline] {
+  animation-timeline: scroll(root);
 }
-[data-scroll-timeline],
 [data-view-timeline] {
-  animation-range: normal;
+  animation-timeline: view();
+}
+
+/* Default Duration - necessary for Firefox */
+[data-view-timeline],
+[data-view-timeline],
+[data-scroll-animate],
+[data-scroll-animate] {
   animation-duration: 100ms;
-  /* Default duration necessary for Firefox */
+}
+
+/* Default Range - necessary for polyfill */
+[data-view-timeline],
+[data-view-timeline],
+[data-scroll-animate],
+[data-scroll-animate] {
+  animation-range: normal;
 }
