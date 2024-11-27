@@ -1,6 +1,6 @@
 import Carousel from "@/components/Carousel";
 import ProjectCard from "@/components/project/ProjectCard";
-import { Project as ProjectType, Projects } from "@/types/ContentfulData";
+import { Project as ProjectType } from "@/types/ContentfulData";
 import { useEffect, useState } from "react";
 import {styled} from  "@linaria/react";
 
@@ -8,7 +8,7 @@ const CarouselItem = styled.div`
   margin:var(--space-8) var(--space-2);
 `;
 
-export default function ProjectCarousel({ comingSoon, projects }: { comingSoon: boolean; projects: Projects }) {
+export default function ProjectCarousel({ isUpcoming, projects }: { isUpcoming: boolean; projects: ProjectType[] }) {
   if (!Object.keys(projects).length) return;
 
   const [hideControls, setHideControls] = useState(false);
@@ -37,13 +37,13 @@ export default function ProjectCarousel({ comingSoon, projects }: { comingSoon: 
       {Object.values(projects).map(
         (project: ProjectType) => (
           <CarouselItem key={project.sys.id}>
-            <ProjectCard isUpcoming={comingSoon} project={project} />
+            <ProjectCard isUpcoming={isUpcoming} project={project} />
           </CarouselItem>
         )
       )}
 
       <CarouselItem>
-        <ProjectCard isUpcoming={comingSoon} />
+        <ProjectCard isUpcoming={isUpcoming} />
       </CarouselItem>
     </Carousel>
   );
