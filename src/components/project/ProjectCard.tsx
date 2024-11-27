@@ -1,8 +1,26 @@
-import ProjectCardInner from "./ProjectCardInner";
+import ProjectCardContents from "./ProjectCardContents";
 import { Project as ProjectType } from "@/types/ContentfulData";
 import { styled } from "@linaria/react";
+import { css } from "@linaria/core";
 
-const ProjectContainer = styled.div`
+const projectStyles = css`
+  justify-content: end;
+  background-image: linear-gradient(
+    to right bottom,
+    rgb(6 182 212),
+    rgb(236 72 153)
+  );
+`;
+const placeholderStyles = css`
+  justify-content: center;
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(79 70 229 / 0.9),
+    rgba(13 148 136 / 0.4)
+  );
+`;
+
+const ProjectCardOuter = styled.div`
   border-radius: var(--space-2);
   display: flex;
   flex-direction: column;
@@ -25,28 +43,39 @@ const ProjectContainer = styled.div`
     }
   }
 `;
+const ProjectCardInner = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  width: 100%;
+`;
 
-export default function ProjectCard({ project }: { project?: ProjectType }) {
+export default function ProjectCard({ isUpcoming, project }: { isUpcoming: boolean; project?: ProjectType }) {
   return (
     <>
       {!project && (
-        <ProjectContainer>
-          <ProjectCardInner />
-        </ProjectContainer>
+        <ProjectCardOuter>
+          <ProjectCardInner className={placeholderStyles}>
+            <ProjectCardContents isUpcoming={isUpcoming} />
+          </ProjectCardInner>
+        </ProjectCardOuter>
       )}
 
       {project?.fields && project?.fields.comingSoon && (
-        <ProjectContainer>
+        <ProjectCardOuter>
           <div title={project?.fields.displayTitle}>
-            <ProjectCardInner project={project} />
+            <ProjectCardInner className={projectStyles}>
+              <ProjectCardContents isUpcoming={isUpcoming} project={project} />
+            </ProjectCardInner>
           </div>
-        </ProjectContainer>
+        </ProjectCardOuter>
       )}
 
       {project?.fields &&
         !project?.fields.comingSoon &&
         project?.fields.externalLink && (
-          <ProjectContainer>
+          <ProjectCardOuter>
             <a
               role="button"
               href={project?.fields.externalLink}
@@ -54,9 +83,11 @@ export default function ProjectCard({ project }: { project?: ProjectType }) {
               title={project?.fields.displayTitle}
               rel="noreferrer"
             >
-              <ProjectCardInner project={project} />
+              <ProjectCardInner className={projectStyles}>
+                <ProjectCardContents isUpcoming={isUpcoming} project={project} />
+              </ProjectCardInner>
             </a>
-          </ProjectContainer>
+          </ProjectCardOuter>
         )}
     </>
   );

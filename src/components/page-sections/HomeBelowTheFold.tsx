@@ -134,6 +134,7 @@ export default function HomeBelowTheFold() {
               </header>
 
               <ProjectCarousel
+                for="active"
                 projects={visibleProjects.filter(project => !project.fields.comingSoon)}
               />
             </section>
@@ -153,6 +154,7 @@ export default function HomeBelowTheFold() {
 
               <div data-group-parent="coming_soon_projects" data-view-timeline="home-coming-soon-projects">
                 <ProjectCarousel
+                  for="comingSoon"
                   projects={visibleProjects.filter(project => project.fields.comingSoon)}
                 />
               </div>

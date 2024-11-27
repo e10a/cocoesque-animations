@@ -26,11 +26,13 @@
   background-color: rgba(var(--color-white) / 0.15);
   border: var(--space-half) solid rgba(var(--color-white) / 0);
   box-shadow: 0 0 0 1px rgba(var(--color-black) / 0.1);
+  color: rgb(var(--color-white));
 }
 .button-transparent-white:hover:not([disabled]) {
   background-color: rgba(var(--color-white) / 0);
   border: var(--space-half) solid rgba(var(--color-white) / 0.9);
   box-shadow: 0 0 0 1px rgba(var(--color-black) / 0.3);
+  color: rgb(var(--color-white));
 }
 
 .button-round {
@@ -57,7 +59,7 @@
 
 .button-sm {
   font-size: var(--text-sm);
-  padding: var(--space-2) var(--space-3);
+  padding: var(--space-3) var(--space-3);
 }
 .button-xl {
   font-size: var(--text-xl);

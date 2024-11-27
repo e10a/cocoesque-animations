@@ -8,8 +8,8 @@ const CarouselItem = styled.div`
   margin:var(--space-8) var(--space-2);
 `;
 
-export default function ProjectCarousel({ projects }: Projects) {
-  if (!projects) return;
+export default function ProjectCarousel({ comingSoon, projects }: { comingSoon: boolean; projects: Projects }) {
+  if (!Object.keys(projects).length) return;
 
   const [hideControls, setHideControls] = useState(false);
 
@@ -31,19 +31,19 @@ export default function ProjectCarousel({ projects }: Projects) {
       centerMode={true}
       slidesToShow={1}
       initialSlide={2}
-      totalSlides={projects.length}
+      totalSlides={Object.keys(projects).length}
       hideControls={hideControls}
     >
-      {projects.map(
+      {Object.values(projects).map(
         (project: ProjectType) => (
           <CarouselItem key={project.sys.id}>
-            <ProjectCard project={project} />
+            <ProjectCard isUpcoming={comingSoon} project={project} />
           </CarouselItem>
         )
       )}
 
       <CarouselItem>
-        <ProjectCard />
+        <ProjectCard isUpcoming={comingSoon} />
       </CarouselItem>
     </Carousel>
   );
