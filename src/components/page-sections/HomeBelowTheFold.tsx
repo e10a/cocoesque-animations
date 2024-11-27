@@ -151,7 +151,7 @@ export default function HomeBelowTheFold() {
                 <p>Presentation for these projects are in the works. Stay tuned!</p>
               </header>
 
-              <div data-group-parent="coming_soon_projects">
+              <div data-group-parent="coming_soon_projects" data-view-timeline="home-coming-soon-projects">
                 <ProjectCarousel
                   projects={visibleProjects.filter(project => project.fields.comingSoon)}
                 />

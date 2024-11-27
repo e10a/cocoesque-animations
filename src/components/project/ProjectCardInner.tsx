@@ -111,7 +111,7 @@ export default function ProjectCardInner({ project }: { project?: Project }) {
 
       {comingSoon && (
         <>
-          <div data-group-child="coming_soon_projects" />
+          <div data-group-child="coming_soon_projects" data-view-animate="home-coming-soon-projects"/>
           <ProjectBanner />
         </>
       )}
