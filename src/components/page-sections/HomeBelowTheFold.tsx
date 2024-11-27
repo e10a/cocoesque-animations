@@ -173,7 +173,7 @@ export default function HomeBelowTheFold() {
             </section>
           </SkillsSection>
 
-          <GetInTouchSection data-location-marker-parent>
+          <GetInTouchSection data-location-marker-parent="">
             <LocationMarker id="contact" style={{ marginTop: "calc(0px - var(--space-8))", top: 0 }} />
 
             <header style={{ marginBottom: "var(--space-10)" }}>

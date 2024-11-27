@@ -74,7 +74,7 @@ export default function PageHome() {
         <div id="page-home">
           <AboveTheFold
             data-view-timeline="above_the_fold"
-            data-location-marker-parent
+            data-location-marker-parent=""
           >
             <HomeHero
               title="Ellen Shimada"

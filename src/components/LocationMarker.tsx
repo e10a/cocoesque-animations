@@ -6,9 +6,10 @@ type Props = {
 };
 
 const Outer = styled.div`
+    height: 1px;
+    opacity: 0;
     position: absolute;
     width: 100%;
-    height: 1px;
     z-index: 1000;
 `;
 
