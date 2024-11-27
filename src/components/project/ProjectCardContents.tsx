@@ -47,28 +47,54 @@ const PlaceholderSection = styled.div`
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
-  padding: var(--space-4);
+  padding: var(--space-2) var(--space-4);
   color: rgb(var(--color-white));
 `;
 const PlaceholderTitle = styled.h3`
   font-weight: var(--text-bold);
   line-height: 110%;
+  color: rgb(var(--color-white));
+`;
+const PlaceholderButtonTitle = styled.h4`
+  font-size: var(--text-base);
+  font-weight: var(--text-bold);
+  line-height: 130%;
+  margin-top: var(--space-8);
 `;
 
 const Placeholder = ({ isUpcoming }: { isUpcoming: boolean }) => {
-  const cta = {
-    title: isUpcoming ? "What&apos;s Next?" : "Let&apos;s build something together!",
-    text: isUpcoming ? "Get in Touch" : "View Upcoming Projects",
-    url: isUpcoming ? "/#contact" : "/#projects-coming-soon",
-  };
+  const buttons = [
+    {
+      title: "",
+      text: isUpcoming ? "View Available Projects" : "View Upcoming Projects",
+      url: isUpcoming ? "/#projects" : "/#projects-coming-soon",
+    },
+    {
+      title: "Let's build something together!",
+      text: "Contact Me",
+      url: "/#contact",
+    },
+  ];
 
   return (
-    <PlaceholderSection>`
+    <>
       <PlaceholderTitle>What&apos;s Next?</PlaceholderTitle>
-      <a className="button button-transparent-white button-sm" href={cta.url}>
-        {cta.text}`
-      </a>
-    </PlaceholderSection>
+
+      {buttons.map(button =>(
+        <PlaceholderSection>
+          {button.title &&
+          <PlaceholderButtonTitle>{button.title}</PlaceholderButtonTitle>}
+
+          <a
+            className="button button-transparent-white button-sm"
+            href={button.url}
+            style={{ width: "100%" }}
+          >
+            {button.text}
+          </a>
+        </PlaceholderSection>
+      ))}
+    </>
   );
 };
 
