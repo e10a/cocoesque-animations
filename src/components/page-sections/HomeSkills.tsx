@@ -4,18 +4,13 @@ import { styled } from "@linaria/react";
 import { Skills as SkillsType } from "@/types/ContentfulData";
 
 const SkillsContainer = styled.div`
-  background-image: linear-gradient(
-    var(--gradient-br),
-    var(--gradient-indigo-teal)
-  );
-  color: rgb(var(--rgb-white));
-  display: flex;
   align-items: center;
-  justify-content: center;
+  display: flex;
   gap: var(--space-4);
+  justify-content: center;
+  max-height: 400px;
   overflow: clip;
   position: relative;
-  max-height: 400px;
 `;
 const ColumnOuter = styled.div`
   position: relative;
@@ -31,7 +26,7 @@ const ColumnInner = styled.div`
   justify-content: center;
 `;
 const ShadowTop = styled.div`
-  box-shadow: rgba(var(--rgb-black), 0.8) 0 0 var(--space-2) var(--space);
+  box-shadow: 0 0 4px 1px rgba(var(--rgb-black), 0.8);
   position: absolute;
   top: 0;
   left: 0;
@@ -39,7 +34,7 @@ const ShadowTop = styled.div`
   z-index: 1;
 `;
 const ShadowBottom = styled.div`
-  box-shadow: rgba(var(--rgb-black), 0.15) 0 0 var(--space-2) var(--space);
+  box-shadow: 0 0 4px 1px rgba(var(--rgb-black), 0.8);
   position: absolute;
   bottom: 0;
   left: 0;
