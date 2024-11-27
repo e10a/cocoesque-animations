@@ -2,4 +2,7 @@
 @import "./animations/nav.css";
 @import "./animations/home-section.css";
 @import "./animations/home-skills.css";
+@import "./animations/coming-soon-project.css";
+
+/* Helpers */
 @import "./animations/_helpers.css";

@@ -1,14 +1,38 @@
-import { useRef, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useRef, useState } from "react";
 import { styled } from "@linaria/react";
+import { css } from "@linaria/core";
+
+const arrowButton = css`
+  box-shadow: 0 0 3px rgba(var(--rgb-black), 0.2);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  margin: 0 var(--space-4);
+
+  &:hover {
+    box-shadow: 0 0 5px rgba(var(--rgb-black), 0.8);
+    filter: brightness(1.5);
+  }
+`;
 
 const ButtonContainer = styled.div`
-  display: flex;
-  gap: var(--space-4);
   align-items: center;
+  gap: var(--space-4);
   justify-content: center;
+`;
+const Outer = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .slick-slider {
+    max-width: 100vw;
+  }
 `;
 
 interface Props {
@@ -29,7 +53,7 @@ interface Props {
   }>;
   totalSlides?: number | null;
   hideControls?: boolean;
-};
+}
 
 export default function Carousel({
   centerMode = false,
@@ -45,39 +69,36 @@ export default function Carousel({
   const [currentSlide, setCurrentSlide] = useState(0);
   const sliderRef = useRef<Slider>(null);
 
-  const NextArrow = (props: { className?: string; onClick?: () => void }) => {
-    const { className, onClick } = props;
+  const NextArrow = (props: { onClick?: () => void }) => {
+    const { onClick } = props;
 
     return (
       <button
+        className={`button-round ${arrowButton}`}
         disabled={currentSlide === totalSlides}
-        className={`button-round ${className} ${hideControls ? "invisible" : ""
-          }`}
         onClick={onClick}
+        style={{ display: hideControls ? "none" : "flex", right: 0 }}
       >
-        <span className="material-symbols-rounded">
-          chevron_right
-        </span>
+        <span className="material-symbols-rounded">chevron_right</span>
       </button>
     );
   };
 
-  const PrevArrow = (props: { className?: string; onClick?: () => void }) => {
-    const { className, onClick } = props;
+  const PrevArrow = (props: { onClick?: () => void }) => {
+    const { onClick } = props;
 
     return (
       <button
+        className={`button-round ${arrowButton}`}
         disabled={currentSlide === 0}
-        className={`carousel-nav-button ml-8 left-0 opacity-0 group-hover:opacity-100 ${className} ${hideControls ? "invisible" : ""
-          }`}
         onClick={onClick}
+        style={{ display: hideControls ? "none" : "flex", left: 0 }}
       >
-        <span className="material-symbols-rounded">
-          chevron_left
-        </span>
+        <span className="material-symbols-rounded">chevron_left</span>
       </button>
     );
   };
+
   const goBack = () => {
     if (sliderRef.current) {
       sliderRef.current.slickPrev();
@@ -114,37 +135,28 @@ export default function Carousel({
   };
 
   return (
-    <div className="carousel flex flex-col items-center group">
-      <div className="w-full">
-        <Slider ref={sliderRef} {...settings}>
-          {children}
-        </Slider>
-      </div>
-      <div className={`carousel-controls ${hideControls ? "hidden" : ""}`}>
-        <div className="flex gap-8 justify-center">
-          <ButtonContainer>
-            <button
-              disabled={currentSlide === 0}
-              className="button-round"
-              onClick={goBack}
-            >
-              <span className="material-symbols-rounded">
-                chevron_left
-              </span>
-            </button>
+    <Outer>
+      <Slider ref={sliderRef} {...settings}>
+        {children}
+      </Slider>
 
-            <button
-              disabled={currentSlide === totalSlides}
-              className="button-round"
-              onClick={goNext}
-            >
-              <span className="material-symbols-rounded">
-                chevron_right
-              </span>
-            </button>
-          </ButtonContainer>
-        </div>
-      </div>
-    </div>
+      <ButtonContainer style={{ display: hideControls ? "none" : "flex" }}>
+        <button
+          disabled={currentSlide === 0}
+          className="button-round"
+          onClick={goBack}
+        >
+          <span className="material-symbols-rounded">chevron_left</span>
+        </button>
+
+        <button
+          disabled={currentSlide === totalSlides}
+          className="button-round"
+          onClick={goNext}
+        >
+          <span className="material-symbols-rounded">chevron_right</span>
+        </button>
+      </ButtonContainer>
+    </Outer>
   );
-};
+}

@@ -57,13 +57,7 @@ const ProjectContent = styled.div`
   }
 `;
 
-export default function ProjectCardInner({
-  project,
-  children,
-}: {
-  project?: Project;
-  children?: React.ReactNode;
-}) {
+export default function ProjectCardInner({ project }: { project?: Project }) {
   if (!project?.fields) return;
 
   const { comingSoon, company, coverImage, displayTitle } = project.fields;
@@ -72,11 +66,7 @@ export default function ProjectCardInner({
   const companyName = company.fields?.name;
 
   return (
-    <ProjectOuter
-      className={comingSoon ? "project_coming-soon" : "project_active"}
-    >
-      {children}
-
+    <ProjectOuter>
       {coverImageUrl && (
         <ProjectImage style={{ backgroundImage: `url(${coverImageUrl})` }} />
       )}

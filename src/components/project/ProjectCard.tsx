@@ -35,7 +35,7 @@ export default function ProjectCard({ project }: { project?: ProjectType }) {
     <>
       {!project && (
         <ProjectContainer>
-          <ProjectCardInner>Placeholder</ProjectCardInner>
+          <ProjectCardInner />
         </ProjectContainer>
       )}
 
