@@ -1,9 +1,9 @@
 /* Animation Helper Styles */
 :root {
-  --outline-animate-green: 4px dashed green;
-  --outline-animate-lime: 4px dashed lime;
-  --outline-animate-magenta: 4px dashed magenta;
-  --outline-animate-red: 4px dashed red;
+  --outline-animate-green: 10px dashed green;
+  --outline-animate-lime: 10px dashed lime;
+  --outline-animate-magenta: 10px dashed magenta;
+  --outline-animate-red: 10px dashed red;
 
   /* Semantic */
   --outline-animate-element: var(--outline-animate-lime);
@@ -23,4 +23,18 @@
   to {
     outline: var(--outline-animate-ending);
   }
+}
+
+@keyframes helper_rainbow {
+  0% { outline: 10px dashed lime !important; }
+  10% { outline: 10px dashed rgb(var(--rgb-yellow-500)) !important; }
+  20% { outline: 10px dashed rgb(var(--rgb-green-500)) !important; }
+  30% { outline: 10px dashed rgb(var(--rgb-cyan-500)) !important; }
+  40% { outline: 10px dashed rgb(var(--rgb-blue-500)) !important; }
+  50% { outline: 10px dashed rgb(var(--rgb-indigo-500)) !important; }
+  60% { outline: 10px dashed rgb(var(--rgb-violet-500)) !important; }
+  70% { outline: 10px dashed rgb(var(--rgb-fuchsia-500)) !important; }
+  80% { outline: 10px dashed rgb(var(--rgb-pink-500)) !important; }
+  90% { outline: 10px dashed rgb(var(--rgb-red-500)) !important; }
+  100% { outline: 10px dashed black !important; }
 }
