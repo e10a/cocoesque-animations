@@ -8,7 +8,7 @@
 [data-view-animate="coming_soon_projects"]:before {
   animation-timeline: --coming_soon_projects;
   /*  */
-  animation-name: coming_soon_project;
+  animation-name: coming_soon_projects;
   /*  */
   animation-fill-mode: forwards;
   animation-range: cover 90% cover 95%;
