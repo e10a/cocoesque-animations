@@ -1,5 +1,6 @@
 /* Animation Defaults */
-[data-animate] {
+[data-scroll-animate],
+[data-view-animate] {
   animation-duration: 100ms;
   /* Default duration necessary for Firefox */
 }
