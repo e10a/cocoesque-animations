@@ -1,6 +1,5 @@
 import HomeBelowTheFold from "@/components/page-sections/HomeBelowTheFold";
 import HomeHero from "@/components/page-sections/HomeHero";
-import LocationMarker from "@/components/LocationMarker";
 import Nav from "@/components/navigation/Nav";
 import PageLayout from "@/components/layouts/PageLayout";
 import { useEffect, useState } from "react";
