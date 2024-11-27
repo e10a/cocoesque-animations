@@ -1,6 +1,13 @@
 /* Animation Defaults */
 [data-scroll-animate],
 [data-view-animate] {
+  animation-range: normal;
+  animation-duration: 100ms;
+  /* Default duration necessary for Firefox */
+}
+[data-scroll-timeline],
+[data-view-timeline] {
+  animation-range: normal;
   animation-duration: 100ms;
   /* Default duration necessary for Firefox */
 }
