@@ -5,7 +5,7 @@
   animation-timeline: --home_coming_soon_project;
   animation-name: home_coming_soon_project;
   animation-fill-mode: forwards;
-  animation-range: cover 0% cover 80%;
+  animation-range: cover -5% cover 80%;
   animation-timing-function: ease-in-out;
   animation-duration: 300ms;
   /*  */
