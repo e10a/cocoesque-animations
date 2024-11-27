@@ -3,7 +3,7 @@ import NavBarTabs from "./NavBarTabs";
 import { styled } from "@linaria/react";
 
 const Outer = styled.nav`
-  box-shadow: 0 0 var(--space-2) rgba(var(--rgb-gray-950) / 0.1);
+  box-shadow: 0 0 var(--space-2) rgba(var(--color-gray-950) / 0.1);
   backdrop-filter: blur(5px);
   .nav-bar__logo {
     height: 50px;
@@ -19,7 +19,7 @@ const Inner = styled.div`
   align-items: center;
   padding: 0 var(--space-4);
   a {
-    color: rgb(var(--rgb-gray-950));
+    color: rgb(var(--color-gray-950));
   }
 `;
 

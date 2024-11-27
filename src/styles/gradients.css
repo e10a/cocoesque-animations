@@ -7,7 +7,8 @@
   --gradient-lb: to left bottom;
   --gradient-rt: to right top;
   --gradient-lt: to left top;
-  --gradient-indigo-pink: rgb(var(--rgb-indigo-500)), rgb(var(--rgb-purple-500)),
-    rgb(var(--rgb-pink-500));
-  --gradient-indigo-teal: rgb(var(--rgb-indigo-500)), rgb(var(--rgb-teal-500));
+  --gradient-indigo-pink: rgb(var(--color-indigo-500)),
+    rgb(var(--color-purple-500)), rgb(var(--color-pink-500));
+  --gradient-indigo-teal: rgb(var(--color-indigo-500)),
+    rgb(var(--color-teal-500));
 }

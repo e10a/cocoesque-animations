@@ -8,7 +8,7 @@ const CtaContainer = styled.div`
   margin-top: var(--space-8);
 `;
 const CtaLink = styled.a`
-  color: rgb(var(--rgb-white));
+  color: rgb(var(--color-white));
   display: inline-flex;
   text-decoration: none;
   font-size: var(--text-sm);
@@ -28,14 +28,14 @@ const CtaLink = styled.a`
   }
 
   &:hover {
-    color: rgb(var(--rgb-white));
+    color: rgb(var(--color-white));
 
     &:before {
-      background-color: rgb(var(--rgb-white));
+      background-color: rgb(var(--color-white));
     }
   }
 
-  &+a:after {
+  & + a:after {
     content: "";
     display: block;
     height: 100%;
@@ -43,7 +43,7 @@ const CtaLink = styled.a`
     position: absolute;
     top: 0;
     left: 0;
-    border-left: 1px solid rgba(var(--rgb-white) / 0.3);
+    border-left: 1px solid rgba(var(--color-white) / 0.3);
     margin-left: calc(0px - var(--space-4));
   }
 `;
@@ -56,8 +56,20 @@ export default function HomeGetInTouch() {
       <CtaContainer>
         <CtaLink href="/resume">Resume</CtaLink>
         <CtaLink href="/#projects">Projects</CtaLink>
-        <CtaLink href="https://www.linkedin.com/in/ellen-s" target="_blank" rel="noopener noreferrer">LinkedIn</CtaLink>
-        <CtaLink href="https://github.com/e10a" target="_blank" rel="noopener noreferrer">GitHub</CtaLink>
+        <CtaLink
+          href="https://www.linkedin.com/in/ellen-s"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </CtaLink>
+        <CtaLink
+          href="https://github.com/e10a"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </CtaLink>
       </CtaContainer>
     </>
   );

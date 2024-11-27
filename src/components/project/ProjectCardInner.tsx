@@ -28,7 +28,7 @@ const ProjectContent = styled.div`
     rgba(79 70 229 / 0.9),
     rgba(13 148 136 / 0.4)
   );
-  color: rgb(var(--rgb-white));
+  color: rgb(var(--color-white));
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
@@ -71,11 +71,12 @@ export default function ProjectCardInner({ project }: { project?: Project }) {
         <ProjectImage style={{ backgroundImage: `url(${coverImageUrl})` }} />
       )}
 
-      {comingSoon &&
-      <>
-        <div data-view-animate="coming_soon_projects" />
-        <ProjectBanner />
-      </>}
+      {comingSoon && (
+        <>
+          <div data-view-animate="coming_soon_projects" />
+          <ProjectBanner />
+        </>
+      )}
 
       <ProjectContent>
         <h3>{displayTitle}</h3>

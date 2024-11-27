@@ -6,7 +6,7 @@ const Cursor = styled.span`
   display: inline-block;
   width: 3px;
   height: 16px;
-  background-color: rgb(var(--rgb-white));
+  background-color: rgb(var(--color-white));
   margin-left: 3px;
   vertical-align: middle;
 `;

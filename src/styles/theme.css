@@ -4,14 +4,14 @@
   --font-mono: "Fira Code", monospace;
   --font-primary: "Inter", sans-serif;
   --font-secondary: "Inter", sans-serif;
-  --rgb-black: var(--rgb-gray-800);
-  --rgb-color-primary-darker: var(--rgb-indigo-700);
-  --rgb-color-primary: var(--rgb-indigo-500);
+  --color-black: var(--color-gray-800);
+  --color-color-primary-darker: var(--color-indigo-700);
+  --color-color-primary: var(--color-indigo-500);
 }
 
 body {
-  background-color: rgb(var(--rgb-indigo-500));
-  color: rgb(var(--rgb-black));
+  background-color: rgb(var(--color-indigo-500));
+  color: rgb(var(--color-black));
   font-family: var(--font-primary);
 }
 
@@ -85,11 +85,11 @@ header > p {
 }
 
 a {
-  color: rgb(var(--rgb-color-primary));
+  color: rgb(var(--color-color-primary));
 }
 
 a:hover {
-  color: rgb(var(--rgb-color-primary-darker));
+  color: rgb(var(--color-color-primary-darker));
 }
 
 code,
@@ -99,15 +99,15 @@ pre {
 }
 
 code {
-  color: rgb(var(--rgb-emerald-500));
+  color: rgb(var(--color-emerald-500));
 }
 
 input,
 textarea {
-  color: rgb(var(--rgb-black));
+  color: rgb(var(--color-black));
 }
 
 .page-layout {
-  background-color: rgb(var(--rgb-white));
+  background-color: rgb(var(--color-white));
   overflow: clip;
 }

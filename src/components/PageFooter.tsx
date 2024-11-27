@@ -23,7 +23,7 @@ const BottomSection = styled.div`
   text-transform: uppercase;
   font-size: var(--text-xs);
   letter-spacing: 0.5px;
-  color: rgb(var(--rgb-gray-500));
+  color: rgb(var(--color-gray-500));
 
   @media only screen and (width >=768px) {
     flex-direction: row;
@@ -71,13 +71,13 @@ const externalLinks = [
     path: "https://github.com/e10a",
     label: "GitHub",
     target: "_blank",
-    icon: "GitHub"
+    icon: "GitHub",
   },
   {
     path: "https://www.linkedin.com/in/ellen-s",
     label: "LinkedIn",
     target: "_blank",
-    icon: "LinkedIn"
+    icon: "LinkedIn",
   },
 ];
 
@@ -99,9 +99,9 @@ const Link = (link: LinkType) => {
       <>
         {!link.icon && link.label}
 
-        {link.icon == "GitHub" && <GitHub/>}
+        {link.icon == "GitHub" && <GitHub />}
 
-        {link.icon == "LinkedIn" && <LinkedIn/>}
+        {link.icon == "LinkedIn" && <LinkedIn />}
       </>
     </a>
   );

@@ -13,7 +13,7 @@ const NavContainer = styled.div`
   left: 0;
   width: 100%;
   z-index: 20;
-  box-shadow: 0 0 5px rgba(var(--rgb-gray-950) / 0.4);
+  box-shadow: 0 0 5px rgba(var(--color-gray-950) / 0.4);
 `;
 const NavContainerInset = styled.div`
   position: absolute;
@@ -26,10 +26,10 @@ const NavContainerInset = styled.div`
   );
 `;
 const Page = styled.section`
-  background-color: rgb(var(--rgb-white));
+  background-color: rgb(var(--color-white));
   border-radius: var(--space);
-  border: 1px solid rgb(var(--rgb-gray-300));
-  box-shadow: 0 0 1px rgba(var(--rgb-gray-950) / 0.2);
+  border: 1px solid rgb(var(--color-gray-300));
+  box-shadow: 0 0 1px rgba(var(--color-gray-950) / 0.2);
   color: rgb(51 65 85 / 1);
   color: rgb(71 85 105 / 1);
   display: flex;
@@ -46,7 +46,7 @@ const Page = styled.section`
 
   h2 {
     font-size: var(--text-3xl);
-    color: rgb(var(--rgb-black));
+    color: rgb(var(--color-black));
 
     + p {
       margin: var(--space-2) 0;
@@ -56,8 +56,8 @@ const Page = styled.section`
   }
 
   h3 {
-    border-bottom: 1px solid rgb(var(--rgb-gray-300));
-    color: rgb(var(--rgb-gray-500));
+    border-bottom: 1px solid rgb(var(--color-gray-300));
+    color: rgb(var(--color-gray-500));
     font-size: var(--text-base);
     font-weight: var(--text-bold);
     letter-spacing: 2px;
@@ -70,7 +70,7 @@ const Page = styled.section`
   }
 
   h4 {
-    color: rgb(var(--rgb-black));
+    color: rgb(var(--color-black));
     font-size: var(--text-base);
 
     + p {
@@ -85,18 +85,18 @@ const Page = styled.section`
   }
 `;
 const PageLayoutInner = styled.div`
-    display: flex;
-    flex: 1 1;
-    flex-direction: column;
-    flex-shrink: 0;
-    min-height: 640px;
-    width: 100%;
-    background-color: rgb(var(--rgb-gray-100));
-    padding: var(--space-16) var(--space-4);
+  display: flex;
+  flex: 1 1;
+  flex-direction: column;
+  flex-shrink: 0;
+  min-height: 640px;
+  width: 100%;
+  background-color: rgb(var(--color-gray-100));
+  padding: var(--space-16) var(--space-4);
 
-    @media only screen and (width >=768px) {
-      padding: var(--space-24) var(--space-12);
-    }
+  @media only screen and (width >=768px) {
+    padding: var(--space-24) var(--space-12);
+  }
 `;
 
 export default function PageResume() {
@@ -111,7 +111,7 @@ export default function PageResume() {
     skills: {
       linked_in_skills: [],
       experience_skills: [],
-      technical_skills: []
+      technical_skills: [],
     },
     achievements: [],
   });
@@ -172,7 +172,7 @@ export default function PageResume() {
         <PageLayoutInner>
           {isLoading && <PageLoader />}
 
-          {!isLoading &&
+          {!isLoading && (
             <>
               <header>
                 <h1 className="sr-only">Resume</h1>
@@ -227,9 +227,9 @@ export default function PageResume() {
                 </section>
               </Page>
             </>
-          }
+          )}
         </PageLayoutInner>
-      </PageLayout >
+      </PageLayout>
     </>
   );
 }; 

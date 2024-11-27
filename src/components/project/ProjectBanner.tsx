@@ -17,7 +17,7 @@ const Outer = styled.div`
   );
 `;
 const Inner = styled.div`
-  color: rgb(var(--rgb-white));
+  color: rgb(var(--color-white));
   font-size: var(--text-xs);
   text-transform: uppercase;
   font-weight: var(--text-bold);
@@ -26,9 +26,7 @@ const Inner = styled.div`
 export default function ProjectBanner() {
   return (
     <Outer>
-      <Inner>
-        Coming Soon!
-      </Inner>
+      <Inner>Coming Soon!</Inner>
     </Outer>
   );
 }

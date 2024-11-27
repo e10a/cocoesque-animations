@@ -18,7 +18,7 @@ const GetInTouchSection = styled.section`
     var(--gradient-rb),
     var(--gradient-indigo-pink)
   );
-  color: rgb(var(--rgb-white));
+  color: rgb(var(--color-white));
 `;
 const ProjectsSection = styled.section`
   padding: var(--space-10) 0;
@@ -29,7 +29,7 @@ const SkillsSection = styled.section`
     var(--gradient-x),
     var(--gradient-indigo-teal)
   );
-  color: rgb(var(--rgb-white));
+  color: rgb(var(--color-white));
 `;
 const AboutSection = styled.section`
   padding: var(--space-10) var(--space-4);
@@ -37,7 +37,7 @@ const AboutSection = styled.section`
     var(--gradient-x),
     var(--gradient-indigo-teal)
   );
-  color: rgb(var(--rgb-white));
+  color: rgb(var(--color-white));
 `;
 const PageLoaderContainer = styled.div`
   padding: var(--space-8) 0;
@@ -131,22 +131,24 @@ export default function HomeBelowTheFold() {
                 <p>What&apos;s been keeping me busy</p>
               </header>
 
-              <ProjectCarousel projects={visibleProjects.filter(
-                (project) => !project.fields.comingSoon
-              )} />
+              <ProjectCarousel
+                projects={visibleProjects.filter(project => !project.fields.comingSoon)}
+              />
             </section>
           </ProjectsSection>
 
-          <ProjectsSection>
+          <ProjectsSection
+            style={{ backgroundColor: "rgb(var(--color-slate-50))" }}
+          >
             <section>
               <header>
                 <h2>Coming Soon</h2>
                 <p>Presentation for these projects are in the works. Stay tuned!</p>
               </header>
 
-              <ProjectCarousel projects={visibleProjects.filter(
-                (project) => project.fields.comingSoon
-              )} />
+              <ProjectCarousel
+                projects={visibleProjects.filter(project => project.fields.comingSoon)}
+              />
             </section>
           </ProjectsSection>
 

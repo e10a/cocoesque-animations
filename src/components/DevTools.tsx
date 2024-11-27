@@ -16,11 +16,11 @@ const Outer = styled.div`
 const Inner = styled.div`
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
-  background-color: rgba(var(--rgb-gray-500) / 0.8);
+  background-color: rgba(var(--color-gray-500) / 0.8);
 
   font-family: var(--font-mono);
   font-size: var(--text-tiniest);
-  color: rgb(var(--rgb-white));
+  color: rgb(var(--color-white));
 
   display: flex;
   flex-direction: column;

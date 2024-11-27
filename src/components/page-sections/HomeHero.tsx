@@ -9,7 +9,7 @@ const Outer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: rgb(var(--rgb-white));
+  color: rgb(var(--color-white));
   text-align: center;
   gap: var(--space-3);
 `;
