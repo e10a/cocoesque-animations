@@ -13,7 +13,7 @@ const NavContainer = styled.div`
   left: 0;
   width: 100%;
   z-index: 20;
-  box-shadow: 0 0 5px rgba(var(--rgb-gray-950), 0.4);
+  box-shadow: 0 0 5px rgba(var(--rgb-gray-950) / 0.4);
 `;
 const NavContainerInset = styled.div`
   position: absolute;
@@ -29,7 +29,7 @@ const Page = styled.section`
   background-color: rgb(var(--rgb-white));
   border-radius: var(--space);
   border: 1px solid rgb(var(--rgb-gray-300));
-  box-shadow: 0 0 1px rgba(var(--rgb-gray-950), 0.2);
+  box-shadow: 0 0 1px rgba(var(--rgb-gray-950) / 0.2);
   color: rgb(51 65 85 / 1);
   color: rgb(71 85 105 / 1);
   display: flex;

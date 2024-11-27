@@ -43,7 +43,7 @@ const CtaLink = styled.a`
     position: absolute;
     top: 0;
     left: 0;
-    border-left: 1px solid rgba(var(--rgb-white), 0.3);
+    border-left: 1px solid rgba(var(--rgb-white) / 0.3);
     margin-left: calc(0px - var(--space-4));
   }
 `;

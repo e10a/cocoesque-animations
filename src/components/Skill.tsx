@@ -3,9 +3,9 @@ import { Skill as SkillType } from "@/types/ContentfulData";
 
 const Outer = styled.div`
   backdrop-filter: blur(5px);
-  background-color: rgba(var(--rgb-white), 0.3);
+  background-color: rgba(var(--rgb-white) / 0.3);
   border-radius: var(--space-3);
-  box-shadow: 0 0 0 2px rgba(var(--rgb-black), 0.05);
+  box-shadow: 0 0 0 2px rgba(var(--rgb-black) / 0.05);
   display: flex;
   flex-direction: column;
   gap: var(--space);

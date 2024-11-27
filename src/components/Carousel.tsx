@@ -6,7 +6,7 @@ import { styled } from "@linaria/react";
 import { css } from "@linaria/core";
 
 const arrowButton = css`
-  box-shadow: 0 0 3px rgba(var(--rgb-black), 0.2);
+  box-shadow: 0 0 3px rgba(var(--rgb-black) / 0.2);
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -14,7 +14,7 @@ const arrowButton = css`
   margin: 0 var(--space-4);
 
   &:hover {
-    box-shadow: 0 0 5px rgba(var(--rgb-black), 0.8);
+    box-shadow: 0 0 5px rgba(var(--rgb-black) / 0.8);
     filter: brightness(1.5);
   }
 `;

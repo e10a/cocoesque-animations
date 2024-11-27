@@ -21,13 +21,13 @@
 
 @keyframes nav--bg {
   0% {
-    background-color: rgba(var(--rgb-white), 0);
+    background-color: rgba(var(--rgb-white) / 0);
   }
   98% {
-    background-color: rgba(var(--rgb-white), 0.3);
+    background-color: rgba(var(--rgb-white) / 0.3);
   }
   100% {
-    background-color: rgba(var(--rgb-white), 0.8);
+    background-color: rgba(var(--rgb-white) / 0.8);
   }
 }
 

@@ -26,7 +26,7 @@ const ColumnInner = styled.div`
   justify-content: center;
 `;
 const ShadowTop = styled.div`
-  box-shadow: 0 0 4px 1px rgba(var(--rgb-black), 0.8);
+  box-shadow: 0 0 4px 1px rgba(var(--rgb-black) / 0.8);
   position: absolute;
   top: 0;
   left: 0;
@@ -34,7 +34,7 @@ const ShadowTop = styled.div`
   z-index: 1;
 `;
 const ShadowBottom = styled.div`
-  box-shadow: 0 0 4px 1px rgba(var(--rgb-black), 0.8);
+  box-shadow: 0 0 4px 1px rgba(var(--rgb-black) / 0.8);
   position: absolute;
   bottom: 0;
   left: 0;

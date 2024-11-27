@@ -11,7 +11,7 @@
 
 body {
   background-color: rgb(var(--rgb-indigo-500));
-  color: rgba(var(--rgb-black));
+  color: rgb(var(--rgb-black));
   font-family: var(--font-primary);
 }
 

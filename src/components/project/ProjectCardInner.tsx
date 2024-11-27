@@ -11,8 +11,8 @@ const ProjectOuter = styled.div`
   width: 100%;
   background-image: linear-gradient(
     to right bottom,
-    rgb(6, 182, 212),
-    rgb(236, 72, 153)
+    rgb(6 182 212),
+    rgb(236 72 153)
   );
 `;
 const ProjectImage = styled.div`
@@ -25,8 +25,8 @@ const ProjectContent = styled.div`
   backdrop-blur: blur(12px);
   background-image: linear-gradient(
     to right bottom,
-    rgba(79, 70, 229, 0.9),
-    rgba(13, 148, 136, 0.4)
+    rgba(79 70 229 / 0.9),
+    rgba(13 148 136 / 0.4)
   );
   color: rgb(var(--rgb-white));
   display: flex;
@@ -71,7 +71,11 @@ export default function ProjectCardInner({ project }: { project?: Project }) {
         <ProjectImage style={{ backgroundImage: `url(${coverImageUrl})` }} />
       )}
 
-      {comingSoon && <ProjectBanner />}
+      {comingSoon &&
+      <>
+        <div data-view-animate="coming_soon_projects" />
+        <ProjectBanner />
+      </>}
 
       <ProjectContent>
         <h3>{displayTitle}</h3>
