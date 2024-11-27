@@ -87,8 +87,6 @@ export default function HomeSkills({ skills }: SkillsType) {
 
   return (
     <SkillsContainer
-      data-animate="skills_container"
-      data-timeline="skills_container"
       data-cols={numberOfColumns}
       data-items={itemsPerCol}
       ref={containerRef}
@@ -102,7 +100,7 @@ export default function HomeSkills({ skills }: SkillsType) {
             const columnNumber = index + 1;
             const startPosition = index * itemsPerCol;
             const endPosition = startPosition + itemsPerCol;
-            const nthValue = index % 2 as 0 ? "even" : "odd";
+            const nthValue = ((index % 2) as 0) ? "even" : "odd";
             const iterations = [1, 2];
             const slicedSkills = skills.slice(startPosition, endPosition);
 
@@ -111,19 +109,18 @@ export default function HomeSkills({ skills }: SkillsType) {
                 key={`column-${columnNumber}`}
                 data-col={`${columnNumber} of ${numberOfColumns}`}
               >
-                <ColumnInner data-animate={`column_inner_${nthValue}`}>
-                  {
-                    iterations.map((iteration: number) =>
-                      slicedSkills
-                        .map((skill) => <Skill key={`${iteration}-${skill.sys.id}`} {...skill} />)
-                    )
-                  }
+                <ColumnInner data-scroll-animate={`column_inner_${nthValue}`}>
+                  {iterations.map((iteration: number) =>
+                    slicedSkills.map((skill) => (
+                      <Skill key={`${iteration}-${skill.sys.id}`} {...skill} />
+                    ))
+                  )}
                 </ColumnInner>
               </ColumnOuter>
-            )
+            );
           })}
 
       <ShadowBottom />
     </SkillsContainer>
   );
-};
+}

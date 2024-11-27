@@ -1,4 +1,4 @@
-[data-animate="column_inner_odd"] {
+[data-scroll-animate="column_inner_odd"] {
   animation-timeline: scroll(root);
   /*  */
   animation-name: column_inner_odd;
@@ -6,7 +6,7 @@
   animation-fill-mode: forwards;
   animation-timing-function: ease-out;
 }
-[data-animate="column_inner_even"] {
+[data-scroll-animate="column_inner_even"] {
   animation-timeline: scroll(root);
   /*  */
   animation-name: column_inner_even;

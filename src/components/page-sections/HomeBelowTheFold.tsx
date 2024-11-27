@@ -157,7 +157,7 @@ export default function HomeBelowTheFold() {
                 <p>What&apos;s in my tool belt</p>
               </header>
 
-              <div data-animate="home_section_contents">
+              <div data-view-animate="home_section_contents">
                 <HomeSkills
                   skills={
                     skills.filter(

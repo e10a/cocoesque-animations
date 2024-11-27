@@ -1,0 +1,45 @@
+[data-view-timeline="coming_soon_projects"] {
+  view-timeline-name: --coming_soon_projects;
+  animation-timeline: view();
+}
+
+/* animation-timeline: scroll(root); */
+
+[data-view-animate="coming_soon_projects"]:before {
+  animation-timeline: --coming_soon_projects;
+  /*  */
+  animation-name: coming_soon_project;
+  /*  */
+  animation-fill-mode: forwards;
+  animation-range: cover 90% cover 95%;
+  animation-timing-function: ease-out;
+  /*  */
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  /*  */
+  background-color: black;
+}
+/* background-color: rgba(var(--rgb-black), 1); */
+/* backdrop-filter: blur(2.5px); */
+
+@keyframes coming_soon_projects {
+  0% {
+    background-color: green;
+    /* background-color: rgba(var(--rgb-black), 0.8); */
+    /* backdrop-filter: blur(2.5px); */
+  }
+
+  50% {
+    /* background-color: rgba(var(--rgb-black), 0); */
+    /* backdrop-filter: blur(0); */
+  }
+
+  100% {
+    background-color: red;
+    /* background-color: rgba(var(--rgb-black), 0.8); */
+    /* backdrop-filter: blur(2.5px); */
+  }
+}

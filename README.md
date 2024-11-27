@@ -9,8 +9,13 @@
 Data attributes to specify timeline and animated elements to keep animation separate from styling.
 
 ```css
-data-timeline="parent_element"
-data-animate="child_element"
+/* Scroll */
+data-scroll-timeline="parent_element"
+data-scroll-animate="child_element"
+
+/* View */
+data-view-timeline="parent_element"
+data-view-animate="child_element"
 ```
 
 #### Polyfill

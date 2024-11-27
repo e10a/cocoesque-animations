@@ -1,8 +1,8 @@
-[data-timeline="above_the_fold"] {
+[data-view-timeline="above_the_fold"] {
   view-timeline-name: --above_the_fold;
   animation-timeline: view();
 }
-[data-animate="nav"] {
+[data-view-animate="nav"] {
   animation-timeline: --above_the_fold;
   /*  */
   animation-fill-mode: forwards;
@@ -10,7 +10,7 @@
   animation-range: cover 90% cover 95%;
   animation-timing-function: linear;
 }
-[data-animate="nav__inner"] {
+[data-view-animate="nav__inner"] {
   animation-timeline: --above_the_fold;
   /*  */
   animation-fill-mode: backwards;

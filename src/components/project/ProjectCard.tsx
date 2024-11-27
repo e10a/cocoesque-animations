@@ -16,11 +16,11 @@ const ProjectContainer = styled.div`
     height: 300px;
   }
 
-  &:has( > div:first-child) {
+  &:has(> div:first-child) {
     border: 4px solid rgba(var(--rgb-fuchsia-500), 0.8);
   }
 
-  &:has( > a:first-child) {
+  &:has(> a:first-child) {
     box-shadow: 0 0 3px rgba(var(--rgb-black), 0.2);
 
     &:hover {
@@ -40,26 +40,31 @@ export default function ProjectCard({ project }: { project?: ProjectType }) {
       )}
 
       {project?.fields && project?.fields.comingSoon && (
-        <ProjectContainer>
-          <div title={project?.fields.displayTitle}>
+        <ProjectContainer data-view-timeline="coming_soon_projects">
+          <div
+            title={project?.fields.displayTitle}
+            data-view-animate="coming_soon_projects"
+          >
             <ProjectCardInner project={project} />
           </div>
         </ProjectContainer>
       )}
 
-      {project?.fields && !project?.fields.comingSoon && project?.fields.externalLink && (
-        <ProjectContainer>
-          <a
-            role="button"
-            href={project?.fields.externalLink}
-            target="_blank"
-            title={project?.fields.displayTitle}
-            rel="noreferrer"
-          >
-            <ProjectCardInner project={project} />
-          </a>
-        </ProjectContainer>
-      )}
+      {project?.fields &&
+        !project?.fields.comingSoon &&
+        project?.fields.externalLink && (
+          <ProjectContainer>
+            <a
+              role="button"
+              href={project?.fields.externalLink}
+              target="_blank"
+              title={project?.fields.displayTitle}
+              rel="noreferrer"
+            >
+              <ProjectCardInner project={project} />
+            </a>
+          </ProjectContainer>
+        )}
     </>
   );
 }

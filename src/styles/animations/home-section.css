@@ -1,5 +1,4 @@
-/* view-timeline-name: --home_section_contents; */
-[data-animate="home_section_contents"] {
+[data-view-animate="home_section_contents"] {
   animation-timeline: view();
   /*  */
   animation-name: home_section_contents;

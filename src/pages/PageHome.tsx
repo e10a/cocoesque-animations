@@ -72,7 +72,10 @@ export default function PageHome() {
     <>
       <PageLayout>
         <div id="page-home">
-          <AboveTheFold data-timeline="above_the_fold" data-location-marker-parent>
+          <AboveTheFold
+            data-view-timeline="above_the_fold"
+            data-location-marker-parent
+          >
             <HomeHero
               title="Ellen Shimada"
               subtitle="Software Engineer • UI/UX Design Lead"
@@ -84,16 +87,19 @@ export default function PageHome() {
               <Nav />
             </NavContainer>
 
-            <LocationMarker id="projects" style={{ marginBottom: "var(--space-12)", bottom: 0 }} />
+            <LocationMarker
+              id="projects"
+              style={{ marginBottom: "var(--space-12)", bottom: 0 }}
+            />
           </AboveTheFold>
 
-          {!isLoading &&
+          {!isLoading && (
             <div id="below-the-fold">
               <HomeBelowTheFold />
             </div>
-          }
+          )}
         </div>
       </PageLayout>
     </>
   );
-};
+}
