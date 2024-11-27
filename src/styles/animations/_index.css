@@ -8,16 +8,16 @@
 
 /* Default Duration - necessary for Firefox */
 [data-view-timeline],
-[data-view-timeline],
-[data-scroll-animate],
+[data-view-animate],
+[data-scroll-timeline],
 [data-scroll-animate] {
   animation-duration: 100ms;
 }
 
 /* Default Range - necessary for polyfill */
 [data-view-timeline],
-[data-view-timeline],
-[data-scroll-animate],
+[data-view-animate],
+[data-scroll-timeline],
 [data-scroll-animate] {
   animation-range: normal;
 }
