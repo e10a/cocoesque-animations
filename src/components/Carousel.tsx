@@ -137,28 +137,30 @@ export default function Carousel({
   };
 
   return (
-    <Outer>
+    <>
       <Slider ref={sliderRef} {...settings}>
         {children}
       </Slider>
 
-      <ButtonContainer style={{ display: hideControls ? "none" : "flex" }}>
-        <button
-          disabled={currentSlide === 0}
-          className="button-round"
-          onClick={goBack}
-        >
-          <span className="material-symbols-rounded">chevron_left</span>
-        </button>
-
-        <button
-          disabled={currentSlide === totalSlides}
-          className="button-round"
-          onClick={goNext}
-        >
-          <span className="material-symbols-rounded">chevron_right</span>
-        </button>
-      </ButtonContainer>
-    </Outer>
+      <Outer>
+        <ButtonContainer style={{ display: hideControls ? "none" : "flex" }}>
+          <button
+            disabled={currentSlide === 0}
+            className="button-round"
+            onClick={goBack}
+          >
+            <span className="material-symbols-rounded">chevron_left</span>
+          </button>
+  
+          <button
+            disabled={currentSlide === totalSlides}
+            className="button-round"
+            onClick={goNext}
+          >
+            <span className="material-symbols-rounded">chevron_right</span>
+          </button>
+        </ButtonContainer>
+      </Outer>
+    </>
   );
 }
