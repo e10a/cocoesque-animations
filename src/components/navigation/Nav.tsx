@@ -1,6 +1,8 @@
-import NavBarBrand from "./NavBarBrand";
-import NavBarTabs from "./NavBarTabs";
+import { lazy } from "react";
 import { styled } from "@linaria/react";
+
+const NavBarBrand = lazy(() => import("@/components/navigation/NavBarBrand.tsx"));
+const NavBarTabs = lazy(() => import("@/components/navigation/NavBarTabs.tsx"));
 
 const Outer = styled.nav`
   box-shadow: 0 0 var(--space-2) rgba(var(--color-gray-950) / 0.1);

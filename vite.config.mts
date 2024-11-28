@@ -13,5 +13,16 @@ export default defineConfig({
       babelOptions: {
         presets: ["@babel/preset-typescript", "@babel/preset-react"],
       },
-    }),],
+    }),
+  ],
+
+  server: {
+    warmup: {
+      clientFiles: [
+        "./src/components/layouts/PageLayout.tsx",
+        "./src/components/navigation/Nav.tsx",
+        "./src/components/page-sections/HomeHero.tsx",
+      ],
+    },
+  },
 });

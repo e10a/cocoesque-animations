@@ -1,5 +1,7 @@
-import ContactForm from "@/components/forms/ContactForm.tsx";
+import { lazy } from "react";
 import { styled } from "@linaria/react";
+
+const ContactForm = lazy(() => import("@/components/forms/ContactForm.tsx"));
 
 const CtaContainer = styled.div`
   display: flex;

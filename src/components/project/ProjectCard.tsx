@@ -1,7 +1,9 @@
-import ProjectCardContents from "./ProjectCardContents";
-import { Project as ProjectType } from "@/types/ContentfulData.ts";
+import { Project } from "@/types/ContentfulData.ts";
+import { lazy } from "react";
 import { styled } from "@linaria/react";
 import { css } from "@linaria/core";
+
+const ProjectCardContents = lazy(() => import("@/components/project/ProjectCardContents.tsx"));
 
 const projectStyles = css`
   justify-content: end;
@@ -51,7 +53,7 @@ const ProjectCardInner = styled.div`
   width: 100%;
 `;
 
-export default function ProjectCard({ isUpcoming, project }: { isUpcoming: boolean; project?: ProjectType }) {
+export default function ProjectCard({ isUpcoming, project }: { isUpcoming: boolean; project?: Project }) {
   return (
     <>
       {!project && (

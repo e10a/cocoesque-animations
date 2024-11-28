@@ -1,4 +1,6 @@
-import PageFooter from "@/components/PageFooter.tsx";
+import { lazy } from "react";
+
+const PageFooter = lazy(() => import("@/components/PageFooter.tsx"));
 
 export default function PageLayout({ children }: { children: React.ReactNode })  {
   return (

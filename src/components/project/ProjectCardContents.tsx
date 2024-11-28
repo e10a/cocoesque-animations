@@ -1,6 +1,8 @@
-import ProjectBanner from "./ProjectBanner";
+import { lazy } from "react";
 import { Project } from "@/types/ContentfulData.ts";
 import { styled } from "@linaria/react";
+
+const ProjectBanner = lazy(() => import("@/components/project/ProjectBanner.tsx"));
 
 const ProjectImage = styled.div`
   background-size: cover;

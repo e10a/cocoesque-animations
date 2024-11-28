@@ -1,10 +1,11 @@
-import HomeBelowTheFold from "@/components/page-sections/HomeBelowTheFold.tsx";
 import HomeHero from "@/components/page-sections/HomeHero.tsx";
 import Nav from "@/components/navigation/Nav.tsx";
 import PageLayout from "@/components/layouts/PageLayout.tsx";
-import { useEffect, useState } from "react";
+import { lazy, useEffect, useState } from "react";
 import { createClient } from "contentful";
 import { styled } from "@linaria/react";
+
+const HomeBelowTheFold = lazy(() => import("@/components/page-sections/HomeBelowTheFold.tsx"));
 
 const AboveTheFold = styled.section`
   display: flex;

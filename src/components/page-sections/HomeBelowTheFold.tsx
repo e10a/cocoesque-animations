@@ -1,13 +1,14 @@
-import ProjectCarousel from "@/components/project/ProjectCarousel.tsx";
-import HomeAbout from "@/components/page-sections/HomeAbout.tsx";
-import HomeGetInTouch from "@/components/page-sections/HomeGetInTouch.tsx";
-import HomeSkills from "@/components/page-sections/HomeSkills.tsx";
-import LocationMarker from "@/components/LocationMarker.tsx";
-import PageLoader from "@/components/PageLoader.tsx";
-import { useEffect, useState } from "react";
+import { lazy, useEffect, useState } from "react";
 import { createClient } from "contentful";
 import { styled } from "@linaria/react";
 import { About, ContentfulData, Project, Skill } from "@/types/ContentfulData.ts";
+
+const ProjectCarousel = lazy(() => import("@/components/project/ProjectCarousel.tsx"));
+const PageLoader = lazy(() => import("@/components/PageLoader.tsx"));
+const HomeAbout = lazy(() => import("@/components/page-sections/HomeAbout.tsx"));
+const HomeGetInTouch = lazy(() => import("@/components/page-sections/HomeGetInTouch.tsx"));
+const HomeSkills = lazy(() => import("@/components/page-sections/HomeSkills.tsx"));
+const LocationMarker = lazy(() => import("@/components/LocationMarker.tsx"));
 
 const Outer = styled.div`
   text-align: center;
