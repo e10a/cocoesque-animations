@@ -1,166 +1,125 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useRef, useState } from "react";
 import { styled } from "@linaria/react";
-import { css } from "@linaria/core";
+import { Children, useRef } from "react";
 
-const arrowButton = css`
-  box-shadow: 0 0 3px rgba(var(--color-black) / 0.2);
-  display: flex;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
-  margin: 0 var(--space-4);
+const SliderContainer = styled.div`
+  padding: 0 var(--space-2);
 
-  &:hover {
-    box-shadow: 0 0 5px rgba(var(--color-black) / 0.8);
-    filter: brightness(1.5);
+  .slick-track {
+    display: flex;
+
+    .slick-slide {
+        height: auto;
+        display: flex;
+
+        > div {
+            display: flex;
+        }
+    }
   }
-`;
 
-const ButtonContainer = styled.div`
-  align-items: center;
-  gap: var(--space-4);
-  justify-content: center;
-`;
-const Outer = styled.div`
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  button {
+    margin: 0 var(--space-4);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    background-color: rgb(var(--color-white));
+    box-shadow: 0 0 3px rgb(var(--color-gray-500));
 
-  .slick-slider {
-    max-width: var(--space-1440px);
-    width: 100vw;
+    &:hover:not([disabled]) {
+      background-color: rgb(var(--color-white));
+      box-shadow: 0 0 5px 5px rgb(var(--color-gray-500) / 0.4);
+      transform: scale(1.2) translateY(-50%);
+    }
+
+    &.slick-arrow:before {
+      display: none;
+    }
+
+    &.slick-prev {
+      left: 0;
+      right: auto;
+    }
+
+    &.slick-next {
+      right: 0;
+      left: auto;
+    }
   }
 `;
 
 interface Props {
-  centerMode?: boolean;
-  children: React.ReactNode;
-  infinite?: boolean;
-  initialSlide?: number;
-  rows?: number;
-  slidesToShow?: number;
-  responsive?: Array<{
-    breakpoint: number;
-    settings: {
-      slidesToShow: number;
-      slidesToScroll?: number;
-      infinite?: boolean;
-      dots?: boolean;
-    };
-  }>;
-  totalSlides?: number | null;
-  hideControls?: boolean;
+  className?: string;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-export default function Carousel({
-  centerMode = false,
-  children,
-  infinite = true,
-  initialSlide = 0,
-  rows = 1,
-  slidesToShow = 3,
-  responsive = [],
-  totalSlides = null,
-  hideControls = false,
-}: Props) {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const sliderRef = useRef<Slider>(null);
+const ButtonNext = (props: Props) => {
+  if (!props) return null;
 
-  const NextArrow = (props: { onClick?: () => void }) => {
-    const { onClick } = props;
+  const { className, onClick } = props;
 
-    return (
-      <button
-        className={`button-round ${arrowButton}`}
-        disabled={currentSlide === totalSlides}
-        onClick={onClick}
-        style={{ right: 0 }}
-      >
-        <span className="material-symbols-rounded">chevron_right</span>
-      </button>
-    );
-  };
+  return (
+    <button
+      className={`button-round ${className}`}
+      onClick={onClick}
+    >
+      <span
+        className="material-symbols-rounded"
+        style={{ position: "relative", right: "-1px" }}
+      >chevron_right</span>
+    </button>
+  );
+}
 
-  const PrevArrow = (props: { onClick?: () => void }) => {
-    const { onClick } = props;
+const ButtonPrev = (props: Props) => {
+  if (!props) return null;
 
-    return (
-      <button
-        className={`button-round ${arrowButton}`}
-        disabled={currentSlide === 0}
-        onClick={onClick}
-        style={{ left: 0 }}
-      >
-        <span className="material-symbols-rounded">chevron_left</span>
-      </button>
-    );
-  };
+  const { className, onClick } = props;
 
-  const goBack = () => {
-    if (sliderRef.current) {
-      sliderRef.current.slickPrev();
-    }
-  };
+  return (
+    <button className={`button-round ${className}`} onClick={onClick}>
+      <span
+        className="material-symbols-rounded"
+        style={{ position: "relative", left: "-1px" }}
+      >chevron_left</span>
+    </button>
+  );
+}
 
-  const goNext = () => {
-    if (sliderRef.current) {
-      sliderRef.current.slickNext();
-    }
-  };
+export default function Carousel({ children }: { children: React.ReactNode }) {
+  const sliderRef = useRef<Slider | null>(null);
 
-  const handleAfterChange = (current: number) => {
-    setCurrentSlide(current);
-  };
+  const childrenCount = children ? Children.count(children) : 0;
 
   const settings = {
-    className: "cursor-grab",
-    swipeToSlide: true,
-    slideToScroll: 1,
+    centerMode: false,
+    centerPadding: "0px",
+    dots: false,
+    infinite: true,
+    initialSlide: 1,
+    rows: 1,
+    slidesToScroll: 1,
+    slidesToShow: childrenCount,
     speed: 500,
-    centerPadding: "0",
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-    initialSlide: initialSlide,
-    variableWidth: rows === 1,
-    centerMode: centerMode,
-    infinite: infinite,
-    responsive: responsive,
-    rows: rows,
-    slidesPerRow: rows > 1 ? Math.floor((totalSlides || 0) / rows) : 1,
-    slidesToShow: slidesToShow,
-    afterChange: (current: number) => handleAfterChange(current),
+    swipeToSlide: true,
+    variableWidth: true,
+    nextArrow: <ButtonNext />,
+    prevArrow: <ButtonPrev />,
   };
 
   return (
-    <>
-      <Slider ref={sliderRef} {...settings}>
-        {children}
-      </Slider>
-
-      <Outer>
-        <ButtonContainer style={{ display: hideControls ? "none" : "flex" }}>
-          <button
-            disabled={currentSlide === 0}
-            className="button-round"
-            onClick={goBack}
-          >
-            <span className="material-symbols-rounded">chevron_left</span>
-          </button>
-  
-          <button
-            disabled={currentSlide === totalSlides}
-            className="button-round"
-            onClick={goNext}
-          >
-            <span className="material-symbols-rounded">chevron_right</span>
-          </button>
-        </ButtonContainer>
-      </Outer>
-    </>
+      <SliderContainer className="slider-container">
+        <Slider
+          ref={(slider) => {
+            sliderRef.current = slider;
+          }}
+          {...settings}
+        >
+          {children}
+        </Slider>
+      </SliderContainer>
   );
 }

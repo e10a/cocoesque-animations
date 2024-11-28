@@ -1,9 +1,9 @@
+import ProjectCarousel from "@/components/project/ProjectCarousel";
 import HomeAbout from "@/components/page-sections/HomeAbout";
 import HomeGetInTouch from "@/components/page-sections/HomeGetInTouch";
 import HomeSkills from "@/components/page-sections/HomeSkills";
 import LocationMarker from "@/components/LocationMarker";
 import PageLoader from "@/components/PageLoader";
-import ProjectCarousel from "@/components/project/ProjectCarousel";
 import { useEffect, useState } from "react";
 import { createClient } from "contentful";
 import { styled } from "@linaria/react";
@@ -137,6 +137,11 @@ export default function HomeBelowTheFold() {
                 isUpcoming={false}
                 projects={visibleProjects.filter(project => !project.fields.comingSoon)}
               />
+
+              {/* <ProjectCarousel
+                isUpcoming={false}
+                projects={visibleProjects.filter(project => !project.fields.comingSoon)}
+              /> */}
             </section>
           </ProjectsSection>
 
@@ -154,10 +159,17 @@ export default function HomeBelowTheFold() {
 
               <div data-group-parent="coming_soon_projects" data-view-timeline="home-coming-soon-projects">
                 <ProjectCarousel
+                    isUpcoming={true}
+                    projects={visibleProjects.filter(project => project.fields.comingSoon)}
+                  />
+              </div>
+
+              {/* <div data-group-parent="coming_soon_projects" data-view-timeline="home-coming-soon-projects">
+                <ProjectCarousel
                   isUpcoming={true}
                   projects={visibleProjects.filter(project => project.fields.comingSoon)}
                 />
-              </div>
+              </div> */}
             </section>
           </ProjectsSection>
 
