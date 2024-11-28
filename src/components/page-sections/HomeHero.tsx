@@ -1,6 +1,4 @@
-import { FadeIn } from "@/animations/FadeIn";
 import { TypeEffect } from "@/animations/TypeEffect";
-import { WaveEffect } from "@/animations/WaveEffect";
 import { styled } from "@linaria/react";
 
 const Outer = styled.div`
@@ -100,32 +98,27 @@ export default function HomeHero({
   return (
     <>
       <Outer id="hero-inner">
-        <FadeIn>
-          <Header>
-            <Title>{title}</Title>
-            <Subtitle>{subtitle}</Subtitle>
-            <Tagline>
-              <TaglineInvisible>{tagline}</TaglineInvisible>
-              <TaglineVisible>
-                <TypeEffect text={tagline} />
-              </TaglineVisible>
-            </Tagline>
-          </Header>
-        </FadeIn>
-        <CtaWrapper>
-          {Boolean(ctas.length) && (
-            <WaveEffect delay={0.4}>
-              {ctas.map((cta) => (
-                <Cta
-                  className="button button-transparent-white"
-                  key={cta.sys.id}
-                  href={cta.fields.url}
-                >
-                  {cta.fields.text}
-                </Cta>
-              ))}
-            </WaveEffect>
-          )}
+        <Header>
+          <Title>{title}</Title>
+          <Subtitle>{subtitle}</Subtitle>
+          <Tagline>
+            <TaglineInvisible>{tagline}</TaglineInvisible>
+            <TaglineVisible>
+              <TypeEffect text={tagline} />
+            </TaglineVisible>
+          </Tagline>
+        </Header>
+
+        <CtaWrapper data-animate="home_hero_buttons">
+          {ctas.map((cta) => (
+            <Cta
+              className="button button-transparent-white"
+              key={cta.sys.id}
+              href={cta.fields.url}
+            >
+              {cta.fields.text}
+            </Cta>
+          ))}
         </CtaWrapper>
       </Outer>
     </>
