@@ -43,16 +43,12 @@ Provided by [flackr](https://github.com/flackr/scroll-timeline)
 
 ## What's next
 
-- Finish styling Projects
-- Style footer
 - Redo hero button animations
-- Add more scroll driven css animations
-- Performance optimizations
-- Tests
 
 ## What's in the backlog
 
-- ...
+- Performance optimizations
+- Tests
 
 ## Extras
 
