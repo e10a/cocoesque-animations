@@ -1,10 +1,13 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 import tsconfigPaths from "vite-tsconfig-paths";
 import wyw from "@wyw-in-js/vite";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  build: {
+    outDir: "dist" // Ensure the output directory is correct
+  },
   plugins: [
     react(),
     tsconfigPaths(),
@@ -22,6 +25,7 @@ export default defineConfig({
         "./src/components/layouts/PageLayout.tsx",
         "./src/components/navigation/Nav.tsx",
         "./src/components/page-sections/HomeHero.tsx",
+        "./src/page/PageResume.tsx",
       ],
     },
   },
