@@ -1,5 +1,6 @@
 import PageHome from "@/pages/PageHome.tsx";
 import PageResume from "@/pages/PageResume.tsx";
+import Page404 from "@/pages/Page404.tsx";
 import { Route, Routes } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react"
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<PageHome />} />
           <Route path="/resume" element={<PageResume />} />
+          <Route path="*" element={<Page404 />} />
         </Routes>
         <Analytics />
         <SpeedInsights />
