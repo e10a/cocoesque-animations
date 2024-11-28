@@ -7,9 +7,9 @@ export default function NavBarBrand() {
         <img
           className="nav-bar__logo"
           src="https://jrynlppcbsquzh8t.public.blob.vercel-storage.com/coco-icon-0jftvJAugPhOkZjuqrTNXOO2AZfcuO.svg"
-          alt="Cocoesque Logo"
-          width="36"
-          height="36"
+          alt="Cocoesque"
+          width="50"
+          height="50"
         />
       </NavLink>
     </div>
