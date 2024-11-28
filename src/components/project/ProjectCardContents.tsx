@@ -81,7 +81,7 @@ const Placeholder = ({ isUpcoming }: { isUpcoming: boolean }) => {
       <PlaceholderTitle>What&apos;s Next?</PlaceholderTitle>
 
       {buttons.map(button =>(
-        <PlaceholderSection>
+        <PlaceholderSection key={Math.random()}>
           {button.title &&
           <PlaceholderButtonTitle>{button.title}</PlaceholderButtonTitle>}
 
