@@ -19,14 +19,10 @@ export default defineConfig({
     }),
   ],
 
-  server: {
-    warmup: {
-      clientFiles: [
-        "./src/components/layouts/PageLayout.tsx",
-        "./src/components/navigation/Nav.tsx",
-        "./src/components/page-sections/HomeHero.tsx",
-        "./src/page/PageResume.tsx",
-      ],
-    },
-  },
+  // server: {
+  //   warmup: {
+  //     clientFiles: [
+  //     ],
+  //   },
+  // },
 });
