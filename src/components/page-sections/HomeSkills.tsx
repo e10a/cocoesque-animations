@@ -1,7 +1,7 @@
-import Skill from "@/components/Skill";
+import Skill from "@/components/Skill.tsx";
 import { useEffect, useRef, useState } from "react";
 import { styled } from "@linaria/react";
-import { Skills as SkillsType } from "@/types/ContentfulData";
+import { Skills as SkillsType } from "@/types/ContentfulData.ts";
 
 const SkillsContainer = styled.div`
   align-items: center;

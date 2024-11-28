@@ -1,5 +1,5 @@
-import GitHub from "@/svgs/brands/GitHub";
-import LinkedIn from "@/svgs/brands/LinkedIn";
+import GitHub from "@/svgs/brands/GitHub.tsx";
+import LinkedIn from "@/svgs/brands/LinkedIn.tsx";
 import { styled } from "@linaria/react";
 
 const FooterContainer = styled.div`

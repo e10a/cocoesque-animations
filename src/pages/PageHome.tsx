@@ -1,7 +1,7 @@
-import HomeBelowTheFold from "@/components/page-sections/HomeBelowTheFold";
-import HomeHero from "@/components/page-sections/HomeHero";
-import Nav from "@/components/navigation/Nav";
-import PageLayout from "@/components/layouts/PageLayout";
+import HomeBelowTheFold from "@/components/page-sections/HomeBelowTheFold.tsx";
+import HomeHero from "@/components/page-sections/HomeHero.tsx";
+import Nav from "@/components/navigation/Nav.tsx";
+import PageLayout from "@/components/layouts/PageLayout.tsx";
 import { useEffect, useState } from "react";
 import { createClient } from "contentful";
 import { styled } from "@linaria/react";
@@ -13,7 +13,7 @@ const AboveTheFold = styled.section`
   justify-content: center;
   max-height: 90vh;
   min-height: 90vh;
-  padding: var(--space-8) 0 var(--space-8);
+  padding: var(--space-32) 0;
   width: 100%;
   background-image: linear-gradient(
     var(--gradient-rb),

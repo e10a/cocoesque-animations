@@ -1,5 +1,5 @@
-import TimelineTracker from "@/dev-tools/TimelineTracker";
-import Responsive from "@/dev-tools/Responsive";
+import TimelineTracker from "@/dev-tools/TimelineTracker.tsx";
+import Responsive from "@/dev-tools/Responsive.tsx";
 import { styled } from "@linaria/react";
 
 const Outer = styled.div`

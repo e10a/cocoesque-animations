@@ -1,5 +1,5 @@
 import ProjectBanner from "./ProjectBanner";
-import { Project } from "@/types/ContentfulData";
+import { Project } from "@/types/ContentfulData.ts";
 import { styled } from "@linaria/react";
 
 const ProjectImage = styled.div`

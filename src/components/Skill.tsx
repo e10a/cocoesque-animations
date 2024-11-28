@@ -1,5 +1,5 @@
 import { styled } from "@linaria/react";
-import { Skill as SkillType } from "@/types/ContentfulData";
+import { Skill as SkillType } from "@/types/ContentfulData.ts";
 
 const Outer = styled.div`
   backdrop-filter: blur(5px);

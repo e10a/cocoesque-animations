@@ -1,5 +1,5 @@
-import { useResponsive } from "@/context/ResponsiveContext";
-import { ResponsiveType, Screen } from "@/types/ResponsiveData";
+import { useResponsive } from "@/context/ResponsiveContext.tsx";
+import { ResponsiveType, Screen } from "@/types/ResponsiveData.ts";
 
 const ScreenItem = (screen: Screen) => (
   <div className="dev-tools-item">

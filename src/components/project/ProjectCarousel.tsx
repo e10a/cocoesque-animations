@@ -1,6 +1,6 @@
-import Carousel from "@/components/Carousel";
-import ProjectCard from "@/components/project/ProjectCard";
-import { Project as ProjectType } from "@/types/ContentfulData";
+import Carousel from "@/components/Carousel.tsx";
+import ProjectCard from "@/components/project/ProjectCard.tsx";
+import { Project as ProjectType } from "@/types/ContentfulData.ts";
 import {styled} from  "@linaria/react";
 
 const CarouselItem = styled.div`

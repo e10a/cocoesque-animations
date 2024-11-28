@@ -1,4 +1,4 @@
-import { Experience } from "@/types/ResumeData";
+import { Experience } from "@/types/ResumeData.ts";
 import { styled } from "@linaria/react";
 
 const Container = styled.div`

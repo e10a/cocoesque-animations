@@ -1,5 +1,5 @@
 import ProjectCardContents from "./ProjectCardContents";
-import { Project as ProjectType } from "@/types/ContentfulData";
+import { Project as ProjectType } from "@/types/ContentfulData.ts";
 import { styled } from "@linaria/react";
 import { css } from "@linaria/core";
 

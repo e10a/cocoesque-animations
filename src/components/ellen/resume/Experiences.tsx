@@ -1,4 +1,4 @@
-import { Experience } from "@/types/ContentfulData";
+import { Experience } from "@/types/ContentfulData.ts";
 
 export const Experiences = ({ experiences }: { experiences: Experience[] }) => {
   return (

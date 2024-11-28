@@ -1,6 +1,6 @@
 import { useMediaQuery } from "react-responsive";
 import { createContext, useContext, useEffect, useState } from "react";
-import { ResponsiveType } from "@/types/ResponsiveData";
+import { ResponsiveType } from "@/types/ResponsiveData.ts";
 
 const Context = createContext<ResponsiveType>(
   {} as ResponsiveType

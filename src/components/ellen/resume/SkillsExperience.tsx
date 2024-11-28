@@ -1,4 +1,4 @@
-import { ExperienceSkill } from "@/types/ContentfulData";
+import { ExperienceSkill } from "@/types/ContentfulData.ts";
 
 export const SkillsExperience = ({ skills }: { skills: ExperienceSkill[] }) => {
   return (

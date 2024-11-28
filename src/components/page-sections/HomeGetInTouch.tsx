@@ -1,4 +1,4 @@
-import ContactForm from "@/components/forms/ContactForm";
+import ContactForm from "@/components/forms/ContactForm.tsx";
 import { styled } from "@linaria/react";
 
 const CtaContainer = styled.div`
