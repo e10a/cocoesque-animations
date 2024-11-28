@@ -97,25 +97,6 @@ export default function HomeHero({
     };
   }[];
 }) {
-  const handleClick = (
-    cta: { fields: { url: string } },
-    event: React.MouseEvent
-  ) => {
-    const { url } = cta.fields;
-
-    if (url.startsWith("#")) {
-      event.preventDefault();
-
-      const target = document.querySelector(url);
-
-      if (target) {
-        target.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }
-    }
-  };
   return (
     <>
       <Outer id="hero-inner">
@@ -139,7 +120,6 @@ export default function HomeHero({
                   className="button button-transparent-white"
                   key={cta.sys.id}
                   href={cta.fields.url}
-                  onClick={(event) => handleClick(cta, event)}
                 >
                   {cta.fields.text}
                 </Cta>
