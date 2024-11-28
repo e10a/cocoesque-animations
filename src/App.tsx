@@ -2,6 +2,7 @@ import PageHome from "@/pages/PageHome.tsx";
 import PageResume from "@/pages/PageResume.tsx";
 import { Route, Routes } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react"
 import { Provider as ResponsiveProvider } from "@/context/ResponsiveContext.tsx";
 import { lazy } from "react";
 
@@ -15,9 +16,10 @@ function App() {
           <Route path="/" element={<PageHome />} />
           <Route path="/resume" element={<PageResume />} />
         </Routes>
+        <Analytics />
+        <SpeedInsights />
         {import.meta.env.VITE_APP_ENV !== "production" && <DevTools />}
       </ResponsiveProvider>
-      <Analytics />
     </>
   );
 }
