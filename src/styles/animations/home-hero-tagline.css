@@ -1,0 +1,19 @@
+[data-animate="home_hero_tagline"] {
+  animation: home_hero_tagline;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  animation-duration: 1.25s;
+  animation-delay: 0;
+}
+
+@keyframes home_hero_tagline {
+  0% {
+    opacity: 0.3;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}

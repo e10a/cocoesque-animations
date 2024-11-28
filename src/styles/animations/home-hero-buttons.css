@@ -1,10 +1,9 @@
 [data-animate="home_hero_buttons"] {
   .button {
-    animation-range: 10% 90%;
-    animation-timing-function: ease-out;
-    animation: home_hero_buttons 10s linear 1;
+    animation: home_hero_buttons;
     animation-fill-mode: forwards;
-    animation-duration: 0.8s;
+    animation-timing-function: linear;
+    animation-duration: 1.25s;
     opacity: 0;
   }
 
@@ -13,7 +12,7 @@
   }
 
   .button:nth-child(2) {
-    animation-delay: 0.3s;
+    animation-delay: 0.2s;
   }
 }
 
@@ -31,6 +30,12 @@
     transform: translateX(10px);
   }
   90% {
+    transform: translateX(-4px);
+  }
+  93% {
+    transform: translateX(2px);
+  }
+  98% {
     transform: translateX(-2px);
   }
   100% {

@@ -103,7 +103,7 @@ export default function HomeHero({
           <Subtitle>{subtitle}</Subtitle>
           <Tagline>
             <TaglineInvisible>{tagline}</TaglineInvisible>
-            <TaglineVisible>
+            <TaglineVisible data-animate="home_hero_tagline">
               <TypeEffect text={tagline} />
             </TaglineVisible>
           </Tagline>
