@@ -22,6 +22,7 @@ const Outer = styled.div`
   }
 `;
 const Inner = styled.section`
+  padding: 0 var(--space-4);
   max-width: var(--space-960px);
   margin: 0 auto;
   display: flex;
