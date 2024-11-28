@@ -130,12 +130,9 @@ export default function PageResume() {
       if (!isMounted) {
         return;
       }
+
       if (error) {
         throw new Error(error);
-      }
-
-      if (data) {
-        console.log("data", data);
       }
 
       setData(data);
