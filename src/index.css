@@ -12,9 +12,6 @@
 /* Theme */
 @import "./styles/theme.css";
 
-/* Groups */
-@import "./styles/groups.css";
-
 /* Animations */
 @import "./styles/animations.css";
 
