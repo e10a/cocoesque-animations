@@ -1,15 +1,8 @@
-// import PageHome from "@/pages/PageHome.tsx";
-// import PageResume from "@/pages/PageResume.tsx";
-import Page404 from "@/pages/Page404.tsx";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Provider as ResponsiveProvider } from "@/context/ResponsiveContext.tsx";
 import { lazy, Suspense } from "react";
-// import PageAnimations from "./pages/css/PageAnimations";
-// import PagePrototypePattern from "./pages/js/design-patterns/PagePrototypePattern";
-// import PageAdapterPattern from "./pages/js/design-patterns/PageAdapterPattern";
-// import PageDecoratorPattern from "./pages/js/design-patterns/PageDecoratorPattern";
 
 const DevTools = lazy(() => import("@/components/DevTools.tsx"));
 
