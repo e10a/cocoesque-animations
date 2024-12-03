@@ -2,7 +2,7 @@ import { lazy } from "react";
 import { styled } from "@linaria/react";
 
 const Outer = styled.div`
-  minHeight: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 `;
