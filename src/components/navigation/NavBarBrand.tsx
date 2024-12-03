@@ -17,6 +17,7 @@ export default function NavBarBrand() {
       <NavLink to="/" onClick={handleClick}>
         <img
           className="nav-bar__logo"
+          loading="lazy"
           src="https://jrynlppcbsquzh8t.public.blob.vercel-storage.com/coco-icon-0jftvJAugPhOkZjuqrTNXOO2AZfcuO.svg"
           alt="Cocoesque"
           width="36"

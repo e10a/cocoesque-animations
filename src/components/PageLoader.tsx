@@ -3,7 +3,7 @@ export default function PageLoader() {
 
   return (
     <div className="loader">
-      <img src={loadingImg} alt="Loading..." />
+      <img src={loadingImg} alt="Loading..." loading="lazy"/>
     </div>
   );
 };
