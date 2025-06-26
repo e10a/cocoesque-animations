@@ -2,10 +2,10 @@ export const getResume = async () => {
     return {
       error: "",
       data: {
-        full_name: "Ellen Shimada",
-        tag_line: "Full Stack Software Engineer | UI/UX Design Lead",
+        full_name: "Ellen Kohler",
+        tag_line: "UX Engineer",
         about:
-          "Seasoned software engineer with over 10 years of experience, specializing in delivering high-impact features from ideation to implementation. Proven ability to lead projects end-to-end, mentor fellow engineers, and collaborate across teams to drive results. Experienced in creating scalable solutions that solve real user needs, with a strong focus on product outcomes and data-driven decision-making. Excited to contribute by owning technical challenges, fostering a culture of collaboration, and driving meaningful product improvements.",
+          "Seasoned engineer with over 10 years of experience specializing in delivering high-impact features from ideation to implementation. Proven ability to lead projects end-to-end, mentor peers, and collaborate across teams to drive results. Experiences in creating scalable solutions that solve real user needs, with a strong focus on product outcomes and data-driven decision-making. Excited to contribute by owning technical and design challenges, fostering a culture of collaboration, and driving meaningful product improvements.",
         contact: {
           phone_number: "949-697-2186",
           email_address: "ellenshimada@gmail.com",
@@ -136,6 +136,21 @@ export const getResume = async () => {
         experiences: [
           {
             id: 1,
+            title: "UX Engineer Contractor",
+            company: "Milo",
+            location: "San Francisco, CA",
+            years: "2025, February - March",
+            is_remote: true,
+            items: [
+              "Sole developer to re-engineer existing linear onboarding code base to a modularized set of components. Introduced a simple json driven interface for non-developers to have the ability to dictate modifications, re-ordering, and addition of new steps based on various step types.",
+              "Adopted existing landing page code progress from another developer to quickly implement the remaining 95% of work needed to deploy the new landing page to production including optimization of visual assets for different screen sizes and pixel densities, cross-reference checks across provided design and design system to identify reusable code and elements, simultaneous inspection across mobile and desktop to ensure cohesive quality and experience of the finished product.",
+              "Thoughtfully introduced code changes without compromising the integrity of the existing codebase.",
+              "Implemented A/B testing for UI/UX experiments, collecting data to guide product decisions and optimize the user journey.",
+              "Developed clear documentation of key information and changes for a smooth hand-off.",
+            ],
+          },
+          {
+            id: 2,
             title: "Full Stack Engineer • Lead UI/UX Designer",
             company: "Rocksbox, Inc.",
             location: "San Francisco, CA",
@@ -150,7 +165,7 @@ export const getResume = async () => {
             ],
           },
           {
-            id: 2,
+            id: 3,
             title: "Senior Software Engineer • Lead Designer",
             years: "2022 - 2023",
             company: "Amava, Inc.",
@@ -163,7 +178,7 @@ export const getResume = async () => {
             ],
           },
           {
-            id: 3,
+            id: 4,
             title: "Software Engineer",
             years: "2020 - 2021",
             company: "Shelterluv, Inc.",
