@@ -1,4 +1,6 @@
-import NavBarTab from "./NavBarTab";
+import { lazy } from "react";
+
+const NavBarTab = lazy(() => import("@/components/navigation/NavBarTab.tsx"));
 
 export default function NavBarTabs() {
   return (

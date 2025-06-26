@@ -1,19 +1,21 @@
-import Carousel from "@/components/Carousel";
-import ProjectCard from "@/components/project/ProjectCard";
-import { Project as ProjectType } from "@/types/ContentfulData";
-import {styled} from  "@linaria/react";
+import { lazy } from "react";
+import { Project } from "@/types/ContentfulData.ts";
+import { styled } from  "@linaria/react";
+
+const Carousel = lazy(() => import("@/components/Carousel.tsx"));
+const ProjectCard = lazy(() => import("@/components/project/ProjectCard.tsx"));
 
 const CarouselItem = styled.div`
   margin:var(--space-8) var(--space-2);
 `;
 
-export default function ProjectCarousel({ isUpcoming, projects }: { isUpcoming: boolean; projects: ProjectType[] }) {
+export default function ProjectCarousel({ isUpcoming, projects }: { isUpcoming: boolean; projects: Project[] }) {
   if (!projects) return;
 
   return (
     <Carousel>
       {Object.values(projects).map(
-        (project: ProjectType) => (
+        (project: Project) => (
           <CarouselItem key={project.sys.id}>
             <ProjectCard isUpcoming={isUpcoming} project={project} />
           </CarouselItem>

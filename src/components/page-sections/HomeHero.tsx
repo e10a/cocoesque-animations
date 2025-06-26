@@ -1,4 +1,3 @@
-import { TypeEffect } from "@/animations/TypeEffect";
 import { styled } from "@linaria/react";
 
 const Outer = styled.div`
@@ -37,24 +36,12 @@ const Subtitle = styled.h2`
     font-size: var(--text-lg);
   }
 `;
-const Tagline = styled.div`
-  position: relative;
+const Tagline = styled.p`
+  line-height: 160%;
+
   @media only screen and (width >=768px) {
     font-size: var(--text-2xl);
   }
-`;
-const TaglineInvisible = styled.p`
-  line-height: 160%;
-  visibility: hidden;
-  position: relative;
-  z-index: -1;
-`;
-const TaglineVisible = styled.p`
-  line-height: 160%;
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
 `;
 const CtaWrapper = styled.div`
   display: flex;
@@ -101,12 +88,7 @@ export default function HomeHero({
         <Header>
           <Title>{title}</Title>
           <Subtitle>{subtitle}</Subtitle>
-          <Tagline>
-            <TaglineInvisible>{tagline}</TaglineInvisible>
-            <TaglineVisible data-animate="home_hero_tagline">
-              <TypeEffect text={tagline} />
-            </TaglineVisible>
-          </Tagline>
+          <Tagline>{tagline}</Tagline>
         </Header>
 
         <CtaWrapper data-animate="home_hero_buttons">

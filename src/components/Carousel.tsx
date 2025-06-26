@@ -35,16 +35,12 @@ const SliderContainer = styled.div`
       transform: scale(1.2) translateY(-50%);
     }
 
-    &.slick-arrow:before {
-      display: none;
-    }
-
-    &.slick-prev {
+    &:first-child {
       left: 0;
       right: auto;
     }
 
-    &.slick-next {
+    &:last-child {
       right: 0;
       left: auto;
     }
@@ -59,11 +55,11 @@ interface Props {
 const ButtonNext = (props: Props) => {
   if (!props) return null;
 
-  const { className, onClick } = props;
+  const { onClick } = props;
 
   return (
     <button
-      className={`button-round ${className}`}
+      className="button-round"
       onClick={onClick}
     >
       <span
@@ -77,10 +73,10 @@ const ButtonNext = (props: Props) => {
 const ButtonPrev = (props: Props) => {
   if (!props) return null;
 
-  const { className, onClick } = props;
+  const { onClick } = props;
 
   return (
-    <button className={`button-round ${className}`} onClick={onClick}>
+    <button className="button-round" onClick={onClick}>
       <span
         className="material-symbols-rounded"
         style={{ position: "relative", left: "-1px" }}

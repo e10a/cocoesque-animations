@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import Nav from "@/components/navigation/Nav";
-import PageLoader from "@/components/PageLoader";
-import PageLayout from "@/components/layouts/PageLayout";
-import ResumeExperiences from "@/components/resume/ResumeExperiences";
-import { getResume } from "@/services/message.service";
-import { Achievement, Resume, TechnicalSkill } from "@/types/ResumeData";
+import Nav from "@/components/navigation/Nav.tsx";
+import PageLoader from "@/components/PageLoader.tsx";
+import PageLayout from "@/components/layouts/PageLayout.tsx";
+import ResumeExperiences from "@/components/resume/ResumeExperiences.tsx";
+import { getResume } from "@/services/message.service.js";
+import { Achievement, Resume, TechnicalSkill } from "@/types/ResumeData.ts";
 import { styled } from "@linaria/react";
 
 const NavContainer = styled.div`
@@ -130,12 +130,9 @@ export default function PageResume() {
       if (!isMounted) {
         return;
       }
+
       if (error) {
         throw new Error(error);
-      }
-
-      if (data) {
-        console.log("data", data);
       }
 
       setData(data);

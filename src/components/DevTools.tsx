@@ -1,6 +1,8 @@
-import TimelineTracker from "@/dev-tools/TimelineTracker";
-import Responsive from "@/dev-tools/Responsive";
+import { lazy } from "react";
 import { styled } from "@linaria/react";
+
+const TimelineTracker = lazy(() => import("@/dev-tools/TimelineTracker.tsx"));
+const Responsive = lazy(() => import("@/dev-tools/Responsive.tsx"));
 
 const Outer = styled.div`
   bottom: 0;
