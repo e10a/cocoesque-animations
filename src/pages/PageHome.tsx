@@ -74,8 +74,8 @@ export default function PageHome() {
         <div id="page-home">
           <AboveTheFold data-view-timeline="above_the_fold">
             <HomeHero
-              title="Ellen Shimada"
-              subtitle="Software Engineer • UI/UX Design Lead"
+              title="Ellen Kohler"
+              subtitle="UX Engineer • Web Technologist"
               tagline="My specialty is to design and build engaging, high-quality digital experiences"
               ctas={data.sectionHero?.fields?.ctas || []}
             />
