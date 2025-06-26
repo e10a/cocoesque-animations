@@ -20,7 +20,7 @@
     "@mui/material": "^6.1.8",
     "@vercel/analytics": "^1.2.2",
     "@vercel/blob": "^0.22.1",
-    "@vercel/speed-insights": "^1.1.0",
+    "@vercel/speed-insights": "^1.2.0",
     "@wyw-in-js/babel-preset": "^0.5.5",
     "axios": "^0.27.2",
     "contentful": "^11.0.3",
