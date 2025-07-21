@@ -20,7 +20,7 @@ const SliderContainer = styled.div`
     }
   }
 
-  button {
+  button[name="carousel-navigation"] {
     margin: 0 var(--space-4);
     position: absolute;
     top: 50%;
@@ -61,6 +61,7 @@ const ButtonNext = (props: Props) => {
     <button
       className="button-round"
       onClick={onClick}
+      name="carousel-navigation"
     >
       <span
         className="material-symbols-rounded"
@@ -76,7 +77,11 @@ const ButtonPrev = (props: Props) => {
   const { onClick } = props;
 
   return (
-    <button className="button-round" onClick={onClick}>
+    <button
+      className="button-round"
+      onClick={onClick}
+      name="carousel-navigation"
+    >
       <span
         className="material-symbols-rounded"
         style={{ position: "relative", left: "-1px" }}
