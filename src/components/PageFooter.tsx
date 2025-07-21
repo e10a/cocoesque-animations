@@ -3,13 +3,13 @@ import { LinkedInIcon } from "@/svgs/LinkedInIcon";
 import { styled } from "@linaria/react";
 
 const FooterContainer = styled.div`
-    font-size: var(--text-sm);
-    border: 0 solid #e5e7eb;
-    margin: 0 auto;
-    padding: var(--space-4);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-4);
+  font-size: var(--text-sm);
+  border: 0 solid #e5e7eb;
+  margin: 0 auto;
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
 `;
 const TopSection = styled.div`
   display: flex;
@@ -124,10 +124,14 @@ export default function PageFooter() {
         </TopSection>
 
         <BottomSection>
-          <div>{import.meta.env.VITE_APP_NAME}{" • "}{import.meta.env.VITE_APP_DESCRIPTION}</div>
+          <div>
+            {import.meta.env.VITE_APP_NAME}
+            {" • "}
+            {import.meta.env.VITE_APP_DESCRIPTION}
+          </div>
           <div>Copyright © {new Date().getUTCFullYear()}</div>
         </BottomSection>
       </FooterContainer>
     </footer>
   );
-};
+}

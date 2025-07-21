@@ -31,7 +31,9 @@
     /* Paths */
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": [
+        "src/*"
+      ]
     },
   },
   "exclude": [
@@ -40,6 +42,7 @@
     "**/test"
   ],
   "include": [
-    "src", "vite.config.mts"
+    "src",
+    "vite.config.mts"
   ]
 }
