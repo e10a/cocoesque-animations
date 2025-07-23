@@ -147,7 +147,7 @@ const HomeHeroSwiper: React.FC<PropType> = (props) => {
   const progressCircle = useRef<SVGSVGElement | null>(null);
   const progressContent = useRef<HTMLSpanElement | null>(null);
 
-  const onAutoplayTimeLeft = (_, time: any, progress: any) => {
+  const onAutoplayTimeLeft = (_: any, time: any, progress: any) => {
     if (progressCircle?.current) {
       progressCircle.current.style.setProperty(
         "--progress",
