@@ -9,11 +9,10 @@
   animation-range: cover 90% cover 95%;
   animation-timing-function: linear;
 }
-[data-view-animate="nav__inner"] {
+[data-view-animate="nav-bar__brand"] {
   animation-timeline: --above_the_fold;
-  /*  */
   animation-fill-mode: backwards;
-  animation-name: nav__inner--filter;
+  animation-name: nav-bar__brand--filter;
   animation-range: cover 90% cover 95%;
   animation-timing-function: linear;
 }
@@ -30,14 +29,11 @@
   }
 }
 
-@keyframes nav__inner--filter {
+@keyframes nav-bar__brand--filter {
   0% {
     filter: invert(1);
   }
-  80% {
-    filter: invert(0.8);
-  }
-  100% {
+  150% {
     filter: invert(0);
   }
 }

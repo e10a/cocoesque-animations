@@ -28,7 +28,7 @@ const Inner = styled.div`
 export default function Nav() {
   return (
     <Outer id="nav" data-view-animate="nav">
-      <Inner id="nav__inner" data-view-animate="nav__inner">
+      <Inner id="nav__inner">
         <NavBarBrand />
         <NavBarTabs />
       </Inner>

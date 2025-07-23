@@ -1,4 +1,5 @@
 import { NavLink, useLocation } from "react-router-dom";
+import { CocoIcon } from "@/svgs/CocoIcon";
 
 export default function NavBarBrand() {
   const location = useLocation();
@@ -13,16 +14,9 @@ export default function NavBarBrand() {
   };
 
   return (
-    <div className="nav-bar__brand">
+    <div className="nav-bar__brand" data-view-animate="nav-bar__brand">
       <NavLink to="/" onClick={handleClick}>
-        <img
-          className="nav-bar__logo"
-          loading="lazy"
-          src="https://jrynlppcbsquzh8t.public.blob.vercel-storage.com/coco-icon-0jftvJAugPhOkZjuqrTNXOO2AZfcuO.svg"
-          alt="Cocoesque"
-          width="36"
-          height="36"
-        />
+        <CocoIcon />
       </NavLink>
     </div>
   );
