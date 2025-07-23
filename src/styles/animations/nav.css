@@ -9,7 +9,8 @@
   animation-range: cover 90% cover 95%;
   animation-timing-function: linear;
 }
-[data-view-animate="nav-bar__brand"] {
+[data-view-animate="nav-bar__brand"],
+[data-view-animate="nav-bar__tabs"] {
   animation-timeline: --above_the_fold;
   animation-fill-mode: backwards;
   animation-name: nav-bar__brand--filter;

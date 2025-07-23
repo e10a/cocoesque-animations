@@ -4,7 +4,7 @@ const NavBarTab = lazy(() => import("@/components/navigation/NavBarTab.tsx"));
 
 export default function NavBarTabs() {
   return (
-    <div className="nav-bar__tabs">
+    <div className="nav-bar__tabs" data-view-animate="nav-bar__tabs">
       <a className="nav-bar__tab" href="/#projects">
         Projects
       </a>
