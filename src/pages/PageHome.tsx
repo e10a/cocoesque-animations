@@ -12,19 +12,16 @@ const AboveTheFold = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 90vh;
   max-height: 90vh;
   min-height: 90vh;
-  padding: var(--space-32) 0;
   width: 100%;
   background-image: linear-gradient(
     var(--gradient-rb),
     var(--gradient-indigo-pink)
   );
-
-  @media only screen and (width >= 768px) {
-    padding: var(--space-20) 0 var(--space-20);
-  }
 `;
+
 const NavContainer = styled.div`
   position: fixed;
   top: 0;
