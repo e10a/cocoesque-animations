@@ -1,6 +1,7 @@
 export interface Project {
   fields: {
     accentColor: string;
+    catagories?: string[];
     comingSoon: boolean;
     company: {
       fields?: {
@@ -15,7 +16,16 @@ export interface Project {
         name?: string;
       };
     };
-    coverImage: {
+    contractedWork: boolean;
+    coverImage?: {
+      fields?: {
+        file?: {
+          url?: string;
+        };
+        title?: string;
+      };
+    };
+    slideImage?: {
       fields?: {
         file?: {
           url?: string;
@@ -24,9 +34,13 @@ export interface Project {
       };
     };
     displayTitle: string;
-    externalLink: string;
+    displayDescription?: string;
+    externalLink?: string;
     hide: boolean;
-    slug?: string;
+    name: string;
+    skills?: Skill[];
+    slug: string;
+    year: string;
   };
   sys: {
     id: string;
@@ -34,7 +48,7 @@ export interface Project {
 }
 
 export interface Projects {
-  projects: Project[];
+  projects: Project[] | undefined;
 }
 
 export interface ExperienceSkill {
