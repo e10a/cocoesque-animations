@@ -111,7 +111,7 @@ export default function ProjectCardContents({
 
   const { comingSoon, company, coverImage, displayTitle } = project.fields;
 
-  const coverImageUrl = coverImage.fields?.file?.url;
+  const coverImageUrl = coverImage?.fields?.file?.url;
   const companyName = company.fields?.name;
 
   return (
